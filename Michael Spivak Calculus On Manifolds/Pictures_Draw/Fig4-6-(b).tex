@@ -1,0 +1,47 @@
+% 生成最终的图象时把第一个文档类取消注释即可
+\documentclass[10pt,varwidth]{standalone}
+% \documentclass[12pt]{article}
+% 1.必须添加varwidth选项，不然就会报错
+\PassOptionsToPackage{quiet}{fontspec}
+\usepackage{ctex}
+% 必须要保证绘图的纸张足够的大
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{xifthen}
+\usepackage{xfp}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.16}
+% 2.引用的tikz库
+\usetikzlibrary {matrix, chains, trees, decorations}
+\usetikzlibrary {arrows.meta, automata,positioning}
+\usetikzlibrary {decorations.pathmorphing, calc}
+\usetikzlibrary {calligraphy}
+\usetikzlibrary {backgrounds, mindmap,shadows}
+\usetikzlibrary {patterns, quotes, 3d, shadows}
+\usetikzlibrary {graphs, fadings, scopes}
+\usetikzlibrary {arrows, shapes.geometric}
+\usepgflibrary {shadings}
+
+\tikzset{
+    >={Latex}
+}
+
+
+\begin{document}
+\begin{tikzpicture}
+    % axis
+    \draw[->] (-5, 0) -- (6, 0)    node [below] {$x$};
+    \draw[->] (0, 0)  -- (0, 5)    node [left]  {$z$};
+    \draw[->] (-135:4) -- (0, 0) -- (45:7.06) node [above] {$y$};
+    % eclipse
+    \draw (2,0) arc(0:81:2cm and 1cm);
+    \draw (2,0) arc(0:-275:2cm and 1cm);
+    % circle
+    % \draw (2, 0) circle (2cm);
+    \draw (4, 0) arc(0:-149:2cm);
+    \draw (4, 0) arc(0:208:2cm);
+    % fig num
+    \node at (0, -2.5) [below] {(b)};
+\end{tikzpicture}    
+\end{document}

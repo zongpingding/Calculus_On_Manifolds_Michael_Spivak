@@ -1,0 +1,110 @@
+% 生成最终的图象时把第一个文档类取消注释即可
+\documentclass[10pt,varwidth]{standalone}
+% \documentclass[12pt]{article}
+% 1.必须添加varwidth选项，不然就会报错
+\PassOptionsToPackage{quiet}{fontspec}
+\usepackage{ctex}
+% 必须要保证绘图的纸张足够的大
+\usepackage[a3paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{xifthen}
+\usepackage{xfp}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.16}
+% 2.引用的tikz库
+\usetikzlibrary {matrix, chains, trees, decorations}
+\usetikzlibrary {arrows.meta, automata,positioning}
+\usetikzlibrary {decorations.pathmorphing, calc}
+\usetikzlibrary {calligraphy}
+\usetikzlibrary {backgrounds, mindmap,shadows}
+\usetikzlibrary {patterns, quotes, 3d, shadows}
+\usetikzlibrary {graphs, fadings, scopes}
+\usetikzlibrary {arrows, shapes.geometric}
+\usepgflibrary {shadings}
+\usetikzlibrary{angles}
+
+\tikzset{
+    >={Latex}
+}
+
+
+
+\begin{document}
+\;\begin{tikzpicture}[rotate=-45]
+    % draw axis
+    % \draw[->] (-5,0) -- (5,0) node[right] {$x$};
+    % \draw[->] (0,-5) -- (0,5) node[above] {$y$};
+    % above left
+    \begin{scope}
+        \begin{scope}[xshift=-1cm, yshift=0]
+            \draw[->] (4, 2) coordinate (O)  -- (2, 2) coordinate (f1);
+            \draw[->] (4, 2) -- (4, 4) coordinate (f2);
+            \pic [draw, ->, angle radius = 8mm, angle eccentricity=0, ""] {angle = f2--O--f1};    
+        \end{scope}
+        \begin{scope}[xshift=-5cm, yshift=0cm]
+            \draw[->] (4, 2) coordinate (O)  -- (2, 2) coordinate (f1);
+            \draw[->] (4, 2) -- (4, 4) coordinate (f2);
+            \pic [draw, ->, angle radius = 8mm, angle eccentricity=0, ""] {angle = f2--O--f1};    
+        \end{scope}
+        \begin{scope}[xshift=-5cm, yshift=-5cm]
+            \draw[->] (4, 2) coordinate (O)  -- (2, 2) coordinate (f1);
+            \draw[->] (4, 2) -- (4, 4) coordinate (f2);
+            \pic [draw, ->, angle radius = 8mm, angle eccentricity=0, ""] {angle = f2--O--f1};    
+        \end{scope}
+        \begin{scope}[xshift=-1cm, yshift=-5cm]
+            \draw[->] (4, 2) coordinate (O)  -- (2, 2) coordinate (f1);
+            \draw[->] (4, 2) -- (4, 4) coordinate (f2);
+            \pic [draw, ->, angle radius = 8mm, angle eccentricity=0, ""] {angle = f2--O--f1};    
+        \end{scope}
+        \begin{scope}[xshift=.5cm, yshift=-6cm]
+            \draw[->] (4, 2) coordinate (O)  -- (2, 2) coordinate (f1);
+            \draw[->] (4, 2) -- (4, 4) coordinate (f2);
+            \pic [draw, ->, angle radius = 8mm, angle eccentricity=0, ""] {angle = f2--O--f1};    
+        \end{scope}
+        \draw (5, 4.5) to[out=170, in=10] (-4.5, 4.5);
+        \draw (-4.5, 4.5) to[out=-85, in=100] (-4.5, -6);
+        \draw (-4.5, -6) to[out=3, in=-185] (5.5, -5.5);
+        \draw (5.5, -5.5) to[out=100, in=-85] (5, 4.5);
+    \end{scope}
+    % above right
+    \begin{scope}[xshift=13cm]
+        \begin{scope}[xshift=-1cm, yshift=0]
+            \draw[->] (3, 2) coordinate (O)  -- (5, 2) coordinate (f1);
+            \draw[->] (3, 2) -- (3, 4) coordinate (f2);
+            \pic [draw, ->, angle radius = 8mm, angle eccentricity=0, ""] {angle = f1--O--f2};    
+        \end{scope}
+        \begin{scope}[xshift=-5.5cm, yshift=.5cm]
+            \draw[->] (4, 2) coordinate (O)  -- (2, 2) coordinate (f1);
+            \draw[->] (4, 2) -- (4, 4) coordinate (f2);
+            \pic [draw, ->, angle radius = 8mm, angle eccentricity=0, ""] {angle = f2--O--f1};    
+        \end{scope}
+        \begin{scope}[xshift=-4.5cm, yshift=-.5cm]
+            \draw[->] (4, 2) coordinate (O)  -- (2, 2) coordinate (f1);
+            \draw[->] (4, 2) -- (4, 4) coordinate (f2);
+            \pic [draw, ->, angle radius = 8mm, angle eccentricity=0, ""] {angle = f2--O--f1};    
+        \end{scope}
+        \begin{scope}[xshift=-5cm, yshift=-5cm]
+            \draw[->] (4, 2) coordinate (O)  -- (2, 2) coordinate (f1);
+            \draw[->] (4, 2) -- (4, 4) coordinate (f2);
+            \pic [draw, ->, angle radius = 8mm, angle eccentricity=0, ""] {angle = f2--O--f1};    
+        \end{scope}
+        \begin{scope}[xshift=-0.5cm, yshift=-4.5cm]
+            \draw[->] (3, 2) coordinate (O)  -- (5, 2) coordinate (f1);
+            \draw[->] (3, 2) -- (3, 4) coordinate (f2);
+            \pic [draw, <-, angle radius = 8mm, angle eccentricity=0, ""] {angle = f1--O--f2};    
+        \end{scope}
+        \begin{scope}[xshift=4cm, yshift=-6.5cm, rotate=90]
+            \draw[->] (4, 2) coordinate (O)  -- (2, 2) coordinate (f1);
+            \draw[->] (4, 2) -- (4, 4) coordinate (f2);
+            \pic [draw, ->, angle radius = 8mm, angle eccentricity=0, ""] {angle = f2--O--f1};    
+        \end{scope}
+        \draw (5, 4.5) to[out=170, in=10] (-4.5, 4.5);
+        \draw (-4.5, 4.5) to[out=-85, in=100] (-4.5, -6);
+        \draw (-4.5, -6) to[out=3, in=-185] (5.5, -5.5);
+        \draw (5.5, -5.5) to[out=100, in=-85] (5, 4.5);
+    \end{scope}
+    \node at (6, -6) {(a)};
+    \node at (19, -6) {(b)};
+\end{tikzpicture}
+\end{document}

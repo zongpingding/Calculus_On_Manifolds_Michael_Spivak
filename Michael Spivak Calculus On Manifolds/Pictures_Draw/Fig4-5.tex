@@ -1,0 +1,52 @@
+% 生成最终的图象时把第一个文档类取消注释即可
+\documentclass[10pt,varwidth]{standalone}
+% \documentclass[12pt]{article}
+% 1.必须添加varwidth选项，不然就会报错
+\PassOptionsToPackage{quiet}{fontspec}
+\usepackage{ctex}
+% 必须要保证绘图的纸张足够的大
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{xifthen}
+\usepackage{xfp}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.16}
+% 2.引用的tikz库
+\usetikzlibrary {matrix, chains, trees, decorations}
+\usetikzlibrary {arrows.meta, automata,positioning}
+\usetikzlibrary {decorations.pathmorphing, calc}
+\usetikzlibrary {calligraphy}
+\usetikzlibrary {backgrounds, mindmap,shadows}
+\usetikzlibrary {patterns, quotes, 3d, shadows}
+\usetikzlibrary {graphs, fadings, scopes}
+\usetikzlibrary {arrows, shapes.geometric}
+\usepgflibrary {shadings}
+
+\tikzset{
+    >={Latex}
+}
+
+
+
+\begin{document}
+\;
+
+\begin{tikzpicture}
+    \begin{scope}
+        \filldraw (1, 0) circle (1pt);
+        \filldraw (4, 0) circle (1pt);
+        \draw (0, 0) -- (5, 0) node[midway, below=2em] {$(a)$};
+        \draw[thick] (1, 0)node[below] {$I^1_{(1,0)}$} -- (4, 0)node[below] {$I^1_{(1,1)}$};
+    \end{scope}
+    \begin{scope}[xshift=8cm]
+        \draw[->] (0, 0) -- (0, 5);
+        \draw[->] (0, 0) -- (5, 0);
+        \draw[->] (3, 0) -- (3, 3) node[midway, right] {$I^2_{(1,1)}$};
+        \draw[->] (0, 0) -- (3, 0) node[midway, below=2em] {$(b)$}; 
+        \draw[->] (0, 0) -- (3, 0) node[midway, below] {$I^2_{(2,0)}$}; 
+        \draw[->] (3, 3) -- (0, 3) node[midway, above] {$I^2_{(2,1)}$};
+        \draw[->] (0, 3) -- (0, 0) node[midway, left] {$I^2_{(1,0)}$};
+    \end{scope}
+\end{tikzpicture}
+\end{document}

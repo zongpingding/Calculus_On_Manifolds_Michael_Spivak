@@ -1,0 +1,66 @@
+\documentclass[12pt]{book}
+\usepackage{ManifoldsBook}
+
+
+
+% temp cmds
+\let\B\F
+\newcommand{\wrong}[1]{\textcolor{red}{#1}} 
+\usepackage{pdfpages}
+
+
+
+\begin{document}
+% Cover and others
+\pagenumbering{Roman}
+\input{./chapter/Cover.tex}
+\input{./chapter/Title.tex}
+\input{./chapter/CopyRight.tex}
+\large      % Global Font cmd 
+\input{./chapter/Forward.tex}
+\input{./chapter/Preface.tex}
+\input{./chapter/Table_of_Contents.tex}
+
+
+% Book's Body 
+\chapter{Functions on Euclidean Space}
+\input{./chapter/chapter_01/NORM AND INNER PRODUCT.tex}
+\input{./chapter/chapter_01/SUBSETS OF EUCLIDEAN SPACE.tex}
+\input{./chapter/chapter_01/FUNCTIONS AND CONTINUITY.tex}
+
+\chapter{Differentiation}
+\input{./chapter/chapter_02/BASIC DEFINITIONS.tex}
+\input{./chapter/chapter_02/BASIC THEOREMS.tex}
+\input{./chapter/chapter_02/PARTIAL DERIVATIVES.tex}
+\input{./chapter/chapter_02/DERIVATIVES.tex}
+\input{./chapter/chapter_02/INVERSE FUNCTIONS.tex}
+\input{./chapter/chapter_02/IMPLICIT FUNCTIONS.tex}
+\input{./chapter/chapter_02/NOTATION.tex}
+
+\chapter{Integration}
+\input{./chapter/chapter_03/BASIC DEFINITIONS.tex}
+\input{./chapter/chapter_03/MEASURE ZERO AND CONTENT ZERO.tex}
+\input{./chapter/chapter_03/INTEGRABLE FUNCTIONS.tex}
+\input{./chapter/chapter_03/FUBINI'S THEOREM.tex}
+\input{./chapter/chapter_03/PARTITIONS OF UNITY.tex}
+\input{./chapter/chapter_03/CHANGE OF VARIABLE.tex}
+
+\chapter{Integration on Chains}
+\input{./chapter/chapter_04/ALGEBRAIC PRELIMINARIES.tex}
+\input{./chapter/chapter_04/FIELDS AND FORMS.tex}
+\input{./chapter/chapter_04/GEOMETRIC PRELIMINARIES.tex}
+\input{./chapter/chapter_04/THE FUNDAMENTAL THEOREM OF CALCULUS.tex}
+
+\chapter{Integration on Manifolds}
+\input{./chapter/chapter_05/MANIFOLDS.tex}
+\input{./chapter/chapter_05/FIELDS AND FORMS ON MANIFOLDS.tex}
+\input{./chapter/chapter_05/STOKES' THEOREM ON MANIFOLDS.tex}
+\input{./chapter/chapter_05/THE VOLUME ELEMENT.tex}
+\input{./chapter/chapter_05/THE CLASSICAL THEOREMS.tex}
+
+
+% Acknowledgments and others
+\input{./chapter/Bibliography.tex}
+\input{./chapter/Index.tex}
+\input{./chapter/Addenda.tex}
+\end{document}

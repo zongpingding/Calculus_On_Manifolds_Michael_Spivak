@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="141.69456mm"
+   height="136.15331mm"
+   viewBox="0 0 141.69456 136.15331"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   sodipodi:docname="Fig5-4.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.83678302"
+     inkscape:cx="244.98585"
+     inkscape:cy="307.1286"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-44.765766,-50.422134)">
+    <g
+       id="g5"
+       transform="matrix(1.6101126,-0.02291986,0.02291986,1.6101126,-139.61686,-64.978438)">
+      <g
+         id="g4"
+         transform="rotate(45,126.1331,118.90682)">
+        <g
+           id="g3"
+           transform="rotate(-65.176412,139.00021,80.900857)">
+          <g
+             id="g2"
+             transform="rotate(-7.8550404,73.184295,-221.87431)">
+            <ellipse
+               style="fill:none;stroke:#000000;stroke-width:0.124202;stroke-miterlimit:4.7;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+               id="path1"
+               cx="107.84882"
+               cy="61.686821"
+               rx="33.65942"
+               ry="21.277891"
+               transform="rotate(25.128747)" />
+            <path
+               style="fill:none;stroke:#000000;stroke-width:0.248405;stroke-miterlimit:4.7;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+               d="m 60.26242,94.170507 c 19.1333,-1.717294 24.160162,15.523563 24.160162,15.523563"
+               id="path2"
+               sodipodi:nodetypes="cc" />
+            <path
+               style="fill:none;stroke:#000000;stroke-width:0.124202;stroke-miterlimit:4.7;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+               d="M 93.791533,109.42406 C 66.312493,113.35524 57.859282,89.294007 57.859282,89.294007"
+               id="path2-5"
+               sodipodi:nodetypes="cc" />
+          </g>
+        </g>
+      </g>
+      <ellipse
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.124202;stroke-miterlimit:4.7;stroke-dasharray:0.745214, 0.745214;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="path6"
+         cx="172.83069"
+         cy="123.92543"
+         transform="rotate(0.81554809)"
+         rx="8.9061937"
+         ry="8.67624" />
+    </g>
+    <g
+       id="g6"
+       transform="matrix(1.6785655,0,0,1.604805,-24.246622,-81.049216)">
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.121857;stroke-miterlimit:4.7;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         d="m 75.704956,134.36205 v -4.22162 m 0,-2.57965 v -13.2303 m 0,-2.51319 v -3.04631 -2.20856 -24.638853"
+         id="path4"
+         sodipodi:nodetypes="cccccccc" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.121857;stroke-miterlimit:4.7;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         d="m 43.345488,166.72151 12.530024,-12.53002 m 1.800647,-1.80065 14.150339,-14.15033 m 1.369377,-1.36938 2.509081,-2.50908 h 11.133983 m 1.910214,0 h 15.401017 m 3.32751,0 h 18.05031"
+         id="path5"
+         sodipodi:nodetypes="ccccccccccc" />
+    </g>
+  </g>
+</svg>

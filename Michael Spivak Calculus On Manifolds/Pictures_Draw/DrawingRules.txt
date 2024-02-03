@@ -1,0 +1,7 @@
+1. 文本禁止使用描边,填充选项中禁止使用透明
+2. 普通线条0.2mm,加粗线条0.5mm
+3. 点的直径为3.4mm
+4. 颜色级别:纯黑, 30%gray, 60%gray (不使用alpha属性
+4. 特征字体:sans serief, 大小为9.00pt
+5. 文件保存:"文档属性:对象大小" --> "保存副本" --> "pdf" --> “生成latex文件”
+6. Picture 保存: cp Pictures_Draw/Fig1-3.pdf ./pics/

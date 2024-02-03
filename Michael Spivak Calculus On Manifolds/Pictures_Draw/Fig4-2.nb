@@ -1,0 +1,17 @@
+(* 1. ComplexVectorPlot *)
+fg1 = ComplexVectorPlot[
+	z^2, {z, -5-5*I, 5+5*I}, 
+	Frame->False, 
+	VectorColorFunction->None, VectorStyle->Black, 
+	VectorPoints->"Mesh"
+]
+fg1 = ComplexVectorPlot[
+	1/z, {z, -5-5*I, 5+5*I}, 
+	Frame->False, 
+	VectorColorFunction->None, VectorStyle->Black, 
+	VectorPoints->"Mesh"
+]
+
+(* 2. Export Graphics *)
+Export["C:\\Users\\PC\\Desktop\\fig1.pdf", fg1]
+Export["C:\\Users\\PC\\Desktop\\fig2.pdf", fg2]

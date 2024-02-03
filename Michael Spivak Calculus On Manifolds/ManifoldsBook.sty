@@ -1,0 +1,249 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ManifoldsBook}
+
+
+% page layout
+\usepackage[a4paper, left=7em, right=7em, top=7em, bottom=7em]{geometry}
+\RequirePackage[Glenn]{fncychap}
+% \RequirePackage{enumerate}
+\RequirePackage{enumitem}
+\RequirePackage{multicol}
+% \setlist[enumerate,1]{label={\upshape(\arabic*)}}
+\RequirePackage{titlesec}
+% tikz and related drawing things
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+% float enviroment
+\RequirePackage{float}
+\RequirePackage{graphicx}
+\RequirePackage{subfigure}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+% changed figure caption style
+\RequirePackage{caption2}
+\@addtoreset{equation}{chapter}
+\renewcommand{\figurename}{\bfseries FIGURE}
+\renewcommand{\thefigure}{\arabic{figure}}
+\let\old@thefigure\thefigure
+\renewcommand{\captionlabeldelim}{~}
+\renewcommand{\thefigure}{\bfseries\thechapter-\old@thefigure}
+% color define
+\definecolor{CoverInfo}{HTML}{7c534a}
+% copyright symbol package
+\RequirePackage{textcomp} 
+% fancy header
+\RequirePackage{fancyhdr}
+\setlength{\headheight}{1.5em}
+\renewcommand{\headrule}{}
+\pagestyle{fancy}
+\fancyhf{}
+\addtolength{\headheight}{0pt}
+\fancyhead[ER]{\bfseries Calculus on Manifolds}
+\fancyhead[EL]{\bfseries\thepage}
+\fancyhead[OL]{\bfseries\leftmark}
+\fancyhead[OR]{\bfseries\thepage}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}} % remove "Chapter N." prefix
+
+
+
+%% other
+\RequirePackage{csquotes}
+\MakeOuterQuote{"}
+% section format
+\titleformat{\section}
+    {\centering\normalfont\bfseries}{\thesection}{1em}{}
+
+
+
+%% Commands define
+% package
+\RequirePackage{amsthm,amsmath}   % basic math package
+\RequirePackage{amsfonts,mathtools} % which provide more math font  
+\RequirePackage{amssymb,bm}                 % bold math font 
+\RequirePackage{thmtools}
+% eqref config
+\renewcommand{\theequation}{\arabic{equation}}
+% \newcommand{\eqref}[1]{\textup{\tagform@{\ref{#1}}}}
+% can't use expand reason --> \tagform@
+% an example of using LaTeX3 for Expanding
+% \ExplSyntaxOn
+% \def\aaa{aaa}
+% \uppercase{\aaa}
+% \tl_set:Nx \l_tmpa_tl {\aaa}
+% \par\textbf{\l_tmpa_tl}
+% \ExplSyntaxOff
+\renewcommand{\eqref}[1]{
+    Equation~(\textbf{\ref{#1}})
+}
+% equations list tag form cmd, \usetagform{etag}
+\newtagform{etag}[\color{black}{[}]{}{]}
+
+
+
+
+%% math env
+% Reset equation at \subsection
+\counterwithin*{equation}{subsection}
+% theorem env 
+\newcounter{math@env}[chapter]
+\newenvironment{math@env}[2][]{
+    \stepcounter{math@env}
+    \par\vspace{.5em}
+    \expandafter\ifx\expandafter\relax\detokenize{#1}\relax
+        \noindent\textbf{\arabic{chapter}-\themath@env~#2.}
+    \else
+        \noindent\textbf{\arabic{chapter}-\themath@env~Theorem(#1).}
+    \fi 
+    \itshape
+}{}
+% corollary and theorem env
+% \newtheorem{corollary}{Corollary}[section]
+\newenvironment{theorem}[1][]{\begin{math@env}[#1]{Theorem}}{\end{math@env}}
+\newenvironment{corollary}[1][]{\begin{math@env}[#1]{Corollary}}{\end{math@env}}
+\newenvironment{lemma}[1][]{\begin{math@env}[#1]{Lemma}}{\end{math@env}}
+% proof env
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\providecommand{\proofname}{Proof}
+\renewenvironment{proof}[1][\proofname]{
+    \pushQED{\qed}%
+    \normalfont \topsep6\p@\@plus6\p@\relax
+    \trivlist
+    \item\relax
+        % {\itshape\bfseries
+        {\bfseries
+        #1\@addpunct{.}}\noindent\quad\ignorespaces
+    }{%
+        \popQED\endtrivlist\@endpefalse
+    }
+% problem env
+\newenvironment{problems}{
+    % verticle before space
+    \par\vspace*{1em}
+    \begin{center}
+        \bfseries Problems \thesection
+    \end{center}
+    % {\centering \bfseries Problems \thesection}
+    \par
+}{
+    % verticle after space
+    \par\vspace*{2em}
+    % \clearpage
+    % \pageblank
+}
+\newcounter{pr@blem}[chapter]
+\newcommand{\problem}[2][]{
+    \stepcounter{pr@blem}
+    \par\noindent{\bfseries\thechapter-\thepr@blem.#1}
+    #2 \par
+}
+
+
+
+
+
+%% Alias command
+% Math Font Alias 
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\C}[1]{\ensuremath{\mathcal{#1}}}
+\renewcommand{\S}[1]{\ensuremath{\mathscr{#1}}}
+\newcommand{\B}[1]{\ensuremath{\mathbb{#1}}}
+\newcommand{\F}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\R}[1]{\ensuremath{\mathrm{#1}}}
+\newcommand{\K}[1]{\ensuremath{\mathfrak{#1}}}
+% Math arrow (need package mathtools)
+\newcommand{\lr}{\ensuremath{\longrightarrow}}
+\renewcommand{\ll}{\ensuremath{\longleftarrow}}
+\newcommand{\equ}{\ensuremath{\Longleftrightarrow}\,}
+\newcommand{\sr}{\ensuremath{\longmapsto}}
+\newcommand{\lrr}[2][]{\ensuremath{\xRightarrow[#1]{#2}}}
+\renewcommand{\lll}[2][]{\ensuremath{\xLeftarrow[#1]{#2}}}
+\newcommand{\ns}{\ensuremath{\varnothing}}
+\newcommand{\A}{\ensuremath{\forall}}
+\newcommand{\alt}{\ensuremath{\mathrm{Alt}\;}}
+\newcommand{\sgn}{\ensuremath{\mathrm{sgn}\;}}
+\newcommand{\curl}{\ensuremath{\mathrm{curl}\;}}
+\newcommand{\grad}{\ensuremath{\mathrm{grad}\;}}
+\newcommand{\trace}{\ensuremath{\mathrm{trace}\;}}
+\renewcommand{\div}{\ensuremath{\mathrm{div}\;}}
+
+
+
+%% Global Font size cmd
+% \newcommand{\bigsize}{\fontsize{16pt}{20pt}\selectfont}
+% scale cmd
+\newcommand{\scale}[2]{%
+    \scalebox{#1}[#1]{#2}}
+% page blank command
+\let\cleardoublepage=\clearpage
+\newcommand{\pageblank}[1][This page intentionally left blank]{
+    \newpage
+    \thispagestyle{empty}
+    \topskip0pt
+    \vspace*{\fill}
+    \begin{center}
+        {#1}
+    \end{center}
+    \vspace*{\fill}
+}
+% Cover
+\newcommand{\cover}[1][]{
+    \begin{titlepage}
+        % 1. Backgroud Picture
+        \expandafter\ifx\expandafter\relax\detokenize{#1}\relax
+            \relax 
+        \else
+            \begin{tikzpicture}[overlay, remember picture]
+                \node[anchor=north east] at (current page.north east)
+                    {\includegraphics[width=1\paperwidth]{#1}};
+            \end{tikzpicture}
+        \fi
+        % 2. Cover Info
+        \vspace*{8em}
+        \begin{center}    
+        \begin{tabular}{c}
+            {\Huge\bfseries\itshape Michael Spivak}\\
+            \\\\\\\\
+            {\textcolor{CoverInfo}{\scale{4}{CALCULUS}}} \\
+            \\\\\\\\
+            {\textcolor{CoverInfo}{\scale{4}{ON}}}\\
+            \\\\\\\\
+            {\textcolor{CoverInfo}{\scale{4}{MANIFOLDS}}}
+        \end{tabular}
+        \end{center}
+        \begin{center}
+            % 1. Tikz Draw
+            % \begin{tikzpicture}[overlay]
+            %     \begin{scope}[xshift=-4em, yshift=-14em]
+            %         \node[circle, draw, line width=1.15pt, inner sep=2pt, rotate=22.5] at (0, 0) {{\bfseries\itshape CRC}}; 
+            %         \node[anchor=west] at (1.5em, .75em) {{\large\bfseries\sffamily CRC Press}};
+            %         \node[anchor=west] at (1.5em, -.75em) {{\sffamily Taylor \& Francis Group}};
+            %         \node[anchor=west] at (-2em, -2.5em) {{\sffamily A CHAPMAN \& HALL BOOK}};
+            %     \end{scope}
+            % \end{tikzpicture} 
+            % 2. insert picture
+            \vspace*{10em}
+            \includegraphics[width=16em]{./pics/Log_I.pdf}
+        \end{center}
+    \end{titlepage}
+}
+
+
+
+%% biblatex
+\RequirePackage[backend=biber,style=numeric]{biblatex}
+% bib source file
+\addbibresource{ref.bib}
+\AtBeginDocument{\renewcommand{\refname}{Bibliography}}
+
+
+
+%% make index
+% --> xelatex Calculus_On_Manifold 
+% --> makeindex Calculus_On_Manifold.idx 
+% --> xelatex Calculus_On_Manifold
+\RequirePackage{makeidx}
+\makeindex
+
+
+
+%% hyperref package
+\RequirePackage{hyperref}

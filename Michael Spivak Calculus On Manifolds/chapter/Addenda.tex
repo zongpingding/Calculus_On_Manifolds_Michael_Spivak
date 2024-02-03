@@ -1,0 +1,53 @@
+{\let\cleardoublepage\space
+\chapter*{Addenda}}
+\addcontentsline{toc}{chapter}{Addenda}
+\hspace*{1em}\textbf{(1)}. It should be remarked after Theorem 2-11 (the Inverse Function Theorem) 
+that the formula for $f^{-1}$ allows us to conclude that $f^{-1}$ is actually continuously 
+differentiable (and that it is $C^\infty$ if $f$ is). Indeed, it suffices to note that the 
+entries of the inverse of a matrix $A$ are $C^\infty$ functions of the entries of $A$. This 
+follows from ``Cramer's Rule'': $(A^{-1})_{ji}=(\det A^{ij})/(\det A)$, where $A^{ij}$ is the 
+matrix obtained from $A$ by deleting row $i$ and column $j$.
+
+\vspace*{3em}
+\textbf{(2)}. The proof of the first part of Theorem 3-8 can be simplified 
+considerably, rendering Lemma 3-7 unnecessary. It suffices to cover $B$ by the 
+interiors of closed rectangles $U_i$ with $\sum_{i=1}^{n}{v(U_i)}<\varepsilon$, and 
+by the interiors of closed rectangles $V_x$, containing $x$ in its interior, with 
+$M_{V_x}(f)-m_{V_x}(f)<\varepsilon$. If every subrectangle of a partition $P$ is 
+contained in one of some finite collection of $U_i$'s and $V_x$'s which
+cover $A$, and $|f(x)|\le M$ for all $x$ in $A$, then $U(f, P) - L(f, P)
+<\varepsilon v(A)+2M\varepsilon.$
+
+The proof of the converse part contains an error, since
+$M_S(f)-m_S(f)\ge 1/n$ is guaranteed only if the interior of $S$
+intersects $B_{1/n}$. To compensate for this it suffices to cover the
+boundaries of all subrectangles of $P$ with a finite collection of
+rectangles with total volume $< \varepsilon$. These, together with $S$,
+cover $B_{1/m}$ and have total volume $< 2\varepsilon$.
+
+\vspace*{3em}
+\textbf{(3)}. The argument in the first part of Theorem 3-14 (Sard's Theorem) requires 
+a little amplification. If $U\subset A$ is a closed rectangle with sides of length $l$, 
+then, because $U$ is compact, there is an integer $N$ with the following property: if $U$ 
+is divided into $N^n$ rectangles, with sides of length $l/N$, then $|\R{D}_jg^i(w) - \R{D}_jg^i(z)|<\varepsilon/n^2$
+whenever $w$ and $z$ are both in one such rectangle $S$. Given $x\in S$, let $f(z)=\R{D}g(x)(z)-g(z)$.
+Then, if $z\in S$,
+\begin{align*}
+    \left|\R{D}_jf^i(z)\right|=\left|\R{D}_jg^i(x)-\R{D}_jg^i(z)\right|<\varepsilon/n^2
+\end{align*}
+
+So by Lemma 2-10, if $x,y\in\C{S}$, then 
+\begin{align*}
+    |\R{D}g(x)(y-x)-g(y)+g(x)|
+    & = |f(y)-f(x)|<\varepsilon|x-y|\\
+    & \le \varepsilon\sqrt{n}(l/N)
+\end{align*}
+
+\vspace*{3em}
+\textbf{(4)}. Finally, the notation $\Lambda^k(V)$ appearing in this book is
+incorrect, since it confiicts with the standard definition of
+$\Lambda^k(V)$ (as a certain quotient of the tensor algebra of $V$).
+For the vector space in question (which is naturally isomorphic to
+$\Lambda^k(V^*)$ for finite dimensional vector spaces $V$) the notation
+$\Omega^k(V)$ is probably on the way to becoming standard. This
+substitution should be made on pages 84-91, 94-95, 124, and 134-143.

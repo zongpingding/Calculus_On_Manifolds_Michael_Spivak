@@ -1,0 +1,200 @@
+\clearpage
+\section{DERIVATIVES}
+The reader who has compared Problems 2-10 and 2-17 has
+probably already guessed the following.
+
+\begin{theorem}
+    If $f:\F{R}^n\to \F{R}^m$ is differentiable at $a$, then $\R{D}_if^i(a)$ exists for
+    $1\le i \le m, 1\le j\le n$ and $f'(a)$ is the $m\times n$ matrix $\left(\R{D}_jf^i(a)\right)$.
+\end{theorem}
+
+\begin{proof}
+    Suppose first that $m=1$, so that $f:\F{R}^n\to \F{R}$. Define $h:\F{R}\to \F{R}^n$ by 
+    $h(x) = \left(a^1, \cdots, x, \cdots, a^n\right)$, with $x$ in the $j$th place, Then 
+    $\R{D}_jf(a) = (f\circ h)'(a^j)$. Hence by Theorem 2-2,
+    \begin{align*}
+        (f\circ h)'(a^j) 
+        = f'(a)\cdot h'(a^j) 
+        = f'(a) \cdot \left(\begin{matrix}
+            0 \\ \vdots \\ 1 \\ \vdots \\ 0
+        \end{matrix}\right)
+        \leftarrow j\text{th place}
+    \end{align*} 
+    Since $(f\circ h)'(a^j)$ has the single entry $\R{D}_jf(a)$, this shows that $\R{D}_jf(a)$ exists and is the 
+    $j$th entry of the $1\times n$ matrix $f'(a)$.
+
+    The theorem now follows for arbitary $m$ since, by Theorem 2-3, each $f^i$ is differentiable and the 
+    $i$th row of $f'(a)$ is $(f^j)'(a)$.
+\end{proof}
+
+There are several examples in the problems to show that the
+converse of Theorem 2-7 is false. It is true, however, if one
+hypothesis is added.
+
+\begin{theorem}
+    If $f:\F{R}^n\to \F{R}^n$, then $\R{D}f(a)$ exists if all $\R{D}_jf(a)$ exists in an open set containing 
+    $a$ and if each function $\R{D}_jf^i$ is continuous at $a$.
+\end{theorem}
+
+\begin{proof}
+    As in the proof of Theorem 2-7, it suffices to consider the case $m = 1$, so that 
+    $f:\F{R}^n\to \F{R}$. Then 
+    \begin{align*}
+        f(a+h) &  - f(a) = f(a^1+h^1, a^2, \cdots, a^n) - f(a^1, \cdots, a^n) \\
+        & + f(a^1+h^1, a^2+h^2, a^3, \cdots, a^n) - f(a^1+h^1, a^2, \cdots, a^n) \\
+        & + \cdots \\
+        & + f(a^1+h^1, \cdots, a^n+h^n) - f(a^1+h^1, \cdots, a^{n-1}+h^{n-1}, a^n)
+    \end{align*}
+    Recall that $\R{D}_jf$ is the derivative of the function $g$ defined by $g(x) = f(x, a^2, \cdots, a^n)$. Applying 
+    the mean-value theorem to $g$ obtain 
+    \begin{align*}
+        f(a^1+h^1, a^2, \cdots, a^n) - f(a^1, \cdots, a^n)
+        = h^1\cdot \R{D}_1f(b_1, a^2, \cdots, a^n)
+    \end{align*}
+    for some $b_1$ between $a^1$ and $a^1+h^1$. Similarly, the $i$th term in the sum equals
+    \begin{align*}
+        h^i\cdot \R{D}_if(a^1+h^1, \cdots, a^{i-1}+h^{i-1}, b_i, \cdots, a^n)
+        = h^i\R{D}_if(c_i)
+    \end{align*}
+    for some $c_i$. Then 
+    \begin{align*}
+        &\lim_{h\to 0}{\frac{\left|f(a+h) - f(a) - \sum_{i=1}^{n }{\R{D}_if(a)\cdot h^i}\right|}{|h|}} \\
+        = & \lim_{h\to 0}{\frac{\left|\sum_{i=1}^{n }{\left[\R{D}_if(c_i) - \R{D}_if(a)\right]\cdot h^i}\right|}{|h|}} \\
+        \le & \lim_{h\to 0}{\sum_{i=1}^{n }{\left|\R{D}_if(c_i) - \R{D}_if(a)\right|\cdot \frac{|h^i|}{|h|}}} \\
+        \le & \lim_{h\to 0}{\sum_{i=1}^{n }{\left|\R{D}_if(c_i) - \R{D}_if(a)\right|}} \\
+        = & 0
+    \end{align*}
+    since $\R{D}_if$ is continuous at $a$.
+\end{proof}
+
+Although the chain rule was used in the proof of Theorem
+2-7, it could easily have been eliminated. With Theorem 2-8 to
+provide differentiable functions, and Theorem 2-7 to provide
+their derivatives, the chain rule may therefore seem almost
+superfluous. However, it has an extremely important corollary 
+concerning partial derivatives.
+
+\begin{theorem}
+    Let $g_1, \cdots, g_m:\F{R}^n\to \F{R}$ be continuously differentiable at $a$, and 
+    let $f:\F{R}^m\to \F{R}$ be differentiable at $\left(g_1(a), \dots, g_m(a)\right)$. 
+    Define the function $F:\F{R}^n\to \F{R}$ by $F(x) = f\left(g_1(x), \cdots, g_m(x)\right)$. Then 
+    \begin{align*}
+        \R{D}_iF(a) = \sum_{j=1}^{m}{\R{D}_jf\left(g_a(a), \cdots, g_m(a)\right)\cdot \R{D}_ig_j(a)}
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    The function $F$ is just the composition $f\circ g$, where $g = (g_1,\cdots,g_m)$.
+    Since $g_i$ is continuously differentiable at $a$, it follows from Theorem 2-8 
+    that $g$ is differentiable at $a$. Hence by Theorem 2-2,
+    \begin{align*}
+        F'(a) 
+        & = f'(g(a)) \cdot g'(a) \\
+        & = \left(\R{D}_1f(g(a)), \cdots, \R{D}_mf(g(a))\right)\cdot 
+            \left(\begin{matrix}
+                \R{D}_1g_1(a) & \cdots & \R{D}_ng_1(a) \\
+                \vdots & & \vdots \\
+                \R{D}_1g_m(a) & \cdots & \R{D}_ng_m(a)
+            \end{matrix}\right)
+    \end{align*}
+    But $\R{D}_iF(a)$ is the $i$th entry of the left side of this equation, while 
+    $\sum_{j=1}^{m }{\R{D}_jf\left(g_1(a), \cdots, g_m(a)\right)}\cdot \R{D}_ig_j(a)$ is the $i$th 
+    entry of the right side.
+\end{proof}
+
+Theorem 2-9 is often called the chain rule, but is weaker
+than Theorem 2-2 since $g$ could be differentiable without $g_i$
+being continuously differentiable (see Problem 2-32).
+Most computations requiring Theorem 2-9 are fairly straightforward.
+A slight subtlety is required for the function $F:\F{R}^2\to \F{R}$
+defined by 
+\begin{align*}
+    F(x, y) = f\left(g(x, y), h(x), k(y)\right)
+\end{align*}
+
+where $h, k:\F{R}\to \F{R}$. In order to apply Theorem 2-9 define $\hat{h}, \hat{k}:\F{R}^2\to \F{R}$ by 
+\begin{align*}
+    \hat{h}(x, y) = h(x) & & \hat{k}(x, y) = k(y).
+\end{align*}
+Then 
+\begin{align*}
+    & \R{D}_1\hat{h}(x, y) = h'(x) && \R{D}_2\hat{h}(x, y) = 0 \\
+    & \R{D}_1\hat{k}(x, y) = 0 && \R{D}_2\hat{k}(x, y) = k'(y)
+\end{align*}
+
+and we can write 
+\begin{align*}
+    F(x, y) = f\left(g(x, y), \hat{h}(x, y), \hat{k}(x, y)\right)
+\end{align*}
+
+Letting $a= \left(g(x, y), h(x), k(y)\right)$, we obtain
+\begin{align*}
+    & \R{D}_1F(x, y) = \R{D}_1f(a)\cdot \R{D}_1g(x, y) + \R{D}_2f(a)\cdot h'(x)\\
+    & \R{D}_2F(x, y) = \R{D}_1f(a)\cdot \R{D}_2g(x, y) + \R{D}_3f(a)\cdot k'(y)
+\end{align*}
+
+It should, of course, be unnecessary for you to actully write 
+down the function $\hat{h}$ and $\hat{k}$
+
+\begin{problems}
+    \problem{Find expressions for the partial derivatives of the following functions:
+        \begin{enumerate}[label={\upshape(\alph*)}]
+            \item $F(x,y)=f(g(x)k(y),g(x)+h(y))$
+            \item $F(x,y,z)=f(g(x+y),h(y+z))$
+            \item $F(x,y,z)=f(x^{y},y^{z},z^{x})$
+            \item $F(x,y)=f(x,g(x),h(x,y))$
+        \end{enumerate}
+        }
+    \problem{Let $f:\F{R}^n\to \F{R}$. For $x\in \F{R}^n$, the limit 
+            \begin{align*}
+                \lim_{t\to 0}{\frac{f(a+tx) - f(a)}{t}}
+            \end{align*}
+            if exists, is denoted $\R{D}_xf(a)$, and called the \textbf{directional derivative} of $f$ at $a$,
+            in the direction $x$.
+            \begin{enumerate}[label={\upshape(\alph*)}]
+                \item Show that $\R{D}_{e_i}f(a) = \R{D}_if(a)$
+                \item Show that $\R{D}_{tx}f(a) = t\R{D}_xf(a)$
+                \item If $f$ is differentiable at $a$, show that $\R{D}_xf(a) = \R{D}f(a)(x)$ and therefore 
+                    $\R{D}_{x+y}f(a) = \R{D}_xf(a) = \R{D}_yf(a)$.
+            \end{enumerate}
+        }
+    \problem{Let $f$ be defined as in the Problem 2-4. Show that $\R{D}_xf(0, 0)$ exists for all $x$
+        but if $g\neq 0$, then $\R{D}_{x+y}f(0, 0) = \R{D}_xf(0, 0) + \R{D}_yf(0, 0)$ is not true for all $x$ and $y$.}
+    \problem{Let $f:\F{R}^2\to \F{R}$ be defined as in Problem 2-26. Show that $\R{D}_xf(0, 0)$ exists for all 
+        $x$ , although $f$ is not even continuous at $(0, 0)$.}
+    \problem{
+        \begin{enumerate}[label={\upshape(\alph*)}]
+            \item Let $f:\F{R}\to \F{R}$ be defined by 
+                \begin{align*}
+                    f(x) = \left\{\begin{aligned}
+                        & x^2\sin \frac{1}{x} && x\neq 0 \\
+                        & 0 && x = 0
+                    \end{aligned}\right.
+                \end{align*}
+                Show that $f$ is differentiable at 0 but $f'$ is not continuous at 0.
+            \item Let $f:\F{R}^2\to \F{R}$ be defined by 
+                \begin{align*}
+                    f(x, y) = \left\{\begin{aligned}
+                        & (x^2 + y^2)\sin \frac{1}{\sqrt{x^2 + y^2}} && (x, y)\neq 0 \\
+                        & 0 && (x, y) = 0
+                    \end{aligned}\right.
+                \end{align*}
+                Show that $f$ is differentiable at 0 but $\R{D}_if$ is not continuous at (0, 0).
+        \end{enumerate}
+        }
+    \problem{Show that the continuity of $\R{D}_1f^i$ at a may be eliminated from the hypothesis of Theorem 2-8.}
+    \problem{A function $f:\F{R}^n\to \F{R}$ is \textbf{homogeneous} of degree $m$ if $f(tx) = t^mf(x)$ 
+        for all $x$. If $f$ is also differentiable , show that 
+        \begin{align*}
+            \sum_{i=1}^{n }{x^i\R{D}_if(x)} = mf(x)
+        \end{align*}
+        \textit{Hint:} If $g(t) = f(tx)$, find $g'(1)$.
+        }
+    \problem{If $f:\F{R}^n\to \F{R}$ is differentiable and $f(0) = 0$, prove that there exists $g_i:\F{R}^n\to \F{R}$
+        such that 
+        \begin{align*}
+            f(x) = \sum_{i=1}^{n}{x^ig_x(x)}
+        \end{align*}
+        \textit{Hint:} If $h_x(t) = f(tx)$, then $f(x) = \int_{0}^{1}{h_x'(t) \mathrm{d}t}$.
+        }
+\end{problems}
