@@ -9,7 +9,7 @@ Any corrections are welcome. The Original pdf version of this book can be found 
 * https://github.com/luqmanmalik/Calculus-on-Manifolds
 
 > [!WARNING]
-> This repository are for personal useage only.
+> This repository is for personal use only.
 
 
 # Notes and Manuals
