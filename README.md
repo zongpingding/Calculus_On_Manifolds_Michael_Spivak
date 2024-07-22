@@ -19,6 +19,7 @@ There are some Notes and Solution Manual list as follows as well:
 * https://github.com/hlud6646/spivak
 * https://github.com/TommyHughes/Calculus-On-Manifolds-Solutions
 * https://jianfeishen.weebly.com/uploads/4/7/2/6/4726705/calculus_on_manifolds.pdf
+* https://github.com/luqmanmalik/Calculus-on-Manifolds
 
 # Discussion and Further Materials
 For more disussion or Further Materials, something useful maybe be at: 
