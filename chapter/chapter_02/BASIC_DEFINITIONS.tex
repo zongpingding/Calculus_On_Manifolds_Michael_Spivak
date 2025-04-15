@@ -1,0 +1,182 @@
+\section{BASIC DEFINITIONS}
+Recall that a function $f:\F{R} \to \F{R}$ is differentiable\index{Differentiable function} at $a\in \F{R}$
+if there is a number $f'(a)$ such that 
+\begin{align}
+    \lim_{h\to 0 }{\frac{f(a+h)-f(a)}{h}} = f'(a)
+    \label{eq:differentiation definitins i}
+\end{align} 
+
+This equation certainly makes no sense in the general case of a
+function $f:\F{R}^n \to \F{R}^m$, but can be reformulated in a way that
+does. If $\lambda: \F{R} \to \F{R}$ is the linear transformation defined by
+$\lambda(h) = f'(a)\cdot h$, then \eqref{eq:differentiation definitins i} 
+is equivalent to 
+\begin{align}
+    \lim_{h\to 0 }{\frac{f(a+h)-f(a)-\lambda(h)}{h}} = 0
+    \label{eq:differentiation definitins ii}
+\end{align} 
+
+\eqref{eq:differentiation definitins ii} is often interpreted as saying that 
+$\lambda + f(a)$ is a good approximatin to $f$ at $a$ (see Problem 2-9).
+Henceforth we focus our attention on the linear transformation $\lambda$ and
+reformulate the definition of differentiability as follows.
+
+A function $f:\F{R} \to \F{R}$ is differentiable\index{Differentiable function} at $a\in \F{R}$
+if there is a linear transformation $\lambda:\F{R}\to \F{R}$ such that 
+\begin{align}
+    \lim_{h\to 0 }{\frac{f(a+h)-f(a)-\lambda(h)}{h}} = 0
+    \label{eq:differentiation definitins iii}
+\end{align} 
+
+In this form the definition has a simple generalization to
+higher dimensions:
+
+A function $f:\F{R}^n \to \F{R}^m$ is differentiable at $a\in \F{R}$
+if there is a linear transformation $\lambda:\F{R}^n\to \F{R}^m$ such that
+\begin{align}
+    \lim_{h\to 0 }{\frac{|f(a+h)-f(a)-\lambda(h)|}{|h|}} = 0
+    \label{eq:differentiation definitins iiii}
+\end{align} 
+
+Note that $h$ is a point of $\F{R}^n$ and $f(a+h)-f(a)-\lambda(h)$ a
+point of $\F{R}^m$, so the norm signs are essential. The linear 
+transformation $\lambda$ is denoted $\R{D}f(a)$ and called the \textbf{derivative}\index{Derivative} of 
+$f$ at $a$. The justification for the phrase "the linear transformation $\lambda$" is.
+
+\begin{theorem}
+    If $f:\F{R}^n\to \F{R}^m$ is differentiable at $a\in \F{R}^n$ there is a unique linear 
+    transformation $\lambda: \F{R}^n\to \F{R}^m$ such that
+    \begin{align*}
+        \lim_{h\to 0 }{\frac{|f(a+h)-f(a)-\lambda(h)|}{|h|}} = 0
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    Suppose $\mu:\F{R}^n\to \F{R}^m$ satisfies 
+    \begin{align*}
+        \lim_{h\to 0 }{\frac{|f(a+h)-f(a)-\lambda(h)|}{|h|}} = 0
+    \end{align*}
+
+    If $d(h) = f(a+h) - f(a)$, then
+    \begin{align*}
+        \lim_{h\to 0 }{|\lambda(h)-\mu(h)|}{|h|}
+        & = \lim_{h\to 0}{\frac{|\lambda(h) - d(h) + d(h) - \mu(h)|}{|h|}} \\
+        & \le \lim_{h\to 0}{\frac{|\lambda(h) - d(h)}{|h|}} + \lim_{h\to 0}{\frac{|d(h) - \mu(h)|}{|h|}} \\
+        & = 0
+    \end{align*}
+
+    If $x\in \F{R}^n$, then $tx\to 0$ as $t\to 0$, Hence for $x\neq 0$ we have 
+    \begin{align*}
+        0 = \lim_{h\to 0}{\frac{|\lambda(tx) - \mu(tx)|}{|th|}} = \frac{|\lambda(x) - \mu(x)|}{|x|}
+    \end{align*}
+
+    Therefore $\lambda(x) = \mu(x)$.
+\end{proof}
+
+We shall later discover a simple way of finding $\R{D}f(a)$. For
+the moment let us consider the function $f:\F{R}^2 \to \F{R}$defined by
+$f(x,y) = sin x$. Then $\R{D}f(a,b) = \lambda$ satisfies $\lambda(x,y) = (\cos a)\cdot x$.
+To prove this, note that
+\begin{align*}
+    \lim_{(h, k)\to 0}{\frac{|f(a+h, b+k) - f(a, b) - \lambda(h, k)|}{|(h, k)|}}\\
+        = \lim_{(h, k)\to 0}{\frac{|\sin(a+h) - \sin a - (\cos a)\cdot h|}{|(h, k)|}}
+\end{align*}
+
+Since $\sin'(a) = \cos a$, we have 
+\begin{align*}
+    \lim_{h\to 0}{\frac{|\sin(a+h) - \sin a - (\cos a)\cdot h|}{|h|}} = 0
+\end{align*}
+
+Since $|(h, k)| \ge |h|$, it is also true that 
+\begin{align*}
+    \lim_{h\to 0}{\frac{|\sin(a+h) - \sin a - (\cos a)\cdot h|}{|(h, k)|}} = 0
+\end{align*}
+
+It is often convenient to consider the matrix of $\R{D}f(a): \F{R}^n\to \F{R}^m$ 
+with respect to the usual bases of $\F{R}^n$ and $\F{R}^m$. This $m\times n$ 
+matrix is called the \Index{Jacobian matrix}\index{Matrix!jacobian} of $f$ at $a$, and denoted $f'(a)$.
+If $f(x, y) = \sin x$, then $f'(a, b) = (\cos a, 0)$. If $f:\F{R}\to \F{R}$, then 
+$f'(a)$ is a $1\times 1$ mastrix whose single entry is the number which is denoted
+$f'(a)$ in the elementary calculus.
+
+The definition of $\R{D}f(a)$ could be made iff were defined only
+in some open set containing $a$. Considering only functions
+defined on $\F{R}^n$ streamlines the statement of theorems and
+produces no real loss of generality. It is convenient to define
+a function $f:\F{R}^n\to \F{R}^m$ to be differentiable on $A$ if $f$ 
+is differentiable at $a$ for each $a\in A$. If $f:A \to \F{R}^m$, 
+then $f$ is called differentiable if $f$ can be extended to a 
+differentiable function on some open set containing $A$.
+
+\begin{problems}
+    \problem{Prove that if $f:\F{R}^n\to \F{R}^m$ is differentiable at
+        $a \in \F{R}^m$, then it is continuous at $a$. \textit{Hint:} Use Problem 1-10.}
+    \problem{A function $f:\F{R}^2 \to \F{R}$ is \textbf{independent of the second variable}\index{Variable!independent of the second}
+        if for each $x\in \F{R}$ we have $f(x, y_1) = f(x, y_2)$ for all $y_1, y_2\in \F{R}$
+        Show that $f$ is independent of the second variable if and only if there is a
+        function $g:\F{R}\to \F{R}$ such that $f(x,y) = g(x)$. What is $f'(a,b)$ in
+        terms of $g'$?}
+    \problem{Define a function $f:\F{R}^2 \to \F{R}$ is independent of the first\index{Variable!independent of the first} 
+        variable and find $f'(a,b)$ for such $f$. Which functions are independent of
+        the first variable and also of the second variable?}
+    \problem{Let $g$ be a continuous real-valued function on the unit circle $\{x\in \F{R}^2:|x|=1\}$ 
+        such that $g(0, 1) = g(1, 0) = 0$ and $g(-x) = -g(x)$. Define $f:\F{R}^2\to \F{R}$ by 
+        \begin{align*}
+            f(x) = 
+            \left\{\begin{aligned}
+                % & |x| \cdot g\left(\begin{matrix}x\\|x|\end{matrix}\right) && x\neq 0 \\
+                % & |x| \cdot g\left(\substack{x\\|x|}\right) && x\neq 0 \\
+                & |x| \cdot g\left(\frac{x}{|x|}\right) && x\neq 0 \\
+                & 0 && x = 0
+            \end{aligned}\right.
+        \end{align*}
+
+        \begin{enumerate}[label={\upshape(\alph*)}]
+            \item If $x\in \F{R}^2$ and $h:\F{R}\to \F{R}$ is defined by $h(t) = f(tx)$, show that $h$ is differentiable.
+            \item Show that $f$ is not differentiable at $(0, 0)$ unless $g=0$ \textit{Hint:} First show that $\R{D}f(0, 0)$ 
+                would have to be $0$ by considering $(h, k)$ with $k=0$ and then with $h=0$. 
+        \end{enumerate}
+        }
+    \problem{Let $f:\F{R}^2 \to \F{R}$ be defined by 
+            \begin{align*}
+                f(x, y) = 
+                \left\{\begin{aligned}
+                    & \frac{x|y|}{\sqrt{x^2 + y^2}} && (x, y) \neq 0 \\
+                    & 0 && (x, y) = 0.
+                \end{aligned}\right.
+            \end{align*}
+
+            Show that $f$ is a function of the kind considered in Problem 2-4, so that 
+            $f$ is not differentiable at $(0, 0)$.
+        }
+    \problem{Let $f:\F{R}^2\to \F{R}$ be defined by $f(x, y) = \sqrt{|xy|}$. Show that $f$ is not differentiable at (0, 0).}
+    \problem{Let $f:\F{R}^2\to \F{R}$ be a function such that $|f(x)|\le |x|^2$. Show that $f$ is differentiable at 0.}
+    \problem{Let $f:\F{R}^2\to \F{R}$. Prove that $f$ is differentiable at $a\in \F{R}$ if and only if $f^1$ and $f^2$ 
+        are, and that in  this case 
+            \begin{align*}
+                f'(a) = \left\{\begin{matrix}
+                    \left(f^1\right)'(a) \\ 
+                    \left(f^2\right)'(a)
+                \end{matrix}\right.
+            \end{align*}
+        }
+    \problem{Two functions $f,g: \F{R}\to \F{R}$ are \Index{Equal up to $n$th order} at $a$ if and only if 
+            \begin{align*}
+                \lim_{h\to 0}{\frac{f(a+h) - g(a+h)}{h^n}} = 0
+            \end{align*}
+
+            \begin{enumerate}[label={\upshape(\alph*)}]
+                \item Show that $f$ is differentiable at $a$ if and only if there is a function $g$ of the 
+                    form $g(x) = a_0 + a_1(x-a)$ such that $f$ and $g$ are equal up to first order at $a$.
+                \item If $f'(a), \cdots, f^{(n)}(a)$ exits, show that $f$ and the function $g$ defined by 
+                    \begin{align*}
+                        g(x) = \sum_{i=0}^{n}{\frac{f^{(i)}}{i!}}(x-1)^i 
+                    \end{align*}\relax 
+                    are equal up to the $n$th order at $a$. \textit{Hint:} The limit
+                    \begin{align*}
+                        \lim_{x\to a}{\frac{\displaystyle f(x) - \sum_{i=0}^{n-1}{\frac{f^{i}(a)}{i!}(x-a)^i}}{(x-a)^n}}
+                    \end{align*}\relax 
+                    may be evaluated by L'Hospital rule.
+            \end{enumerate}
+        }
+\end{problems}

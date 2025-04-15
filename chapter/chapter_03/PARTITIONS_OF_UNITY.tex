@@ -1,0 +1,173 @@
+\clearpage
+\section{PARTITIONS OF UNITY}
+In this section we introduce a tool of extreme importance in
+the theory of integration.
+
+\begin{theorem}
+    Let $A \subset \F{R}^n$ and let $\C{O}$ be an open cover of $A$.
+    Then there is a collection $\Phi$ of $C^\infty$ functions $\varphi$ defined in an open
+    set containing $A$, with the following properties:
+    \begin{enumerate}[label=\upshape{(\arabic*)}]
+        \item For each $x\in A$ we have $0\le \varphi(x)\le 1$ 
+        \item For aach $x\in A$ there is an open set $V$ containing $x$ such that 
+            all but finitely many $\varphi\in \Phi$ are 0 on $V$.
+        \item For each $x\in A$ we have $\sum_{\varphi\in \Phi}\varphi(x)=1$.(by (2) for each 
+            $x$ this sum is finite in some open set containing $x$).
+        \item For each $\varphi\in \Phi$ there is an open set $U$ in $\C{O}$ 
+            such that $\varphi=0$ outside closed set contained in $U$. 
+    \end{enumerate}
+\end{theorem}
+
+A collection of $\Phi$ satisfying (1) to (3) is called a $C^\infty$ \textbf{partition of unity}\index{Partition!of unity}
+for $A$. If $\Phi$ also satisfies (4), it is said too be \textbf{subordinate}\index{Subordinate} to the cover $\C{O}$.
+In this chapter we will only use continuity of the functions $\varphi$.
+
+\begin{proof}
+    \textit{Case} 1: $A$ is compact.\par 
+    Then a finite number $U_1, \cdots, U_n$ of open sets in $\C{O}$ cover $A$.
+    It clearly suffices to construct a partition of unity subordinate
+    to the cover $\{U_1, \cdots, U_n\}$. We will first find compact sets $D_i \subset U_i$ 
+    whose interiors cover $A$. The sets $D_i$ are constructed inductively as follows.
+    
+    Suppose that $D_1, \cdots ,D_k$ have been chosen so that \\
+    $\{\text{interior}\; D_1, \cdots, \text{interior}\;D_k, U_{k+l}, \cdots, U_n\}$ covers $A$. Let 
+    \begin{align*}
+        C_{k+1} = 
+        A - (\R{int} D_1\cup \cdots \cup \R{int} D_k \cup U_{k+1} \cup \cdots \cup U_n)
+    \end{align*}
+    
+    Then $C_{k+1}\subset U_{k+1}$ is compact. Hence (Problem 1-22) we can find a compact set
+    $D_{k+1}$ such that 
+    \begin{align*}
+        C_{k+1} \subset \R{interior}\; D_{k+1} && \text{ and } && D_{k+1} \subset U_{k+1}
+    \end{align*} 
+
+    Having constructed the sets $D_1, \cdots, D_n$, let $\psi_i$  be non-nagetive $C^\infty$
+    function which is positive on $D_i$ and 0 outside of some closed set contained in $U_i$ (Problem 
+    2-26). Since $\{D_1, \cdots, D_n\}$ covers $A$, we have $\psi_1+\cdots +\psi_n>0$ for all 
+    in some open set $U$ containing $A$. On $U$ we can define 
+    \begin{align*}
+        \varphi(x) = \frac{\psi_i(x)}{\psi_1(x)+\cdots +\psi_n(x)}
+    \end{align*}
+
+    If $f:U\to [0,1]$ is a $C^\infty$ function which is 1 on $A$ and 0 outside of some closed set
+    in $U$, then $\Phi = \{f\cdot \varphi_1, \cdots, f\cdot\varphi_n\}$ is the desired partition of 
+    unity.
+
+    \textit{Case} 2: $A = A_1\cup A_2\cup A_3\cup \cdots $, where each $A_i$ is compact 
+    and $A_i\subset \R{interior}\; A_{i+1}$\par 
+    For each $i$ let $\C{O}_i$ consist of all $U\cap (\R{interior}\;A_{i+1}-A_{i-2})$ for $U$ in 
+    $\C{O}$. Then $\C{O}_i$ is an open cover of the compact set $B_i=A_i - \R{interior}\; A_{i-1}$. 
+    By case 1 trhere is a partition of unity $\Phi_i$ for $B_i$, subordinate to $\C{O}_i$. For 
+    each $x\in A$ the sum 
+    \begin{align*}
+        \sigma(x) = \sum_{\varphi\in \Phi_i} \varphi(x)
+    \end{align*} 
+
+    is a finite sum in some open set containing $x$, since if $x\in A_i$ we have 
+    $\varphi(x) = 0$ for $\varphi\in \Phi_j$ with $j\ge i+2$. For each $\varphi$ in 
+    each $\Phi_i$, define $\varphi'(x) = \varphi(x)/\sigma(x)$. Then collection of 
+    all $\varphi'$ is the desired partition of unity.
+
+    \textit{Case} 3: $A$ is open.\par
+    Let 
+    \begin{align*}
+        \{A_i = \{x\in A:|x\le i|\} \text{ and distance from } x \text{ to boundary } A\ge 1/i\}
+    \end{align*}
+    and apply case 2.
+
+    \textit{Case} 4: A is arbitrary.\par
+    Let $B$ be the union of all $U$ in $\C{O}$. By case 3 there is a partition of unity for
+    $B$; this is also a partition of unity for $A$.
+\end{proof}
+
+
+An important consequence of condition (2) of the theorem
+should be noted. Let $C \subset A$ be compact. For each $x \in C$
+there is an open set $V_x$, containing $x$ such that only finitely
+many $\varphi\in \Phi$ are not 0 on $V_x$. Since $C$ is compact, finitely
+many such $V_x$ cover $C$. Thus only finitely many $\varphi\in\Phi$ are
+not 0 on $C$. 
+
+One important application of partitions of unity will 
+illustrate their main role-piecing together results obtained locally.
+An open cover $\C{O}$ of an open set $A \subset \F{R}^n$ is admissible if
+each $U \in \C{O}$ is contained in $A$. If $\Phi$ is subordinate to $\C{O}$,
+$f: A\to \F{R}$ is bounded in some open set around each point of $A$,
+and $\{x: f \text{ is discontinuous at } x\}$ has measure 0, then each
+$\int_A\varphi\cdot |x|$ exists. We define $f$ to be \textbf{integrable}\index{Integral!over an open set} (in the extended
+sense) if $\sum_{\varphi\in\Phi}^{}{\int_A\varphi\cdot f}$, and hence absolute convergence
+of $\sum_{\varphi\in\Phi}^{}{\int_A\varphi\cdot f}$, which we define to be $\int_A f$. These 
+definations do not depend on $\C{O}$ or $\Phi$ (but see Problem 3-38).
+
+\begin{theorem}
+    \begin{enumerate}[label=\upshape{(\arabic*)}]
+        \item If $\Psi$ is another partition of unity, subordinate to an adminsible cover $\C{O}'$ of 
+            $A$, then $\sum_{\psi\in\Psi}^{}{\int_A\psi\cdot |f|}$ also convergence, and 
+            \begin{align*}
+                \sum_{\varphi\in\Phi}^{}{\int_A\psi\cdot f} = \sum_{\psi\in\Psi}^{}{\int_A \psi\cdot f}
+            \end{align*}
+        \item If $A$ and $f$ are bounded, then $f$ is integrable in the extended sense.
+        \item If $A$ is Jordan-measurable and $f$ is bounded, then this definition 
+            of $\int_A f$ agrees with the old one.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}[label=\upshape{(\arabic*)}]
+        \item Since $\varphi\cdot f = 0$ except on some compact set $C$, and there
+            are only finitely many ift which are non-zero on $C$, we can write
+            \begin{align*}
+                \sum_{\varphi\in\Phi}\int_A\varphi\cdot f=\sum_{\varphi\in\Phi}\int_A\sum_{\psi\in\Psi}\psi\cdot\varphi\cdot f=\sum_{\varphi\in\Phi}\sum_{\psi\in\Psi}\int_A\psi\cdot\varphi\cdot f
+            \end{align*}
+
+            This result, applied to $|f|$, shows the convergence of\\
+            $\sum_{\varphi\in\Phi}^{}{\sum_{\psi\in\Psi}^{}{\int_A \psi\cdot \varphi\cdot |f|}}$, and of $\sum_{\varphi\in\Phi}^{}
+            {\sum_{\psi\in\Psi}^{}{|\int_A \psi\cdot\varphi\cdot f|}}$. This absolute convergence justifies interchanging
+            the order os summation in the above equation; the resulting double sum clearly equals $\sum_{\psi\in\Psi}^{
+            }{\int_A \psi\cdot f}$. Finally, this result applied to $|f|$ proves convergence of 
+            $\sum_{\psi\in\Psi}^{}{\int_A \psi\cdot f}$.
+        \item If $A$ is contained in the closed rectangle $B$ and $|f(x)| \le M$
+            for $x\in A$, and $F\subset \Phi$ is finite, then
+            \begin{align*}
+                \sum_{\varphi\in F}\int_{A}\varphi\cdot|f|\leq\sum_{\varphi\in F}M\int_{A}\varphi=M\int_{A}\sum_{\varphi\in F}\varphi\leq Mv(B)
+            \end{align*}
+
+            Since $\sum_{\varphi\in F}^{}{\varphi} \le 1$ on $A$.
+        \item If $\varepsilon > 0$ there is (Problem 3-22) a compact Jordan-measurable 
+            $C \subset A$ such that $\int_{A-C} 1<\varepsilon$. There are only
+            finitely many $\varphi\in\Phi$ which are non-zero on $C$. If $F \subset \Phi$
+            is any finite collection which includes these, and $\int_A f$ has its old meaning, 
+            then 
+            \begin{align*}
+                \left|\int_A f - \sum_{\varphi\in F}^{}{\int_A \varphi\cdot f}\right|
+                & \le \int_A \left|f-\sum_{\varphi\in F}^{}{\varphi\cdot f}\right| \\
+                & \le M \int_A \left(1-\sum_{\varphi\in F}^{}{\varphi}\right) 
+                    = M \int_A \sum_{\varphi\in \Phi - F}^{}{\varphi} \\
+                & \le M \int_{A-C} 1
+                    < M\varepsilon
+            \end{align*}
+    \end{enumerate}
+\end{proof}
+
+
+\begin{problems}
+    \problem{
+        \begin{enumerate}[label=(\alph*)]
+        \item Suppose that $f:(0,1)\to\F{R}$ is a non-negative continuous function. 
+            Show that $\int_{(0,1)}f$ exists if and only if 
+            $\lim_{\varepsilon\to 0}\int_\varepsilon^{1-\varepsilon}f$ exists.
+        \item Let $A_n = [1-1/2^n,1-1/2^{n+1}]$. Suppose that $f:(0,1)\to \F{R}$ satisfies
+            $\int_{A_n} f = (-1)^n//n$ and $f(x)=0$ for $x\notin \text{ any } A_n$. Show that 
+            $\int_{(0,1)}f$ dose not exist, but $\lim_{\varepsilon\to 0}
+            \int_{(\varepsilon, 1-\varepsilon)}f = \log 2$.
+        \end{enumerate}
+    }
+    \problem{
+        Let $A_n$ be a closed set contained in $(n, n+1)$. Suppose that $f:\F{R}\to \F{R}$
+        satisfies $\int_{A_n} f = (-1)^n/n$ and $f=0$ for $x\notin \text{ any } A_n$. Find 
+        two partition of unity $\Phi$ and $\Psi$ such that $\sum_{\varphi\in \Phi}^{}{\varphi \cdot f}$
+        and $\sum_{\psi\in\Psi}^{}{\int_{\F{R}} \psi\cdot f}$ convergence absolutely to different values.
+    }
+\end{problems}
+

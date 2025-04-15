@@ -1,9 +1,9 @@
 \section{MANIFOLDS}
 If $U$ and $V$ are open sets in $\F{R}^n$, a differentiable function
 $h: U\to V$ with a differentiable inverse $h^{-1}:V\to U$ will be called 
-a \textbf{diffeomorphism}. (``differentiable'' henceforth means ``$C^\infty$''.)
+a \textbf{diffeomorphism}\index{Diffeomorphism}. (``differentiable'' henceforth means ``$C^\infty$''.)
 
-A subset $M$ of $\F{R}^n$ is called a $k$-\textbf{dimensional manifold} (in $\F{R}^n$)
+A subset $M$ of $\F{R}^n$ is called a $k$-\textbf{dimensional manifold}\index{Manifold}\index{Dimension!of a manifold} (in $\F{R}^n$)
 if for every point $x\in M$ the following condition is satisfied:
 
 \vspace*{1em}
@@ -29,7 +29,7 @@ manifold, and an open subset of $\F{R}^n$ is an n-dimensional manifold.
     \label{Fig 5-1}
 \end{figure}
 
-One common example of an $n$-dimensional manifold is the $n$-\textbf{sphere}
+One common example of an $n$-dimensional manifold is the $n$-\textbf{sphere}\index{Sphere}
 $S^n$, defined as $\{x\in\F{R}^{n+1}:|x|=1\}$. We leave it as an exercise for 
 the reader to prove taht condition ($M$) is satisfied. If you are unwilling 
 to trouble yourself with the details, you may instead use the following theorem,
@@ -51,7 +51,7 @@ is very important.
 
 \begin{theorem}
     A subset $M$ of $\F{R}^n$ is a $k$-dimensional manifold if and only if for 
-    each point $x\in M$ the following ``coordinate condition'' is satisfied:
+    each point $x\in M$ the following ``\textbf{coordinate condition}''\index{Coordinate condition} is satisfied:
     
     \vspace*{1em}
     \noindent$(C)$ There is an open set $U$ containing $x$ , an open set $W\subset\F{R}^k$,
@@ -63,7 +63,7 @@ is very important.
     \end{enumerate}
 \end{theorem}
 
-[Such a function $f$ is called a \textbf{coordinate system} around $x$ (see Figure \ref{Fig 5-2}).]
+[Such a function $f$ is called a \textbf{coordinate system}\index{Coordinate system} around $x$ (see Figure \ref{Fig 5-2}).]
 
 \begin{figure}[!htb]
     \centering
@@ -103,8 +103,8 @@ $f_2:W_2\to \F{R}^n$ are two coordinate systems, then
 is differentiable with non-singular Jacobian. If fact, $f_2^{-1}(y)$ consists of the first
 $k$ components of $h(y)$.
 
-The \textbf{half-space} $\F{H}^k\in\F{R}^k$ is defined as $\{x\in\F{R}^k:x^k\ge 0\}$. A subset 
-$M$ of $\F{R}^n$ is a $k$-\textbf{dimensional manifold-with-boundary} (Figure \ref{Fig 5-3}) if for evry point 
+The \textbf{half-space}\index{Half-space} $\F{H}^k\in\F{R}^k$ is defined as $\{x\in\F{R}^k:x^k\ge 0\}$. A subset 
+$M$ of $\F{R}^n$ is a $k$-\textbf{dimensional manifold-with-boundary}\index{Manifold-with-boundary}\index{Dimension!of a manifold-with-boundary} (Figure \ref{Fig 5-3}) if for evry point 
 $x\in M$ either condition $(M)$ or the following condition is satisfied:
 
 \begin{figure}[!htb]
@@ -161,13 +161,13 @@ boundary of a set, as defined in Chapter 1 (see Problems 5-3 and 5-8).
         Prove that a $k$-dimensional (vector) subspace of $\F{R}^n$ is a $k$-dimensional manifold.
     }
     \problem{
-        If $f:\F{R}^n\to\F{R}^m$, the \textbf{graph} of $f$ is $\{(x,y):y=f(x)\}$. Show that 
+        If $f:\F{R}^n\to\F{R}^m$, the \textbf{graph}\index{Graph} of $f$ is $\{(x,y):y=f(x)\}$. Show that 
         the graph of $f$ is an $n$-dimensional manifold if and only if $f$ is differentiable.
     }
     \problem{
         Let $\F{K}^n=\{x\in\F{R}^n:x^1=0\text{ and } x^2,\cdots x^{n-1}>0\}$. If $M\subset \F{K}^n$
         is a $k$-dimensional manifold and $N$ is obtained by revoving $M$ around the axis $x^1=\cdots=x^{n-1}=0$,
-        show that $N$ is a $(k+1)$-dimensional manifold. Example: the torus (Figure \ref{Fig 5-4}).
+        show that $N$ is a $(k+1)$-dimensional manifold. Example: the \textbf{torus}\index{Torus} (Figure \ref{Fig 5-4}).
         \begin{figure}[!htb]
             \centering
             \includegraphics[width=.75\linewidth]{./pics/Fig5-4.pdf}

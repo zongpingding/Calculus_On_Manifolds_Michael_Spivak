@@ -1,66 +1,62 @@
 \documentclass[12pt]{book}
 \usepackage{ManifoldsBook}
-
-
-
-% temp cmds
-\let\B\F
-\newcommand{\wrong}[1]{\textcolor{red}{#1}} 
-\usepackage{pdfpages}
-
+\usepackage{newtxtext}
+\makeindex
 
 
 \begin{document}
 % Cover and others
-\pagenumbering{Roman}
+\frontmatter
 \input{./chapter/Cover.tex}
 \input{./chapter/Title.tex}
 \input{./chapter/CopyRight.tex}
 \large      % Global Font cmd 
 \input{./chapter/Forward.tex}
 \input{./chapter/Preface.tex}
+\input{./chapter/ReTypeset_Note.tex}
 \input{./chapter/Table_of_Contents.tex}
 
 
 % Book's Body 
 \chapter{Functions on Euclidean Space}
-\input{./chapter/chapter_01/NORM AND INNER PRODUCT.tex}
-\input{./chapter/chapter_01/SUBSETS OF EUCLIDEAN SPACE.tex}
-\input{./chapter/chapter_01/FUNCTIONS AND CONTINUITY.tex}
+\input{./chapter/chapter_01/NORM_AND_INNER_PRODUCT.tex}
+\input{./chapter/chapter_01/SUBSETS_OF_EUCLIDEAN_SPACE.tex}
+\input{./chapter/chapter_01/FUNCTIONS_AND_CONTINUITY.tex}
 
 \chapter{Differentiation}
-\input{./chapter/chapter_02/BASIC DEFINITIONS.tex}
-\input{./chapter/chapter_02/BASIC THEOREMS.tex}
-\input{./chapter/chapter_02/PARTIAL DERIVATIVES.tex}
+\input{./chapter/chapter_02/BASIC_DEFINITIONS.tex}
+\input{./chapter/chapter_02/BASIC_THEOREMS.tex}
+\input{./chapter/chapter_02/PARTIAL_DERIVATIVES.tex}
 \input{./chapter/chapter_02/DERIVATIVES.tex}
-\input{./chapter/chapter_02/INVERSE FUNCTIONS.tex}
-\input{./chapter/chapter_02/IMPLICIT FUNCTIONS.tex}
+\input{./chapter/chapter_02/INVERSE_FUNCTIONS.tex}
+\input{./chapter/chapter_02/IMPLICIT_FUNCTIONS.tex}
 \input{./chapter/chapter_02/NOTATION.tex}
 
 \chapter{Integration}
-\input{./chapter/chapter_03/BASIC DEFINITIONS.tex}
-\input{./chapter/chapter_03/MEASURE ZERO AND CONTENT ZERO.tex}
-\input{./chapter/chapter_03/INTEGRABLE FUNCTIONS.tex}
-\input{./chapter/chapter_03/FUBINI'S THEOREM.tex}
-\input{./chapter/chapter_03/PARTITIONS OF UNITY.tex}
-\input{./chapter/chapter_03/CHANGE OF VARIABLE.tex}
+\input{./chapter/chapter_03/BASIC_DEFINITIONS.tex}
+\input{./chapter/chapter_03/MEASURE_ZERO_AND_CONTENT_ZERO.tex}
+\input{./chapter/chapter_03/INTEGRABLE_FUNCTIONS.tex}
+\input{./chapter/chapter_03/FUBINI'S_THEOREM.tex}
+\input{./chapter/chapter_03/PARTITIONS_OF_UNITY.tex}
+\input{./chapter/chapter_03/CHANGE_OF_VARIABLE.tex}
 
 \chapter{Integration on Chains}
-\input{./chapter/chapter_04/ALGEBRAIC PRELIMINARIES.tex}
-\input{./chapter/chapter_04/FIELDS AND FORMS.tex}
-\input{./chapter/chapter_04/GEOMETRIC PRELIMINARIES.tex}
-\input{./chapter/chapter_04/THE FUNDAMENTAL THEOREM OF CALCULUS.tex}
+\input{./chapter/chapter_04/ALGEBRAIC_PRELIMINARIES.tex}
+\input{./chapter/chapter_04/FIELDS_AND_FORMS.tex}
+\input{./chapter/chapter_04/GEOMETRIC_PRELIMINARIES.tex}
+\input{./chapter/chapter_04/THE_FUNDAMENTAL_THEOREM_OF_CALCULUS.tex}
 
 \chapter{Integration on Manifolds}
 \input{./chapter/chapter_05/MANIFOLDS.tex}
-\input{./chapter/chapter_05/FIELDS AND FORMS ON MANIFOLDS.tex}
-\input{./chapter/chapter_05/STOKES' THEOREM ON MANIFOLDS.tex}
-\input{./chapter/chapter_05/THE VOLUME ELEMENT.tex}
-\input{./chapter/chapter_05/THE CLASSICAL THEOREMS.tex}
+\input{./chapter/chapter_05/FIELDS_AND_FORMS_ON_MANIFOLDS.tex}
+\input{./chapter/chapter_05/STOKES'_THEOREM_ON_MANIFOLDS.tex}
+\input{./chapter/chapter_05/THE_VOLUME_ELEMENT.tex}
+\input{./chapter/chapter_05/THE_CLASSICAL_THEOREMS.tex}
 
 
 % Acknowledgments and others
+\backmatter
+\input{./chapter/Addenda.tex}
 \input{./chapter/Bibliography.tex}
 \input{./chapter/Index.tex}
-\input{./chapter/Addenda.tex}
 \end{document}

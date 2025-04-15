@@ -3,13 +3,12 @@
 
 
 % page layout
-\usepackage[a4paper, left=7em, right=7em, top=7em, bottom=7em]{geometry}
-\RequirePackage[Glenn]{fncychap}
-% \RequirePackage{enumerate}
+\usepackage[a4paper, margin=7em]{geometry}
+\RequirePackage{framed}
 \RequirePackage{enumitem}
 \RequirePackage{multicol}
-% \setlist[enumerate,1]{label={\upshape(\arabic*)}}
 \RequirePackage{titlesec}
+\titleformat{\chapter}[block]{\huge\bfseries\sffamily}{\thechapter}{20pt}{}[]
 % tikz and related drawing things
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
@@ -42,7 +41,12 @@
 \fancyhead[OL]{\bfseries\leftmark}
 \fancyhead[OR]{\bfseries\thepage}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}} % remove "Chapter N." prefix
-
+\def\backmatter{%
+  \pagestyle{plain}
+  \def\theHchapter{backmatter}
+  \newgeometry{margin=5em}
+}
+\def\frontmatter{\pagenumbering{Roman}}
 
 
 %% other
@@ -55,24 +59,13 @@
 
 
 %% Commands define
-% package
-\RequirePackage{amsthm,amsmath}   % basic math package
-\RequirePackage{amsfonts,mathtools} % which provide more math font  
-\RequirePackage{amssymb,bm}                 % bold math font 
+\RequirePackage{amsthm, amsmath}     % basic math package
+\RequirePackage{amsfonts, mathtools} % which provide more math font  
+\RequirePackage{amssymb, bm}         % bold math font 
 \RequirePackage{thmtools}
-% eqref config
 \renewcommand{\theequation}{\arabic{equation}}
-% \newcommand{\eqref}[1]{\textup{\tagform@{\ref{#1}}}}
-% can't use expand reason --> \tagform@
-% an example of using LaTeX3 for Expanding
-% \ExplSyntaxOn
-% \def\aaa{aaa}
-% \uppercase{\aaa}
-% \tl_set:Nx \l_tmpa_tl {\aaa}
-% \par\textbf{\l_tmpa_tl}
-% \ExplSyntaxOff
 \renewcommand{\eqref}[1]{
-    Equation~(\textbf{\ref{#1}})
+  Equation~(\textbf{\ref{#1}})
 }
 % equations list tag form cmd, \usetagform{etag}
 \newtagform{etag}[\color{black}{[}]{}{]}
@@ -241,9 +234,61 @@
 % --> makeindex Calculus_On_Manifold.idx 
 % --> xelatex Calculus_On_Manifold
 \RequirePackage{makeidx}
-\makeindex
-
+\let\old@index\index
+% \ExplSyntaxOn
+% \RenewDocumentCommand{\index}{m}{%
+%   % \expandafter\old@index\expandafter{\MakeUppercase #1}%
+%   \old@index{\char_titlecase:N #1}
+% }
+\newcommand{\Index}[1]{\textbf{#1}\index{#1}}
+% \ExplSyntaxOff
+\newcommand*{\indexsee}{%
+  \@bsphack
+  \begingroup
+  \@sanitize
+  \@wrindexsee
+}
+\newcommand*{\indexseealso}{%
+  \@bsphack
+  \begingroup
+  \@sanitize
+  \@wrindexseealso
+}
+\newcommand*{\@wrindexsee}[2]{%
+  \stepcounter{indexsee@page}%
+  \protected@write\@indexfile{}{%
+    \string\indexentry{#1|see{#2}}{\the\value{indexsee@page}}%
+  }%
+  \endgroup
+  \@esphack
+}
+\newcommand*{\@wrindexseealso}[2]{%
+  \stepcounter{indexsee@page}%
+  \protected@write\@indexfile{}{%
+    \string\indexentry{#1|seealso{#2}}{\the\value{indexsee@page}}%
+  }%
+  \endgroup
+  \@esphack
+}
+\newcounter{indexsee@page}
+\setcounter{indexsee@page}{10000}
 
 
 %% hyperref package
 \RequirePackage{hyperref}
+\hypersetup{
+  bookmarksnumbered,
+  colorlinks = true,
+  linkcolor = teal,
+  urlcolor = red,
+  citecolor = blue,
+  pdfauthor = {Eureka},
+  pdftitle = {Calculus on Manifolds -- Michael Spivak},
+}
+\RequirePackage{bookmark}
+
+
+%%%%% temp cmds
+% \let\B\F
+\let\F\B
+\newcommand{\wrong}[1]{\textcolor{red}{#1}} 

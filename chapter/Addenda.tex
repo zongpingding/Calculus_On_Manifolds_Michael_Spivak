@@ -1,14 +1,16 @@
-{\let\cleardoublepage\space
+\phantomsection
+{\let\cleardoublepage\relax
 \chapter*{Addenda}}
+\begingroup\normalsize
 \addcontentsline{toc}{chapter}{Addenda}
-\hspace*{1em}\textbf{(1)}. It should be remarked after Theorem 2-11 (the Inverse Function Theorem) 
+\textbf{(1)}. It should be remarked after Theorem \ref{theorem:2-11} (the Inverse Function Theorem) 
 that the formula for $f^{-1}$ allows us to conclude that $f^{-1}$ is actually continuously 
 differentiable (and that it is $C^\infty$ if $f$ is). Indeed, it suffices to note that the 
 entries of the inverse of a matrix $A$ are $C^\infty$ functions of the entries of $A$. This 
 follows from ``Cramer's Rule'': $(A^{-1})_{ji}=(\det A^{ij})/(\det A)$, where $A^{ij}$ is the 
 matrix obtained from $A$ by deleting row $i$ and column $j$.
 
-\vspace*{3em}
+\vspace*{1.5em}
 \textbf{(2)}. The proof of the first part of Theorem 3-8 can be simplified 
 considerably, rendering Lemma 3-7 unnecessary. It suffices to cover $B$ by the 
 interiors of closed rectangles $U_i$ with $\sum_{i=1}^{n}{v(U_i)}<\varepsilon$, and 
@@ -25,7 +27,7 @@ boundaries of all subrectangles of $P$ with a finite collection of
 rectangles with total volume $< \varepsilon$. These, together with $S$,
 cover $B_{1/m}$ and have total volume $< 2\varepsilon$.
 
-\vspace*{3em}
+\vspace*{1.5em}
 \textbf{(3)}. The argument in the first part of Theorem 3-14 (Sard's Theorem) requires 
 a little amplification. If $U\subset A$ is a closed rectangle with sides of length $l$, 
 then, because $U$ is compact, there is an integer $N$ with the following property: if $U$ 
@@ -43,7 +45,7 @@ So by Lemma 2-10, if $x,y\in\C{S}$, then
     & \le \varepsilon\sqrt{n}(l/N)
 \end{align*}
 
-\vspace*{3em}
+\vspace*{1.5em}
 \textbf{(4)}. Finally, the notation $\Lambda^k(V)$ appearing in this book is
 incorrect, since it confiicts with the standard definition of
 $\Lambda^k(V)$ (as a certain quotient of the tensor algebra of $V$).
@@ -51,3 +53,4 @@ For the vector space in question (which is naturally isomorphic to
 $\Lambda^k(V^*)$ for finite dimensional vector spaces $V$) the notation
 $\Omega^k(V)$ is probably on the way to becoming standard. This
 substitution should be made on pages 84-91, 94-95, 124, and 134-143.
+\endgroup

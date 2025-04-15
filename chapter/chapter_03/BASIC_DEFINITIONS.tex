@@ -1,0 +1,188 @@
+\section{BASIC DEFINITIONS}
+The definition of the integral of a function $f: A\to \B{R}$, where $A\subset \B{R}^n$
+is a closed rectangle, is so similar to that of the ordinary integral that 
+a rapid treatment will be give.
+
+Recall that a partition\index{Partition!of a closed interval} $P$ of a closed interval $[a,b]$ is a
+sequence $t_0, t_1, \cdots, t_k$, where $a=t_0\le t_1 \le \cdots \le t_k=b$.
+The partition $P$ divided the interval into $k$ subintervals $[t_{i-1}, t_i]$.
+A \textbf{partition}\index{Partition!of a closed rectangle} of a rectangle $[a_1, b_1]\times \cdots \times [a_n, b_n]$
+is a collection $P=(P_1, \cdots, P_n)$, where each $P_i$ is a partition of the interval 
+$[a_i, b_i]$. Suppose, for example, that $P_1=t_1,\cdots, t_k$ is partition of 
+$[a-1, b_1]$ and $P_2=s_0, \cdots, s_l$ is a partition of $[a_2, b_2]$. Then 
+$P=(P_1, P_2)$ is a divided the closed rectangle $[a_1, b_1]\times [a_2,b_2]$ into 
+$k\times l$ subintervals, a typical one being $[t_{i-1}, t_i]\times [s_{j-1}, s_j]$.
+In general, if $P_i$ divides $[a_i, b_i]$ into $N_i$ subintervals, then 
+$P=(P_1, \cdots, P_n)$ divides $[a_1, b_1]\times \cdots \times [a_n, b_n]$ into 
+$N = N_1 \cdots N_n$ subintervals. These subintervals will be called 
+\textbf{subrectangles of the partition} $P$. 
+
+Suppose now that $A$ is a rectangle, $f: A\to \F{R}$ is a bounded function, and $P$ is a 
+partition of $A$. For each subrectangle $S$ of the partition let
+\begin{align*}
+    & {m}_S(f) = \inf \{f(x):x\in S\},\\
+    & {M}_S(f) = \sup \{f(x):x\in S\}
+\end{align*}
+
+and let $v(S)$ be the volume of $S$ (the \textbf{volume}\index{Volume} of a rectangle 
+$[a_1, b_1]\times \cdots\times [a_n, b_n]$, and also of $(a_1, b_1)\times \cdots\times (a_n, b_n)$,
+is defined as $(b_1-a_1)\cdots (b_n-a_n)$.) The \textbf{lower}\index{Lower sum} and \textbf{upper sums}\index{Upper sum} of $f$ 
+for $P$ are defined by
+\begin{align*}
+    L(f, P) 
+    = \sum_{S }^{}{m_S(f)\cdot v(S)} \text{ and } 
+    U(f, P) = \sum_{S}^{}{M_S(f)\cdot v(S)}
+\end{align*}
+
+Clearly $L(f, P)\le U(f, P)$, and an even stronger assertion (\ref{corollary3-2})
+is true.
+
+\begin{lemma}
+    Suppose the partition $P'$ refines\index{Refine a partition} $P$ (that is, each subrectangle of $P'$
+    is contained in a subrectangle of $P$). Then 
+    \begin{align*}
+        L(f, P) \le L(f, P')
+    \end{align*}
+    \label{lemma3-1}
+\end{lemma}
+
+\begin{proof}
+    Each subrectangle $S$ of $P$ is divided into several subrectangles $S_1, \cdots, S_\alpha$ of 
+    $P'$, so $v(S) = v(S_1) + \cdots +v(S_\alpha)$. Now $m_S(f)\le m_{S_i}(f)$, since the values 
+    $f(x)$ for $s\in S$ included all values $f(x)$ for $x\in S_i$ (and possibly smaller ones).
+    Thus 
+    \begin{align*}
+        m_s(f)\cdot v(S) 
+        & = m_S(f)\cdot v(S_1) + \cdots + m_S(f)\cdot v(S_\alpha)\\
+        & \le m_{S_1}(f)\cdot v(S_1) + \cdots + m_{S_\alpha}(f)\cdot v(S_\alpha)
+    \end{align*}
+
+    The sum, for all $S$, of the terms on the left side is $L(f, P)$, while 
+    the sum of the right side is $L(f, P')$. Hence $L(f, P)\le L(f, P')$. The 
+    proof of upper sums is similar. 
+\end{proof}
+
+
+\begin{corollary}
+    If $P$ and $P'$ are any two partitions, then $L(f,P') \le U(f,P)$.
+    \label{corollary3-2}
+\end{corollary}
+
+\begin{proof}
+    Let $P''$ be a partition which refines both $P$ and $P'$.
+    (For example, let $P'' = (P_1^{''}, \cdots, P_n^{''})$, where $P'$ is a 
+    partition of $[a_i, b_i]$ which refines $P_i$ and $P_i'$). Then 
+    \begin{align*}
+        L(f, P') \le L(f, P'') \le U(f, P'') \le U(f, P)
+    \end{align*}
+\end{proof}
+
+It follows from Corollary 3-2 that the least upper bound of
+all lower sums for $f$ is less than or equal to the greatest lower
+bound of all upper sums for $f$. A function $f:A \to \B{R}$ is called \textbf{integrable}\index{Integrable function}\index{Function!integrable} 
+on the rectangle $A$ if $f$ is bounded and $\sup\{L(f,P)\} = \inf \{U(f, P)\}$. 
+This common number is then denoted $\int_{A }^{}{f}$, and called the \textbf{integral}\index{Integrable} of 
+$f$ over $A$. Often, the notation $\int_{A  }^{}{f(x^1, \cdots, x^n)  \;\mathrm{d}x^1\cdots \dd x^n}$ 
+is used. If $f:[a, b]\to \B{R}$, where $a\le b$, then $\int_{a  }^{b }{f} = \int_{[a, b ]}^{}{f}$.
+A simple but useful criterion for integrability is provided by 
+\begin{theorem}
+    A bounded function $f:A\to \B{R}$ is integrable if and only if for every $\varepsilon>0$ 
+    there is a partition $P$ of $A$ such that $U(f, P) - L(f, P)< \varepsilon$.
+\end{theorem}
+
+\begin{proof}
+    If this condition holds, it is clear that $\sup\{L(f,P)\} = \inf \{U(f, P)\}$ and 
+    $f$ is integrable. On the other hand, if $f$ is integrable, so that $\sup\{L(f,P)\} = \inf \{U(f, P)\}$,
+    then for any $\varepsilon>0$ there are partitions $P$ and $P'$ with $U(f, P)-L(f,P)<\varepsilon$. If 
+    $P''$ refines both $P$ and $P'$, it follows from Lemma \ref{lemma3-1} that $U(f, P'')-L(f, P'')
+    \le U(f, P)-L(f, P)<\varepsilon$
+\end{proof}
+
+In the following sections we will characterize the integrable
+functions and discover a method of computing integrals.
+For the present we consider two functions, one integrable and one not.
+
+1. Let $f:A\to \B{R}$ be a constant function, $f(x)=c$. Then for any partition
+$P$ and subrectangl $S$ we have $m_S(f) = M_S(f) = c$, so that $L(f, P) = U(f, P)
+= \sum_{S}^{}{c\cdot v(S)} = c\cdot v(A)$. Hence $\int_{A  }^{}{f} = c\cdot v(A)$.
+
+2. Let $f:[0, 1]\times [0, 1]\to \B{R}$ be defined by 
+\begin{align*}
+    f(x, y) =
+    \left\{\begin{aligned}
+        & 0, \text{ if $x$ is rational} \\
+        & 1, \text{ if $x$ is irrational} 
+    \end{aligned}\right.
+\end{align*}
+
+If $P$ is a partition, then every subrectangle $S$ will be contain points
+$(x, y)$ with $x$ rational, and also points $(x, y)$ with $x$ irrational.
+Hence 
+\begin{align*}
+    L(f, P) = \sum_{S  }^{}{0\cdot v(S)} = 0
+\end{align*}
+
+and 
+\begin{align*}
+    U(f, P) = \sum_{S  }^{}{1\cdot v(S)} = v([0, 1]\times [0, 1]) = 1 
+\end{align*}
+
+Therefore $f$ is not integrable. 
+
+\begin{problems}
+    \problem{
+        Let $f:[0,1]\times [0,1]\to \B{R}$ be defined by
+        \begin{align*}
+            f(x, y) = 
+            \left\{\begin{aligned}
+                & 0 && \text{ if } 0\le x< \frac12 \\
+                & 1 && \text{ if } \frac12\le x\le 1
+            \end{aligned}\right.
+        \end{align*}
+
+        Show that $f$ is integrable and $\int_{[0,1]\times [0,1]}^{}{f} = \frac12$.
+    }
+    \problem{Let $f:A\to \B{R}$ be integrable and let $g=f$ except at finitely many points.
+    Show that $g$ is integrable and $\int_{A }^{}{f} = \int_A g$.}
+
+    \problem{Let $f,g:A\to \B{R}$ be integrable. 
+        \begin{enumerate}[label={\upshape(\alph*)}]
+            \item For any partition $P$ of $A$ and subrectangle $S$, show that 
+                \begin{align*}
+                    m_S(f) + m_S(g) \le m_S(f+g) \text{ and } M_S(f) + M_S(g) \ge M_S(f+g).
+                \end{align*}
+                and therefore 
+                \begin{align*}
+                    L(f, P) + L(g, P) \le L(f+g, P) \text{ and } U(f+g, P) \le U(f, P) + U(g, P)
+                \end{align*}
+            \item Show that $f+g$ is integrable and $\int_{A }^{}{(f+g)} = \int_{A }^{}{f} + \int_{A }^{}{g}$.
+            \item For any constant $c$, show that $\int_A cf = c\int_A f$.
+        \end{enumerate}
+    }
+    \problem{
+        Let $f: A \to \B{R}$ and let $P$ be a partition of $A$. Show that $f$ is 
+        integrable if and only if for each subrectangle $S$ the function $f|S$, which
+        consists of $f$ restricted to $S$, is integrable, and that in this case
+        $\int_A f = \sum_S\int_S f|S$.
+    }
+    \problem{
+        Let $f,g:A\to \B{R}$ be integrable and suppose $f\le g$. Show that 
+        $\int_A f\le \int_A g$. 
+    }
+    \problem{
+        If $f:A\to \B{R}$ is integrable, show that $|f|$ is integrable and 
+        $|\int_A f|\le \int_A |f|$.
+    }
+    \problem{
+        Let $f:[0,1]\times [0,1]\to \B{R}$ be defined by 
+        \begin{align*}
+            f(x,y) = 
+            \left\{\begin{aligned}
+                & 0 && x \text{ irrational },\\
+                & 0 && x \text{ rational and } y \text{ irrational }\\
+                & 1/q && x \text{ rational }, y=p/q \text{ in lowest terms }.
+            \end{aligned}\right.
+        \end{align*}
+        Show that $f$ is integrable and $\int_{[0,1]\times [0,1]}^{}{f} = 0$.
+    }
+\end{problems}

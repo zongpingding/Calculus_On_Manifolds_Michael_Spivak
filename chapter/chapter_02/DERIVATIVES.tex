@@ -75,7 +75,7 @@ superfluous. However, it has an extremely important corollary
 concerning partial derivatives.
 
 \begin{theorem}
-    Let $g_1, \cdots, g_m:\F{R}^n\to \F{R}$ be continuously differentiable at $a$, and 
+    Let $g_1, \cdots, g_m:\F{R}^n\to \F{R}$ be continuously differentiable\index{Differentiable function!continuously}\index{Function!continuously differentiable} at $a$, and 
     let $f:\F{R}^m\to \F{R}$ be differentiable at $\left(g_1(a), \dots, g_m(a)\right)$. 
     Define the function $F:\F{R}^n\to \F{R}$ by $F(x) = f\left(g_1(x), \cdots, g_m(x)\right)$. Then 
     \begin{align*}
@@ -102,7 +102,7 @@ concerning partial derivatives.
     entry of the right side.
 \end{proof}
 
-Theorem 2-9 is often called the chain rule, but is weaker
+Theorem 2-9 is often called the \textbf{chain rule}\index{Chain rule}, but is weaker
 than Theorem 2-2 since $g$ could be differentiable without $g_i$
 being continuously differentiable (see Problem 2-32).
 Most computations requiring Theorem 2-9 are fairly straightforward.
@@ -149,7 +149,7 @@ down the function $\hat{h}$ and $\hat{k}$
             \begin{align*}
                 \lim_{t\to 0}{\frac{f(a+tx) - f(a)}{t}}
             \end{align*}
-            if exists, is denoted $\R{D}_xf(a)$, and called the \textbf{directional derivative} of $f$ at $a$,
+            if exists, is denoted $\R{D}_xf(a)$, and called the \textbf{directional derivative}\index{Derivative!directional}\index{Directional derivative} of $f$ at $a$,
             in the direction $x$.
             \begin{enumerate}[label={\upshape(\alph*)}]
                 \item Show that $\R{D}_{e_i}f(a) = \R{D}_if(a)$
@@ -183,7 +183,7 @@ down the function $\hat{h}$ and $\hat{k}$
         \end{enumerate}
         }
     \problem{Show that the continuity of $\R{D}_1f^i$ at a may be eliminated from the hypothesis of Theorem 2-8.}
-    \problem{A function $f:\F{R}^n\to \F{R}$ is \textbf{homogeneous} of degree $m$ if $f(tx) = t^mf(x)$ 
+    \problem{A function $f:\F{R}^n\to \F{R}$ is \textbf{homogeneous}\index{Homogeneous function}\index{Function!homogeneous} of degree $m$ if $f(tx) = t^mf(x)$ 
         for all $x$. If $f$ is also differentiable , show that 
         \begin{align*}
             \sum_{i=1}^{n }{x^i\R{D}_if(x)} = mf(x)

@@ -1,0 +1,39 @@
+\documentclass[10pt,varwidth]{standalone}
+\PassOptionsToPackage{quiet}{fontspec}
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{xifthen}
+\usepackage{xfp}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.16}
+% 2.引用的tikz库
+\usetikzlibrary {matrix, chains, trees, decorations}
+\usetikzlibrary {arrows.meta, automata,positioning}
+\usetikzlibrary {decorations.pathmorphing, calc}
+\usetikzlibrary {calligraphy}
+\usetikzlibrary {backgrounds, mindmap,shadows}
+\usetikzlibrary {patterns, quotes, 3d, shadows}
+\usetikzlibrary {graphs, fadings, scopes}
+\usetikzlibrary {arrows, shapes.geometric}
+\usepgflibrary {shadings}
+
+\tikzset{
+    >={Latex}
+}
+
+
+
+\begin{document}
+\begin{tikzpicture}[font=\Large]
+    % axis
+    \draw[->] (-5, 0) -- (6, 0)    node [below] {$x$};
+    \draw[->] (0, 0)  -- (0, 5)    node [left]  {$z$};
+    \draw[->] (-135:5) -- (0, 0) -- (45:7.06) node [above] {$y$};
+    % eclipse
+    \draw (0, 0) circle [x radius=2, y radius=1];
+    \draw (45: 4) circle [x radius=2, y radius=1];
+    % fig num
+    \node at (0, -3) [below] {(a)};
+\end{tikzpicture}
+\end{document}

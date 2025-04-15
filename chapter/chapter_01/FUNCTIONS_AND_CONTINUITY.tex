@@ -1,0 +1,132 @@
+\clearpage
+\section{FUNCTIONS AND CONTINUITY}
+A function from $\F{R}^n$ to $\F{R}^n$ (sometimes called a (vector-valued)\index{Vector-valued function} function of $n$ variables\index{Variable!function of $n$})
+is a rule which association to each point in $\F{R}^n$ some point in $\F{R}^m$;
+the point a function $f$ association to $x$ is denoted $f(x)$.
+We wirte $f:\F{R}^n\to \F{R}^m$ (read ``$f$ takes $\F{R}^n$ into $\F{R}^m$'' or ``$f$, taking
+$\F{R}^n$ into $\F{R}^m$'', depending on context) to indicate that $f(x)\in \F{R}^m$ 
+indicates that $f(x)$ is defined only for $x$ in the set $A$, which is called the \textbf{domain}\index{Domain}
+of $f$. If $B\subset A$, we define $f(B)$ as the set of all $f(x)$ for $x\in B$, and if $C\subset \F{R}^m$
+we define $f^{-1}(C) = \{x\in A:f(x)\in C\}$\index{Function!inverse}\indexseealso{Function!inverse}{Inverse Function Theorem}\index{Inverse function}. 
+The notation $f:A\to B$ indicates that $f(A)\subset B$.
+
+A convenient representation of a function $f: \F{R}^2 \to \F{R}$ may
+be obtained by drawing a picture of its graph\index{Graph}, the set of all
+3-tuples of the form $(x,y,f(x,y))$, which is actually a figure in
+3-space (see, e.g., Figures \ref{Fig 2-1} and \ref{Fig 2-2} of Chapter 2).
+
+If $f, g:\F{R}^n \to \F{R}$, the function $f+g, f-g, f\cdot g$, and $f/g$ are defined 
+precisely as in the one-variable case. If $f:A\to \F{R}^n$ and $g:B\to \F{R}^p$, where 
+$B\in \F{R}^m$, then the \textbf{composition}\index{Composition}\index{Function!composition} $g\circ f$ is defined by $g\circ f(x)=g(f(x))$;
+the domain of $g\circ f$ is $A\cap f^{-1}(B)$. If $f:A\to \F{R}^m$ is 1-1\index{One-one (1-1) function}, that is, if 
+$f(x)\neq f(y)$ when $x\neq y$, we defined $f^{-1}(x):f(A)\to \F{R}^m$ by the requirement 
+that $f^{-1}(z)$ is the unique $x\in A$ with $f(x) = z$.
+
+A function $f:A\to \F{R}^m$ detrmines $m$ \textbf{component functions}\index{Component function}\index{Function!component} $f^1, \cdots, f^m:A\to \F{R}$
+by $f(x) = \left(f^1(x), \cdots, f^m(x)\right)$. If conversely, $m$ functions $g_1, \cdots, g_m:A\to \F{R}^m$
+are given, there is a unique function $f:A\to \F{R}^m$ such that $f^i = g_i$, 
+namely $f(x) = \left(g_1(x), \dots, g_m(x)\right)$, so that we always have $f=\left(f^1, \cdots, f^m\right)$.
+If $\pi: \F{R}^n\to \F{R}^n$ is the \textbf{identity function}\index{Function!identity}\index{Identity function}, 
+$\pi(x) = x$, then $\pi^i(x) = x^i$; the function $\pi^i$ is called the $i$th \textbf{projection function}\index{Projection function}\index{Function!projection}.
+
+The notation $\lim_{x\to a}{f(x)} = b$ means, as in the one-variable case, that we can get $f(x)$ as close to $b$
+as desired, by choosing $x$ suficiently cloes to, but not equal to $a$. In mathematical terms this means that 
+for every number $\varepsilon >0$ there is a number $\delta >0$ such that $|f(x)-b|<\varepsilon$ for all $x$ in 
+the domain of $f$ which satisfy $0<|x-a|<\delta$. A function $f:A\to \F{R}^m$ is called \textbf{continuous}\index{Function!continuous}\index{Continuous function} at 
+$a\in A$ if $\lim_{x\to a }{f(x)} = f(a)$, and $f$ is simply called continus at each $a\in A$. One of the pleasant
+surprise about the concept of continuity is that it can be defined without using limits\index{Limit}. It follows from the 
+next theorem that $f:\F{R}^n\to \F{R}^m$ is continuous if and only if $f^{-1}(U)$ is open whenever $U\subset \F{R}^m$
+is open; if the domain of $f$ is not all of $\F{R}^m$, a slightly more complicated condition is needed.
+
+\begin{theorem}
+    If $A\subset \F{R}^n$, a function $f:A\to \F{R}^m$ is called continuous if and only if 
+    for every open set $U\subset \F{R}^m$ there is some open set $V\subset \F{R}^n$ such that $f^{-1}(U) = V\cap A$.
+\end{theorem}
+
+\begin{proof}
+    Suppose $f$ is continuous. If $a\in f^{-1}(U)$, then $f(a)\in U$. Since $U$ is open there is an open rectangle
+    $B$ with $f(a)\in B\subset U$. Since $f$ is continuous at a, we can ensure that $f(x)\in B$, provided we choose 
+    $x$ in some sufficiently small rectangle $C$ containing $a$. Do this for each $a\in f^{-1}(U)$ and let $V$ be the 
+    union of all such $C$. Clearly $f^{-1}(U) = V\cap A$. The converse is similar and is left to the reader.
+\end{proof}
+
+The following consequence of Theorem 1-8 is of great importance. 
+
+\begin{theorem}
+    If $f:A\to \F{R}^m$ is continuous, where $A\subset \F{R}^n$, and $A$ is compact, then 
+    $f(A) \subset \F{R}^m$ is compact.
+\end{theorem}
+
+\begin{proof}
+    Let \C{O} be a open cover of $f(A)$. For each open set $U$ in \C{O} there is an open set $V_u$ such that 
+    $f^{-1}(U) = V_u\cap A$. The collection of all $V_u$ is an open cover of $A$. Since $A$ is compact, a finite 
+    number $V_{u_1},\cdots, V_{u_n}$ cover $A$. Then $U_1, \cdots, U_n$ cover $f(A)$.
+\end{proof}
+
+If $f:A\to \F{R}$ is bounded, the extent to which $f$ fails to be continuous at $a\in A$ can be measured in a precised 
+way. For $\delta >0$ let 
+\begin{align*}
+    M(a, f, \delta) & = \sup\left\{f(x):x\in A\text{ and } |x-a|< \delta\right\}, \\
+    m(a, f, \delta) & = \inf\left\{f(x):x\in A\text{ and } |x-a|< \delta\right\}, \\
+\end{align*}
+
+The \textbf{oscillation}\index{Oscillation} $o(f, a)$ of $f$ at $a$ is defined by 
+\begin{align*}
+    o(f, a) = \lim_{\delta \to 0 }{M(a, f, \delta) - m(a, f, \delta)}
+\end{align*}
+This limit always exits, since $M(a, f, \delta) - m(a, f, \delta)$ decreases as $\delta$ decreases. There are two 
+important facts about $o(f, a)$.
+
+\begin{theorem}
+    The bounded function $f$ is continuous at $a$ if and only if $o(f, a)= 0$.
+\end{theorem}
+
+\begin{proof}
+    Let f be continuous at $a$. For every number $\varepsilon > 0$  
+    we can choose a number $\delta > 0$ so that $|f(x) - f(a)|< \varepsilon$ for
+    all $x \in A$ with $|x - a| < \delta$; thus $M(a,j,\delta)-m(a,j,\delta) \le 2\varepsilon$.
+    Since this is true for every $\varepsilon$, we have $o(f,a) = 0$.
+    The converse is similar and is left to the reader. 
+\end{proof}
+
+
+
+\begin{theorem}
+    Let $A\subset \F{R}^n$ be closed. If $f:A\to \F{R}$ is any bounded function, and $\varepsilon>0$, then 
+    $\{x\in A: o(f, a)\ge \varepsilon\}$ is closed.
+\end{theorem}
+
+\begin{proof}
+    Let $B = \{x \in A: o(f,x) 2<\varepsilon\}$. We wish to show that $\F{R}^n-B$ is open. 
+    If $x \in \F{R}^n -B$, then either $x \notin A$ or else $x \in A$ and $o(f,x) < \varepsilon$.
+    In the first case, since $A$ is closed, there is an open rectangle $C$ containing $x$ such that
+    $C \subset \F{R}^n - A\subset \F{R}^n-B$. In the second case there is a $\delta > 0$ 
+    such that $M(x,f,\delta) - m(x,f,\delta) < \varepsilon$. Let $C$ be an open
+    rectangle containing $x$ such that $|x - y|<\delta$ for all $y\in C$.
+    Then if $y \in C$ there is a $\delta_1$ such that $|x - z| < \delta$ for all $z$
+    satisfying $|z - y| < \delta_1$. Thus $M(y,f,\delta_1) - m(y,f,\delta_1) < \varepsilon$, and
+    consequently $o(y,f) < \varepsilon$. Therefore $C \subset \F{R}^n-B$.
+\end{proof}
+
+\begin{problems}
+    \problem{If $f:A\to \F{R}^m$ and $a\in A$, show that $\lim_{x\to a}{f(a)} = b$ if 
+        and only if $\lim_{x\to a}{f^i(x)} = b^i$ for $i=1, \cdots, m$.}
+    \problem{Prove $f:A\to \F{R}^m$ is continuous at $a$ if and only if each $f^i$ is.}
+    \problem{Prove that a linear transformation $T:\F{R}^n \to \F{R}^m$ is continuous. \textit{Hint:} Use Problem 1-10}
+    \problem{Let $A = \{(x, y) \in \F{R}^2: x>0\text{ and } 0<y<x^2\}$. 
+        \begin{enumerate}[label={\upshape(\alph*)}]
+            \item Show that every straight line through $(0, 0)$ contains an interval around $(0, 0)$ which is in $\F{R}^2-A$
+            \item Define $f:\F{R}^2\to \F{R}$ by $f(x) = 0$ if $x\notin A$ and $f(x) = 1$ if $x\in A$. For $h\in \F{R}^2$ define 
+                $g_h:\F{R}\to \F{R}$ by $g_h(t) = f(th)$. Show that each $g_h$ is continuous at $0$, but $f$ is not continuous
+                at $(0, 0)$.
+        \end{enumerate}
+    }
+    \problem{Prove that $\{x\in \F{R}^n:|x-a|<r\}$ is open by considering the function $f:\F{R}^n\to \F{R}$ 
+        with $f(x) = |x-a|$.}
+    \problem{If $A\subset \F{R}^n$ is not closed, show that there is a continuous function $f:A\to \F{R}$ 
+        which os unbounded. \textit{Hint:} If $x\in \F{R}^n-A$ but $x\notin$ interior $(\F{R}^n - A)$, let $f(y) = 1/|y-x|$.}
+    \problem{If $A$ is compact, prove that every continuous function $f: A \to \F{R}$
+        takes on a maximum and a minimum value.}
+    \problem{Let $f:[a, b]\to \F{R}$ be an increasing function. If $x_1, \cdots, x_n \in [a, b]$ are 
+        distinct, show that $\sum_{i=1}^{n }{o(f, x_i)} < f(b)-f(a)$.}
+\end{problems}

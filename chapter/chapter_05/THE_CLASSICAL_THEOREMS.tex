@@ -1,0 +1,176 @@
+\clearpage
+\section{THE CLASSICAL THEOREMS}
+We have now prepared all the machinery necessary to state and prove the 
+classical "Stokes' type" of theorems. We will indulge in a little bit of 
+self-explanatory classical notation.
+
+\begin{theorem}[Green's Theorem]\index{Green's Theorem}
+    Let $M \subset \F{R}^2$ be a compact two-dimensional manifold-with-boundary.
+    Suppose that $\alpha,\beta:M\to\F{R}$ are differentiable. Then
+    \begin{align*}
+        \int_{\partial M}\alpha \dd x+\beta \dd y
+        & = \int_{M}(\R{D}_1\beta-\R{D}_2\alpha)\;\dd x\wedge\dd y \\
+        & = \iint_{M}\left(\frac{\partial\beta}{\partial x}-\frac{\partial\alpha}{\partial y}\right)\;\dd x\dd y
+    \end{align*}
+\end{theorem}
+
+(Here $M$ is given the usual orientation, and $\partial M$ the induced
+orientation, also known as the \textbf{counterclockwise orientation}\index{Orientation!counterclockwise}\index{Counterclockwise orientation}.)
+
+\begin{proof}
+    This is a very special case of Theorem 5-5, 
+    since $\dd(\alpha\dd x + \beta\dd y) =(\R{D}_1\beta-\R{D}_2\alpha)\dd x\wedge\dd y$.
+\end{proof}
+
+\begin{theorem}[Divergence Theorem]\index{Divergence Theorem}
+    Let $M\subset\F{R}^3$ be a compact three-dimensional manifold-with-boundary and $n$ the
+    unit outward normal on $\partial M$. Let $F$ be a differentiable vector field on $M$. Then
+    \begin{align*}
+        \int_M\div F\;\dd V = \int_{\partial M}\langle F,n\rangle\dd A
+    \end{align*}
+
+    This equation is also written in terms of three differentiable 
+    functions $\alpha,\beta,\gamma:M\to\F{R}$:
+    \begin{align*}
+        \iiint_M\left(\frac{\partial\alpha}{\partial x}+\frac{\partial\beta}{\partial y}+\frac{\partial\gamma}{\partial z}\right)\;\dd V
+        = \iint_{\partial M}(n^1\alpha+n^2\beta+n^3\gamma)\;\dd S    
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    Define $\omega$ on $M$ by $\omega=F^1\dd y\wedge\dd z + F^2\dd z\wedge\dd x + F^3\dd x\wedge\dd y$.
+    Then $\dd\omega = \div F\dd V$. According to Theorem 5-6, on $\partial M$ we have 
+    \begin{align*}
+        n^1\dd A & = \dd y\wedge \dd z\\
+        n^2\dd A & = \dd z\wedge \dd x\\
+        n^3\dd A & = \dd x\wedge \dd y
+    \end{align*}
+
+    Therefore on $\partial M$ we have 
+    \begin{align*}
+        \langle F,n\rangle\;\dd A 
+        & = F^1n^1\dd A + F^2n^2\dd A + F^3n^3\dd A \\
+        & = F^1\dd y\wedge \dd z + F^2\dd z\wedge \dd x + F^3\dd x\wedge \dd y \\
+        & = \omega
+    \end{align*}
+
+    Thus, by Theorem 5-5 we have
+    \begin{align*}
+        \int_M\div F\;\dd V
+        = \int_M\;\dd\omega
+        = \int_{\partial M}\omega
+        = \int_{\partial M}\langle F,n\rangle\;\dd A
+    \end{align*}
+\end{proof}
+
+\begin{theorem}[Stoke's Theorem]\index{Stokes' Theorem}
+    Let $M\subset\F{R}^3$ be a compact oriented two-dimensional manifold-with-boundary and $n$ the
+    unit outward normal on $M$ determined by the orientation of $M$. Let aM have the induced orientation.
+    Let $T$ be the vector field on $\partial M$ with $\dd s(T) = 1$ and let $F$ be a differentiable 
+    vector field in an open set containing $M$. Then
+    \begin{align*}
+        \int_{M}\langle (\nabla F,T), n\rangle\;\dd A = \int_{\partial M}\langle F,T\rangle\;\dd s
+    \end{align*}
+
+    This equation is sometimes written
+    \begin{align*}
+        & \int_{\partial M}\alpha \dd x+\beta\dd y+\gamma\dd z \\
+        & = \iint_{M}\left[
+            n^1\left(\frac{\partial\gamma}{\partial y}-\frac{\partial\beta}{\partial z}\right)
+            + n^2\left(\frac{\partial\alpha}{\partial z}-\frac{\partial\gamma}{\partial x}\right)
+            + n^3\left(\frac{\partial\beta}{\partial x}-\frac{\partial\alpha}{\partial y}\right)
+            \right]\;\dd S
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    Define $\omega$ on $M$ by $\omega=F^1\dd x + F^2\dd y + F^3\dd z$. Since $\nabla F\times F$ has 
+    components $\R{D}_2F^3 - \R{D}_3F^2, \R{D}_3F^1-\R{D}_1F^3, \R{D}_1F^2-\R{D}_2F^1$, it follows,
+    as in the proof of Theorem 5-8, that on $M$ we have 
+    \begin{align*}
+        \langle (\nabla F,T), n\rangle\;\dd A 
+        & = (\R{D}_2F^3-\R{D}_3F^2)\;\dd y\wedge\dd z + (\R{D}_3F^1-\R{D}_1F^3)\;\dd z\wedge\dd x\\
+        & \hspace*{11.4em} + (\R{D}_1F^2-\R{D}_2F^1)\;\dd x\wedge\dd y \\
+        & = \dd\omega
+    \end{align*}
+
+    On the other hand, since $\dd s(T)=1$, on $\partial M$ we have 
+    \begin{align*}
+        T^1\;\dd s & = \dd x \\
+        T^2\;\dd s & = \dd y \\
+        T^3\;\dd s & = \dd z
+    \end{align*}
+
+    (These equations may be checked by applying both sides to $T_x$, 
+    for $z\in\partial M$, since $T_x$ is a basis for $(\partial M)_x$.)
+
+    Therefore on $\partial M$ we have
+    \begin{align*}
+        \langle F, T\rangle \;\dd s 
+        & = F^1T^1\;\dd s + F^2T^2\;\dd s + F^3T^3\;\dd s \\
+        & = F^1\dd x + F^2\dd y + F^3\dd z \\
+        & = \omega
+    \end{align*}
+
+    Thus, by Theorem 5-5, we have 
+    \begin{align*}
+        \int_{M}\langle (\nabla F,T), n\rangle\;\dd A 
+        = \int_{M}\;\dd\omega
+        = \int_{\partial M}\omega
+        = \int_{\partial M}\langle F,T\rangle\;\dd s
+    \end{align*}
+\end{proof}
+
+Theorems 5-8 and 5-9 are the basis for the names $\div F$ and $\curl F$. If F(x) is the 
+velocity vector of a fluid at $x$ (at some time) then $\int_{\partial M} \langle F,n\rangle\;\dd A$ 
+is the amount of fluid ``diverging'' from $M$. Consequently the condition $\div F=0$ expresses
+the fact that the fluid is incompressible\index{Incompressible fluid}. If M is a disc, then $\int_{\partial M} \langle F,T\rangle\;\dd S$
+measures the amount that the fluid curls around the center of the disc. If this is zero for all discs, 
+then $\nabla \times F=0$, and the fluid is called \textit{irrotational}\index{Irrotational fluid}.
+
+These interpretations of $\div F$ and $\curl F$ are due to Maxwell \cite{maxwell1954electricity}.
+Maxwell actually worked with the negative of $\div F$, which he accordingly 
+called the \textit{convergence}. For $\nabla\times F$ Maxwell proposed ``with great diffidence'' 
+the terminology rotation of $F$\index{Rotation of $F$}; this unfortunate term suggested the abbreviation
+rot F which one occasionally still sees.
+
+The classical theorems of this section are usually stated in
+somewhat greater generality than they are here. For example, Green's Theorem 
+is true for a square, and the Divergence Theorem\index{Divergence of a field} is true for a cube. 
+These two particular facts can be proved by approximating the 
+square or cube by manifolds-with-boundary. A thorough generalization of the theorems of
+this section requires the concept of manifolds-with-corners;
+these are subsets of $\F{R}^n$ which are, up to diffeomorphism,
+locally a portion of $\F{R}^k$ which is bounded by pieces of $(k-1)$-planes.
+The ambitious reader will find it a challenging exercise to define manifolds-with-corners 
+rigorously and to investigate how the results of this entire chapter may be generalized.
+
+\newpage
+\begin{problems}
+    \problem{
+        Generalize the divergence theorem to the case of an $n$-manifold with boundary in $\F{R}^n$.
+    }
+    \problem{
+        Applying the generalized divergence theorem to the set $M=\{x\in\F{R}^n:|x|<a\}$ and 
+        $F(x)=x_x$, find the volume of $S^{n-1} = \{x\in\F{R}^n:|x|=1\}$ in terms of the $n$-dimensional
+        volume of $B_n=\{x\in\F{R}^n:|x|<1\}$. This volume is 
+        \begin{align*}
+            \frac{\pi^{\frac{n}{2}}}{(\frac{n}{2})!}
+        \end{align*}
+        if $n$ is even and 
+        \begin{align*}
+            \frac{2^{\frac{n+1}{2}}\cdot \pi^{\frac{n-1}{2}}}{1\times 3\times 5\times\cdots\times n}
+        \end{align*}
+        if $n$ is odd.
+    }
+    \problem{
+        Define $F$ on $\F{R}^3$ by $F(x) = (0,0,cx^3)_x$ and let $M$ be a compact
+        three-dimensional manifold-with-boundary with $M\subset\{x: x^3\le 0\}$.
+        The vector field $F$ may be thought of as the downward pressure of a fluid 
+        of density $c$ in $\{x: x^3\le 0\}$. Since a fluid exerts equal pressures in 
+        all directions, we define the \textbf{buoyant force}\index{Buoyant force} on $M$, due to the fluid, 
+        as $-\int_{\partial M}\langle F,n\rangle\;\dd A$. Prove the following theorem.
+        \textit{Theorem (Archimedes)}\index{Archimedes}. The buoyant force on $M$ is equal to the
+        weight of the fluid displaced by $M$.
+    }
+\end{problems}
