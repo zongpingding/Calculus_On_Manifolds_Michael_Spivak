@@ -1,5 +1,5 @@
 \clearpage
-\section{THE CLASSICAL THEOREMS}
+\section[\textsc{the classical theorems}]{THE CLASSICAL THEOREMS}
 We have now prepared all the machinery necessary to state and prove the 
 classical "Stokes' type" of theorems. We will indulge in a little bit of 
 self-explanatory classical notation.
@@ -10,7 +10,7 @@ self-explanatory classical notation.
     \begin{align*}
         \int_{\partial M}\alpha \dd x+\beta \dd y
         & = \int_{M}(\R{D}_1\beta-\R{D}_2\alpha)\;\dd x\wedge\dd y \\
-        & = \iint_{M}\left(\frac{\partial\beta}{\partial x}-\frac{\partial\alpha}{\partial y}\right)\;\dd x\dd y
+        & = \iint_{M}\left(\frac{\partial\beta}{\partial x}-\frac{\partial\alpha}{\partial y}\right)\dd x\dd y.
     \end{align*}
 \end{theorem}
 
@@ -26,24 +26,24 @@ orientation, also known as the \textbf{counterclockwise orientation}\index{Orien
     Let $M\subset\F{R}^3$ be a compact three-dimensional manifold-with-boundary and $n$ the
     unit outward normal on $\partial M$. Let $F$ be a differentiable vector field on $M$. Then
     \begin{align*}
-        \int_M\div F\;\dd V = \int_{\partial M}\langle F,n\rangle\dd A
+        \int_M\div F\;\dd V = \int_{\partial M}\langle F,n\rangle\;\dd A.
     \end{align*}
 
     This equation is also written in terms of three differentiable 
     functions $\alpha,\beta,\gamma:M\to\F{R}$:
     \begin{align*}
         \iiint_M\left(\frac{\partial\alpha}{\partial x}+\frac{\partial\beta}{\partial y}+\frac{\partial\gamma}{\partial z}\right)\;\dd V
-        = \iint_{\partial M}(n^1\alpha+n^2\beta+n^3\gamma)\;\dd S    
+        = \iint_{\partial M}(n^1\alpha+n^2\beta+n^3\gamma)\;\dd S.   
     \end{align*}
 \end{theorem}
 
 \begin{proof}
-    Define $\omega$ on $M$ by $\omega=F^1\dd y\wedge\dd z + F^2\dd z\wedge\dd x + F^3\dd x\wedge\dd y$.
+    Define $\omega$ on $M$ by $\omega=F^1\,\dd y\wedge\dd z + F^2\,\dd z\wedge\dd x + F^3\,\dd x\wedge\dd y$.
     Then $\dd\omega = \div F\dd V$. According to Theorem 5-6, on $\partial M$ we have 
     \begin{align*}
-        n^1\dd A & = \dd y\wedge \dd z\\
-        n^2\dd A & = \dd z\wedge \dd x\\
-        n^3\dd A & = \dd x\wedge \dd y
+        n^1\dd A & = \dd y\wedge \dd z,\\
+        n^2\dd A & = \dd z\wedge \dd x,\\
+        n^3\dd A & = \dd x\wedge \dd y.
     \end{align*}
 
     Therefore on $\partial M$ we have 
@@ -51,7 +51,7 @@ orientation, also known as the \textbf{counterclockwise orientation}\index{Orien
         \langle F,n\rangle\;\dd A 
         & = F^1n^1\dd A + F^2n^2\dd A + F^3n^3\dd A \\
         & = F^1\dd y\wedge \dd z + F^2\dd z\wedge \dd x + F^3\dd x\wedge \dd y \\
-        & = \omega
+        & = \omega.
     \end{align*}
 
     Thus, by Theorem 5-5 we have
@@ -59,7 +59,7 @@ orientation, also known as the \textbf{counterclockwise orientation}\index{Orien
         \int_M\div F\;\dd V
         = \int_M\;\dd\omega
         = \int_{\partial M}\omega
-        = \int_{\partial M}\langle F,n\rangle\;\dd A
+        = \int_{\partial M}\langle F,n\rangle\;\dd A.
     \end{align*}
 \end{proof}
 
@@ -69,36 +69,34 @@ orientation, also known as the \textbf{counterclockwise orientation}\index{Orien
     Let $T$ be the vector field on $\partial M$ with $\dd s(T) = 1$ and let $F$ be a differentiable 
     vector field in an open set containing $M$. Then
     \begin{align*}
-        \int_{M}\langle (\nabla F,T), n\rangle\;\dd A = \int_{\partial M}\langle F,T\rangle\;\dd s
+      \int_{M}\langle (\nabla\times F), n\rangle\;\dd A = \int_{\partial M}\langle F,T\rangle\;\dd s.
     \end{align*}
-
     This equation is sometimes written
     \begin{align*}
         & \int_{\partial M}\alpha \dd x+\beta\dd y+\gamma\dd z \\
-        & = \iint_{M}\left[
+        & = \iint_{M}\bigg[
             n^1\left(\frac{\partial\gamma}{\partial y}-\frac{\partial\beta}{\partial z}\right)
             + n^2\left(\frac{\partial\alpha}{\partial z}-\frac{\partial\gamma}{\partial x}\right)
             + n^3\left(\frac{\partial\beta}{\partial x}-\frac{\partial\alpha}{\partial y}\right)
-            \right]\;\dd S
+            \bigg]\dd S.
     \end{align*}
 \end{theorem}
 
 \begin{proof}
-    Define $\omega$ on $M$ by $\omega=F^1\dd x + F^2\dd y + F^3\dd z$. Since $\nabla F\times F$ has 
+    Define $\omega$ on $M$ by $\omega=F^1\,\dd x + F^2\,\dd y + F^3\,\dd z$. Since $\nabla F\times F$ has 
     components $\R{D}_2F^3 - \R{D}_3F^2, \R{D}_3F^1-\R{D}_1F^3, \R{D}_1F^2-\R{D}_2F^1$, it follows,
     as in the proof of Theorem 5-8, that on $M$ we have 
     \begin{align*}
-        \langle (\nabla F,T), n\rangle\;\dd A 
+        \langle (\nabla\times F), n\rangle\;\dd A 
         & = (\R{D}_2F^3-\R{D}_3F^2)\;\dd y\wedge\dd z + (\R{D}_3F^1-\R{D}_1F^3)\;\dd z\wedge\dd x\\
         & \hspace*{11.4em} + (\R{D}_1F^2-\R{D}_2F^1)\;\dd x\wedge\dd y \\
-        & = \dd\omega
+        & = \dd\omega.
     \end{align*}
-
     On the other hand, since $\dd s(T)=1$, on $\partial M$ we have 
     \begin{align*}
-        T^1\;\dd s & = \dd x \\
-        T^2\;\dd s & = \dd y \\
-        T^3\;\dd s & = \dd z
+        T^1\,\dd s & = \dd x, \\
+        T^2\,\dd s & = \dd y, \\
+        T^3\,\dd s & = \dd z.
     \end{align*}
 
     (These equations may be checked by applying both sides to $T_x$, 
@@ -109,15 +107,15 @@ orientation, also known as the \textbf{counterclockwise orientation}\index{Orien
         \langle F, T\rangle \;\dd s 
         & = F^1T^1\;\dd s + F^2T^2\;\dd s + F^3T^3\;\dd s \\
         & = F^1\dd x + F^2\dd y + F^3\dd z \\
-        & = \omega
+        & = \omega.
     \end{align*}
 
     Thus, by Theorem 5-5, we have 
     \begin{align*}
-        \int_{M}\langle (\nabla F,T), n\rangle\;\dd A 
+        \int_{M}\langle (\nabla\times F), n\rangle\;\dd A 
         = \int_{M}\;\dd\omega
         = \int_{\partial M}\omega
-        = \int_{\partial M}\langle F,T\rangle\;\dd s
+        = \int_{\partial M}\langle F,T\rangle\;\dd s.
     \end{align*}
 \end{proof}
 
@@ -169,8 +167,8 @@ rigorously and to investigate how the results of this entire chapter may be gene
         The vector field $F$ may be thought of as the downward pressure of a fluid 
         of density $c$ in $\{x: x^3\le 0\}$. Since a fluid exerts equal pressures in 
         all directions, we define the \textbf{buoyant force}\index{Buoyant force} on $M$, due to the fluid, 
-        as $-\int_{\partial M}\langle F,n\rangle\;\dd A$. Prove the following theorem.
-        \textit{Theorem (Archimedes)}\index{Archimedes}. The buoyant force on $M$ is equal to the
+        as $-\int_{\partial M}\langle F,n\rangle\,\dd A$. Prove the following theorem.
+        \textbf{Theorem (Archimedes)}\index{Archimedes}. The buoyant force on $M$ is equal to the
         weight of the fluid displaced by $M$.
     }
 \end{problems}

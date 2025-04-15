@@ -1,5 +1,5 @@
 \clearpage
-\section{NOTATION}\index{Notation}
+\section[\textsc{notation}]{NOTATION}\index{Notation}
 This section is a brief and not entirely unprejudiced discussion
 of classical notation connected with partial derivatives.
 
@@ -17,9 +17,9 @@ of classical notation, by
 
 or any other convenient similar symbol. This notation forces
 one to write
-\begin{align}
+\begin{align*}
     \frac{\partial f }{\partial u}(u,v,w)
-\end{align}
+\end{align*}
 
 for $D_1f(u, v, w)$, although the symbol 
 \begin{align*}
@@ -29,33 +29,33 @@ for $D_1f(u, v, w)$, although the symbol
 \end{align*}
 
 or something similar may be used (and must be used for an
-expression like $D_1f(7,3,2)$. Similar notation is used for $D_2f$
-and $D_3f$. Higher-order derivatives are denoted by symbols
+expression like $\R D_1f(7,3,2)$. Similar notation is used for $\R D_2f$
+and $\R D_3f$. Higher-order derivatives are denoted by symbols
 like
 \begin{align*}
-    D_2D_1f(x,y,z)=\frac{\partial^2f(x,y,z)}{\partial y\partial x}
+    \R D_2\R D_1f(x,y,z)=\frac{\partial^2f(x,y,z)}{\partial y\partial x}.
 \end{align*}
 
-When $f:\F{R}\to \F{R}$, the symbol $\partial$ automatically reverts to $\dd$; thus
+When $f\colon{}\F{R}\to \F{R}$, the symbol $\partial$ automatically reverts to $\dd$; thus
 \begin{align*}
     \frac{\dd\sin x}{\dd x}
     \quad\mathrm{not}\quad
-    \frac{\partial\sin x}{\partial x}
+    \frac{\partial\sin x}{\partial x}.
 \end{align*}
 
 The mere statement of Theorem 2-2 in classical notation
 requires the introduction of irrelevant letters. The usual
-evaluation for $D_1(f\circ(g, h))$ runs as follows:
+evaluation for $\R D_1(f\circ(g, h))$ runs as follows:
 
 If $f(u,v)$ is a function and $u=g(x, y)$ and $v=h(x, y)$, then
 \begin{align*}
     \frac{\partial f(g(x,y),h(x,y))}{\partial x}
     =
-    \frac{\partial f(u,v)}{\partial u}\frac{\partial u}{\partial x}+\frac{\partial f(u,v)}{\partial v}\frac{\partial v}{\partial x}
+    \frac{\partial f(u,v)}{\partial u}\frac{\partial u}{\partial x}+\frac{\partial f(u,v)}{\partial v}\frac{\partial v}{\partial x}.
 \end{align*}
 
 [The symbol $\partial u/\partial x$ means $\partial/\partial x$ $g(x,y)$ 
-and $\partial/\partial uf(u,v)$ means $D_1f(u,v)=D_1f(g(x,y),h(x,y))$.]
+and $\partial/\partial uf(u,v)$ means $\R D_1f(u,v)=\R D_1f(g(x,y),h(x,y))$.]
 
 This equation is often written simply
 \begin{align*}
@@ -74,7 +74,7 @@ the sole purpose of which is to make the equation
     \dd f=\frac{\dd f}{\dd x}\cdot \dd x
 \end{align*}
 
-work out. If $f:\F{R}^2\to \F{R}$ then $\dd f$ is defined, classically, as 
+work out. If $f\colon{}\F{R}^2\to \F{R}$ then $\dd f$ is defined, classically, as 
 \begin{align*}
     \dd f=\frac{\partial f}{\partial x}\dd x+\frac{\partial f}{\partial y}\dd y
 \end{align*}

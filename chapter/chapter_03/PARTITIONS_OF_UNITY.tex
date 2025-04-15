@@ -1,5 +1,5 @@
 \clearpage
-\section{PARTITIONS OF UNITY}
+\section[\textsc{partition of unity}]{PARTITIONS OF UNITY}
 In this section we introduce a tool of extreme importance in
 the theory of integration.
 
@@ -50,7 +50,7 @@ In this chapter we will only use continuity of the functions $\varphi$.
         \varphi(x) = \frac{\psi_i(x)}{\psi_1(x)+\cdots +\psi_n(x)}
     \end{align*}
 
-    If $f:U\to [0,1]$ is a $C^\infty$ function which is 1 on $A$ and 0 outside of some closed set
+    If $f\colon{}U\to [0,1]$ is a $C^\infty$ function which is 1 on $A$ and 0 outside of some closed set
     in $U$, then $\Phi = \{f\cdot \varphi_1, \cdots, f\cdot\varphi_n\}$ is the desired partition of 
     unity.
 
@@ -70,10 +70,7 @@ In this chapter we will only use continuity of the functions $\varphi$.
     all $\varphi'$ is the desired partition of unity.
 
     \textit{Case} 3: $A$ is open.\par
-    Let 
-    \begin{align*}
-        \{A_i = \{x\in A:|x\le i|\} \text{ and distance from } x \text{ to boundary } A\ge 1/i\}
-    \end{align*}
+    Let $\{A_i = \{x\in A:|x\le i|\} \text{ and distance from } x \text{ to boundary } A\ge 1/i\}$
     and apply case 2.
 
     \textit{Case} 4: A is arbitrary.\par
@@ -93,7 +90,7 @@ One important application of partitions of unity will
 illustrate their main role-piecing together results obtained locally.
 An open cover $\C{O}$ of an open set $A \subset \F{R}^n$ is admissible if
 each $U \in \C{O}$ is contained in $A$. If $\Phi$ is subordinate to $\C{O}$,
-$f: A\to \F{R}$ is bounded in some open set around each point of $A$,
+$f\colon{} A\to \F{R}$ is bounded in some open set around each point of $A$,
 and $\{x: f \text{ is discontinuous at } x\}$ has measure 0, then each
 $\int_A\varphi\cdot |x|$ exists. We define $f$ to be \textbf{integrable}\index{Integral!over an open set} (in the extended
 sense) if $\sum_{\varphi\in\Phi}^{}{\int_A\varphi\cdot f}$, and hence absolute convergence
@@ -140,12 +137,12 @@ definations do not depend on $\C{O}$ or $\Phi$ (but see Problem 3-38).
             is any finite collection which includes these, and $\int_A f$ has its old meaning, 
             then 
             \begin{align*}
-                \left|\int_A f - \sum_{\varphi\in F}^{}{\int_A \varphi\cdot f}\right|
-                & \le \int_A \left|f-\sum_{\varphi\in F}^{}{\varphi\cdot f}\right| \\
-                & \le M \int_A \left(1-\sum_{\varphi\in F}^{}{\varphi}\right) 
-                    = M \int_A \sum_{\varphi\in \Phi - F}^{}{\varphi} \\
-                & \le M \int_{A-C} 1
-                    < M\varepsilon
+                \biggl|\int_A f - \sum_{\varphi\in F}^{}{\int_A \varphi\cdot f}\biggr|
+                & \le \int_A \biggl|f-\sum_{\varphi\in F}^{}{\varphi\cdot f}\biggr| 
+                  \le M \int_A \biggl(1-\sum_{\varphi\in F}^{}{\varphi}\biggr) \\
+                & = M \int_A \sum_{\varphi\in \Phi - F}^{}{\varphi}
+                  \le M \int_{A-C} 1
+                  < M\varepsilon
             \end{align*}
     \end{enumerate}
 \end{proof}
@@ -154,17 +151,17 @@ definations do not depend on $\C{O}$ or $\Phi$ (but see Problem 3-38).
 \begin{problems}
     \problem{
         \begin{enumerate}[label=(\alph*)]
-        \item Suppose that $f:(0,1)\to\F{R}$ is a non-negative continuous function. 
+        \item Suppose that $f\colon{}(0,1)\to\F{R}$ is a non-negative continuous function. 
             Show that $\int_{(0,1)}f$ exists if and only if 
             $\lim_{\varepsilon\to 0}\int_\varepsilon^{1-\varepsilon}f$ exists.
-        \item Let $A_n = [1-1/2^n,1-1/2^{n+1}]$. Suppose that $f:(0,1)\to \F{R}$ satisfies
+        \item Let $A_n = [1-1/2^n,1-1/2^{n+1}]$. Suppose that $f\colon{}(0,1)\to \F{R}$ satisfies
             $\int_{A_n} f = (-1)^n//n$ and $f(x)=0$ for $x\notin \text{ any } A_n$. Show that 
             $\int_{(0,1)}f$ dose not exist, but $\lim_{\varepsilon\to 0}
             \int_{(\varepsilon, 1-\varepsilon)}f = \log 2$.
         \end{enumerate}
     }
     \problem{
-        Let $A_n$ be a closed set contained in $(n, n+1)$. Suppose that $f:\F{R}\to \F{R}$
+        Let $A_n$ be a closed set contained in $(n, n+1)$. Suppose that $f\colon{}\F{R}\to \F{R}$
         satisfies $\int_{A_n} f = (-1)^n/n$ and $f=0$ for $x\notin \text{ any } A_n$. Find 
         two partition of unity $\Phi$ and $\Psi$ such that $\sum_{\varphi\in \Phi}^{}{\varphi \cdot f}$
         and $\sum_{\psi\in\Psi}^{}{\int_{\F{R}} \psi\cdot f}$ convergence absolutely to different values.

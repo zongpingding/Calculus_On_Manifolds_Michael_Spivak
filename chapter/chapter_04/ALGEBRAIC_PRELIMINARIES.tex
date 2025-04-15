@@ -1,4 +1,4 @@
-\section{ALGEBRAIC PRELIMINARIES}
+\section[\textsc{algebraic preliminaries}]{ALGEBRAIC PRELIMINARIES}
 If $V$ is a vector space (over $\F{R}$), we will denote the $k$-fold
 product $V\times \cdots \times V$ by $V^k$. A function $T:V^k\to \F{R}$
 is called \textbf{multilinear} if for each $i$ with $1\le i\le k$ we have 
@@ -91,7 +91,7 @@ the other vector spaces $\K{J}^k(V)$ in terms of $\K{J}^1(V)$.
 \end{proof}
 
 One important construction, familiar for the case of dual
-spaces, can also be made for tensors. If $f:V\to W$ is a 
+spaces, can also be made for tensors. If $f\colon{}V\to W$ is a 
 linear transformation $f^*:\K{J}^k(W) \to \K{J}^k(V)$ is defined 
 by 
 \begin{align*}
@@ -114,7 +114,7 @@ theorem shows that our generalization is not too gerneral.
 \begin{theorem}
     If $T$ is a inner product on $V$, there is a basis $v_1, \cdots, v_n$ for $V$ such that 
     $T(v_i, v_j) =\delta_{i,j}$. (Such a basis is called \textbf{orthonormal} with respect to $T$).
-    Consequentlly there is an isomorphism $f:\F{R}^n\to V$ such that $T(f(x), f(y)) = \langle x, y\rangle$
+    Consequentlly there is an isomorphism $f\colon{}\F{R}^n\to V$ such that $T(f(x), f(y)) = \langle x, y\rangle$
     for $x, y\in \F{R}^n$. In other words $f^*T = \langle \cdot\rangle$.
 \end{theorem}
 
@@ -138,7 +138,7 @@ role than another familiar, seemingly ubiquitous function,
 the tensor $\det E\in \K{J}^n(\F{R}^n)$. In attempting to generalize this
 function, we recall that interchanging two rows of a matrix
 changes the sign of its determinant. This suggests the following definition.
-A $k$-tensor $\omega\in \K{J}^k(V)$ is called \textbf{alternating}\index{Tensor!alternating}\Index{Alternating tensor} if
+A $k$-tensor $\omega\in \K{J}^k(V)$ is called \textbf{alternating}\index{Tensor!alternating}\index{Alternating tensor} if
 \begin{align*}
     \omega(v_1, \cdots, v_i, \cdots, v_j, \cdots, v_k) 
     & = -\omega(v_1, \cdots, v_j, \cdots, v_i, \cdots, v_k)\\
@@ -206,11 +206,11 @@ product $\omega\wedge\eta \in \Lambda^{k+l}(V)$ by
 (The reason for the strange coefficient will appear later.) The following properties of 
 $\wedge$ are left as an exercise for the reader:
 \begin{align*}
-    (\omega_1+\omega_2)\wedge \eta & = \omega_1\wedge\eta + \omega_2\wedge\eta \\
-    \omega\wedge(\eta_1+\eta_2) & = \omega\wedge\eta_1 + \omega\wedge\eta_2 \\
-    (a\omega)\wedge\eta & = \omega\wedge(a\eta) = a(\omega\wedge\eta) \\
-    \omega\wedge\eta & = (-1)^{kl}\eta\wedge\omega \\
-    f^*(\omega\wedge\eta) & = f^*\omega\wedge f^*\eta 
+    (\omega_1+\omega_2)\wedge \eta & = \omega_1\wedge\eta + \omega_2\wedge\eta, \\
+    \omega\wedge(\eta_1+\eta_2) & = \omega\wedge\eta_1 + \omega\wedge\eta_2, \\
+    (a\omega)\wedge\eta & = \omega\wedge(a\eta) = a(\omega\wedge\eta), \\
+    \omega\wedge\eta & = (-1)^{kl}\eta\wedge\omega, \\
+    f^*(\omega\wedge\eta) & = f^*\omega\wedge f^*\eta.
 \end{align*}
 
 The equation $(\omega\wedge\eta)\wedge\theta = \omega\wedge(\eta\wedge\theta)$ is true 
@@ -220,15 +220,15 @@ but requires more work.
     \begin{enumerate}[label=\upshape{(\arabic*)}]
         \item If $S\in \K{J}^k(V)$ and $T\in \K{J}^l(V)$ and $\alt(S) =0$, then 
             \begin{align*}
-                \alt(S\otimes T) = \alt(T\otimes S) = 0
+                \alt(S\otimes T) = \alt(T\otimes S) = 0.
             \end{align*}
         \item $\alt(\alt (\omega\otimes\eta)\otimes\theta) = \alt(\omega\otimes\eta\otimes\theta)
-            = \alt(\omega\otimes\alt(\eta\otimes\theta))$
+            = \alt(\omega\otimes\alt(\eta\otimes\theta))$.
         \item If $\omega\in \Lambda^k(V), \eta\in \Lambda^l(V)$, and $\theta\in \Lambda^m(V)$, then 
             \begin{align*}
                 \omega\wedge(\eta\wedge\theta) 
-                & = (\omega\wedge\eta)\wedge\theta \\
-                & = \frac{(k+l+m)!}{k!l!m!}\alt(\omega\otimes\eta\otimes\theta)
+                = (\omega\wedge\eta)\wedge\theta 
+                = \frac{(k+l+m)!}{k!l!m!}\alt(\omega\otimes\eta\otimes\theta).
             \end{align*}
     \end{enumerate}
 \end{theorem}
@@ -238,7 +238,7 @@ but requires more work.
         \item \;\vspace*{-2em}
             \begin{align*}
                 & (k+l)!\alt(S\otimes T)(v_1, \cdots, v_{k+l}) \\
-                & = \sum_{\sigma\in S_k}^{}{\sgn\sigma\cdot S(v_{\sigma(1)}, \cdots, v_{\sigma(k)})\cdot T(v_{\sigma(k+1)}, \cdots, v_{\sigma(k+l)})}
+                & = \sum_{\sigma\in S_k}^{}{\sgn\sigma\cdot S(v_{\sigma(1)}, \cdots, v_{\sigma(k)})\cdot T(v_{\sigma(k+1)}, \cdots, v_{\sigma(k+l)})}.
             \end{align*}
 
             If $G\subset S_{k+1}$ consists of all $\sigma$ which leave $k+1, \cdots, k+l$, fixed, then 
@@ -246,7 +246,7 @@ but requires more work.
                 & \sum_{\sigma\in G}^{}{\sgn\sigma\cdot S(v_{\sigma(1)}, \cdots, v_{\sigma(k)})\cdot T(v_{\sigma(k+1)}, \cdots, v_{\sigma(k+l)})} \\
                 & = \left[\sum_{\sigma'\in S_k}^{}{\sgn\sigma'\cdot S(v_{\sigma'(1)}, \cdots, v_{\sigma'(k)})}\right]
                     \cdot T(v_{k+1}, \cdots, v_{k+l}) \\
-                & = 0
+                & = 0.
             \end{align*} 
 
             Suppose now that $\sigma_0\notin G$. Let $G\cdot \sigma_0=\{\sigma\cdot\sigma_0:\sigma\in G\}$ and let 
@@ -254,7 +254,7 @@ but requires more work.
             \begin{align*}
                 & \sum_{\sigma\in G\cdot\sigma_0}^{} \sgn\sigma\cdot S(v_{\sigma(1)}, \cdots, v_{\sigma(k)})\cdot T(v_{\sigma(k+1)}, \cdots, v_{\sigma(k+l)}) \\
                 & = \left[\sgn\sigma_0\cdot\sum_{\sigma'\in G}^{}{\sgn\sigma'\cdot S(w_{\sigma'(1)}, \cdots, w_{\sigma'(k)})}\right]\cdot T(w_{k+1}, \cdots, w_{k+l}) \\
-                & = 0
+                & = 0.
             \end{align*}
 
             Notice that $G\cap G\cdot \sigma_0=\ns$. In fact, if $\sigma\subset G\cap G\cdot\sigma_0$,
@@ -266,16 +266,15 @@ but requires more work.
             \begin{align*}
                 \alt(\alt(\eta\otimes\theta) - \eta\otimes\theta) 
                 = \alt(\eta\otimes\theta) - \alt(\eta\otimes\theta)
-                = 0
+                = 0.
             \end{align*}
 
             Hence by (1) we have 
             \begin{align*}
                 0 
-                    & = \alt(\omega\otimes [\alt(\eta\otimes\theta) - \eta\otimes\theta]) \\
-                    & = \alt(\omega\otimes\alt(\eta\otimes\theta)) - \alt(\omega\otimes\eta\otimes\theta) 
+                & = \alt(\omega\otimes [\alt(\eta\otimes\theta) - \eta\otimes\theta]) \\
+                & = \alt(\omega\otimes\alt(\eta\otimes\theta)) - \alt(\omega\otimes\eta\otimes\theta). 
             \end{align*}
-
             The equality is proved similarly.
     \end{enumerate}
 \end{proof}
@@ -288,31 +287,29 @@ a basis for $\Lambda^k(V)$ can now ba constructed quite easily.
 \begin{theorem}
     The set of all
     \begin{align*}
-        \varphi_{i_1}\wedge\cdots\wedge\varphi_{i_k}\quad\quad 1\leq i_1<\cdots<i_k\le n
+      \varphi_{i_1}\wedge\cdots\wedge\varphi_{i_k}\quad\quad 1\leq i_1<\cdots<i_k\le n
     \end{align*} 
-
     is a basis for $\Lambda^k(V)$, which therefore has dimension 
     \begin{align*}
-        \binom nk=\frac{n!}{k!(n-k)!}\cdotp 
+      \binom nk=\frac{n!}{k!(n-k)!}\cdotp.
     \end{align*}
 \end{theorem}
 
 \begin{proof}
     If $\omega\in \Lambda^k(V)\subset \K{J}^k(V)$, then we can write 
     \begin{align*}
-        \omega = \sum_{i_1, \cdots, i_k}^{}{a_{i_1,\cdots,i_k}\varphi_{i_1}\otimes\cdots\otimes\varphi_{i_k}}
+      \omega = \sum_{i_1, \cdots, i_k}^{}{a_{i_1,\cdots,i_k}\varphi_{i_1}\otimes\cdots\otimes\varphi_{i_k}}.
     \end{align*}
-
     Thus 
     \begin{align*}
         \omega
         = \alt(\omega) 
-        = \sum_{i_1, \cdots, i_k}^{}{a_{i_1,\cdots,i_k}\alt(\varphi_{i_1}\otimes\cdots\otimes\varphi_{i_k})}
+        = \sum_{i_1, \cdots, i_k}^{}{a_{i_1,\cdots,i_k}\alt(\varphi_{i_1}\otimes\cdots\otimes\varphi_{i_k})}.
     \end{align*}
 
     Since each $\alt(\varphi_{i_1}\otimes\cdots\otimes\varphi_{i_k})$ is a constant times one of the 
     $\varphi_{i_1}\wedge\cdots\wedge\varphi_{i_k}$, these elemants span $\Lambda^k(V)$. Linear independence 
-    is proved as in Theorem 4-1 (rf. Problem 4-1)
+    is proved as in Theorem 4-1 (cf. Problem 4-1)
 \end{proof}
 
 If $V$ has dimension $n$, it follows from Theorem 4-5 that $\Lambda^n(V)$ has dimension 1. Thus 
@@ -327,8 +324,8 @@ to find it in the following theorem.
 \begin{proof}
     Define $\eta\in \K{J}^n(\F{R}^n)$ by 
     \begin{align*}
-        \eta((1_{11}, \cdots, a_{1n}), \cdots, (a_{n1}, \cdots, a_{nn}))
-        = \omega\left(\sum_{}^{}{a_{1,j}v_j}, \cdots, \sum_{}^{}{a_{nj}v_j}\right)
+        \eta((a_{11}, \cdots, a_{1n}), \cdots, (a_{n1}, \cdots, a_{nn}))
+        = \omega\big(\sum_{}^{}{a_{1,j}v_j}, \cdots, \sum_{}^{}{a_{nj}v_j}\big)
     \end{align*}
 
     Clearly $\eta\in \Lambda^n(\F{R}^n)$ so $\eta=\lambda\cdot\det$ for some $\lambda\in \F{R}$
@@ -354,12 +351,13 @@ criterion of this sort to distinguish a particular $\omega\in\Lambda^n(V)$. Supp
 that an inner product $T$ for $V$ is given. If $v_1, \cdots, v_n$ and $w_1, \cdots, w_n$ are
 two bases which are orthonormal with respect to $T$, and the matirx $A=(a_{ij})$ is defined by 
 $w_i = \sum_{j=1}^{n}{a_{i,j}v_j}$, then 
+\vskip-1.1em
 \begin{align*}
-    \delta_{ij} = T(w_i, w_j) 
-        = \sum_{k,l=1}^{n}{a_{ik}a_{jl}T(v_k,v_l)} 
-        = \sum_{k=1}^{n}{a_{ik}a_{jk}}
+  \delta_{ij} = T(w_i, w_j) 
+      = \sum_{k,l=1}^{n}{a_{ik}a_{jl}T(v_k,v_l)} 
+      = \sum_{k=1}^{n}{a_{ik}a_{jk}}.
 \end{align*}
-
+\vskip-.7em
 In other words,if $A^T$ denoted the transpose\index{Matrix!transpose of} of the matricx of the matrix $A$, then 
 we can have $A\cdot A^T = I$, so $\det A=\pm 1$. It follows from Theorem 4-6 that if 
 $\omega\in \Lambda^n(V)$ satisfies $\omega(v_1, \cdots, v_n) = \pm 1$ then 
@@ -376,23 +374,23 @@ We conclude this section with a construction which we will
 restrict to $\F{R}^n$. If $v_1, \cdots, v_n\in \F{R}^n$ 
 and $\varphi$ is defined by 
 \begin{align*}
-    \varphi(w) = \det \left(\begin{matrix}
+    \varphi(w) = \det \begin{pmatrix}
         v_1 \\
         \vdots \\
         v_{n-1} \\
         v_n \\
-    \end{matrix}\right)
+    \end{pmatrix}
 \end{align*}
-
+\vskip-1.4em
 then $\varphi\in\Lambda^1(\F{R}^n)$; therefore there is a unique $z\in\F{R}^n$ such that 
 \begin{align*}
     \langle w, z\rangle = \varphi(w) 
-    = \det \left(\begin{matrix}
+    = \det \begin{pmatrix}
         v_1 \\
         \vdots \\
         v_{n-1} \\
         v_n \\
-    \end{matrix}\right)
+    \end{pmatrix}
 \end{align*}
 
 This $z$ is denoted $v_1\times\cdots\times v_n$ and called the \textbf{cross product}\index{Cross product} of 
@@ -427,7 +425,7 @@ that the cross product can be defined only in $\F{R}^3$.
         \end{enumerate}
     }
     \problem{
-        If $f:V\to V$ is a linear transformation and $\dim V=n$, then $f^*:\Lambda^n(V)\to \Lambda^n(V)$
+        If $f\colon{}V\to V$ is a linear transformation and $\dim V=n$, then $f^*:\Lambda^n(V)\to \Lambda^n(V)$
         must be multiplication by some constant $c$. Show that $c=\det f$.
     }
     \problem{
@@ -442,7 +440,7 @@ that the cross product can be defined only in $\F{R}^3$.
     }
     \problem{
         If $\omega$ is the volume element of $V$ determined by $T$ and $\mu$, and
-        $f:\F{R}^n\to V$ is an isomorphism such that $f^*T = \langle \cdot \rangle$ and 
+        $f\colon{}\F{R}^n\to V$ is an isomorphism such that $f^*T = \langle \cdot \rangle$ and 
         such that $[f(e_1), \cdots, f(e_n)]=\mu$, show that $f^*\omega = \det$.
     }
     \problem{
@@ -495,7 +493,7 @@ that the cross product can be defined only in $\F{R}^3$.
         certain $(n-1)$-dimensional subsets of $\F{R}^n$.
     }
     \problem{
-        If $T$ is an inner product on $V$, a linear transfromation $f:V\to V$ is called \textbf{self-adjoint}\index{Self-adjoint}
+        If $T$ is an inner product on $V$, a linear transfromation $f\colon{}V\to V$ is called \textbf{self-adjoint}\index{Self-adjoint}
         (with respect to $T$) if $T(x, f(x)) = T(f(x), y)$ for $x,y\in V$. If $v_1,\cdots,v_{n}$ is an orthonormal
         basis and $A=(a_{ij})$ is the matrix of $f$ with respect to this basis, show that $a_{ij} = a_{ji}$. 
     }

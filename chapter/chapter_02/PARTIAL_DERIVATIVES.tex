@@ -1,7 +1,7 @@
 \clearpage
-\section{PARTIAL DERIVATIVES}
+\section[\textsc{partial derivatives}]{PARTIAL DERIVATIVES}
 We begin the attack on the problem of finding derivatives
-"one variable at a time." If $f: \F{R}^n\to \F{R}$ and $a\in \F{R}^n$, 
+"one variable at a time." If $f\colon{} \F{R}^n\to \F{R}$ and $a\in \F{R}^n$, 
 the limit
 \begin{align}
     \lim_{h\to 0} \frac{f(a^1, \cdots, a^i+h, \cdots, a^n) - f(a^1, \cdots, a^n)}{h}
@@ -39,13 +39,13 @@ is quite adequate. We state it here but postpone the proof until later (Problem 
 
 \begin{theorem}
     If $\R{D}_{i,j}f$ and $\R{D}_{j,i}f$ are continuous in an open set containing $a$, then 
-    \begin{align}
-        \R{D}_{i,j}f(a) = \R{D}_{j,i}f(a)
-    \end{align}
+    \begin{align*}
+        \R{D}_{i,j}f(a) = \R{D}_{j,i}f(a).
+    \end{align*}
 \end{theorem}
 
 The function $\R{D}_{i,j}f$ is called a \textbf{second-order (mixed) partial derivative}\index{Partial derivative!second-order (mixed)}\index{Derivative!partial!second-order (mixed)}
-of $f$.Higher-order (mixed) partial derivatives are defined in the obvious way.
+of $f$. Higher-order (mixed) partial derivatives are defined in the obvious way.
 Clearly Theorem 2-5 can be used to prove the equality of higher-order mixed
 partial derivatives\index{Partial derivative!higher-order (mixed)}\index{Derivative!partial!higher-order (mixed)} under appropriate conditions.
 The order of $i_1, \cdots ,i_k$ is completely immaterial in $\R{D}_{i_1,\cdots,i_k}f$
@@ -59,29 +59,29 @@ derivatives. They also have another important use-finding
 maxima\index{Maxima|(} and minima\index{Minima|(} of functions.
 
 \begin{theorem}
-  Let $A\subset \F{R}^n$. If the maximum (or minimum) of $f:A\to \F{R}^n$ occurs at a 
+  Let $A\subset \F{R}^n$. If the maximum (or minimum) of $f\colon{}A\to \F{R}$ occurs at a 
   point $a$ in the interior of $A$ and $\R{D}_if(a)$ exists, then $\R{D}_if(a) = 0$.
 \end{theorem}
 
 \begin{proof}
   Let $g_i(x) = f(a^1, \cdots, x, \cdots, a^n)$. Clearly $g_i$ has a maximum (or minimum)
   at $a^i$, and $g_i$ is defined in an open interval containing 
-  $a^i$. Hence $0 = g_i(a^i) = \R{D}_if(a)$.
+  $a^i$. Hence $0 = g_i'(a^i) = \R{D}_if(a)$.
 \end{proof}
 
 The reader is reminded that the converse of Theorem 2-6
-is false even if $n=1$ (if $f:\F{R}\to \F{R}$ is defined by $f(x) = x^3$, then $f'(0) = 0$, but 
+is false even if $n=1$ (if $f\colon{}\F{R}\to \F{R}$ is defined by $f(x) = x^3$, then $f'(0) = 0$, but 
 0 is not even a local maximum or minimum). If $n>1$, the converse of Theorem 2-6 may fail 
-to be true in a rather spectacular way. Suppose, for example, that $f:\F{R}^2\to \F{R}$ is defined 
+to be true in a rather spectacular way. Suppose, for example, that $f\colon{}\F{R}^2\to \F{R}$ is defined 
 $f(x, y) = x^2-y^2$ (\figref{Fig 2-2}). Then $\R{D}_1f(0, 0) = 0$ because $g_1$ 
 has a minimum at 0, while $\R{D}_2f(0) = 0$ because $g_2$ has a maximum at 0. 
 Clearly $(0, 0)$ is neither a reletive maximum nor reletive minimum.
 
 \begin{figure}[!htb]
-    \centering
-    \includegraphics[width=.75\linewidth]{./pics/Fig2-2.pdf}
-    \caption{}
-    \label{Fig 2-2}
+  \centering
+  \includegraphics[width=.75\linewidth]{./pics/Fig2-2.pdf}
+  \caption{}
+  \label{Fig 2-2}
 \end{figure}
 
 If Theorem 2-6 is used to find the maximum or minimum of
@@ -108,7 +108,7 @@ be used.
             \item $f(x,y)=[\sin{(xy)}]^{\cos{3}}$
         \end{enumerate}\end{multicols}
         }
-    \problem{Find the partial derivatives of the following functions (where $g:\F{R}\to \F{R}$ is continuous):\vspace*{-1em}
+    \problem{Find the partial derivatives of the following functions (where $g\colon{}\F{R}\to \F{R}$ is continuous):\vspace*{-1em}
         \begin{multicols}{2}
         \begin{enumerate}[label={\upshape(\alph*)}]
             \item $\displaystyle f(x, y) = \int_{a}^{x+y}{g}$
@@ -135,33 +135,33 @@ be used.
             \item $f(x,y) =g(x+y)$
         \end{enumerate}\end{multicols}
         }
-    \problem[*]{Let $g_1,g_2:\F{R}^2\to \F{R}$ be conttinuous. Define $f:\F{R}^2\to \F{R}$ by 
+    \problem[*]{Let $g_1,g_2:\F{R}^2\to \F{R}$ be conttinuous. Define $f\colon{}\F{R}^2\to \F{R}$ by 
             \begin{align*}
                 f(x, y) = \int_{0}^{x }{g_1(t, 0)  \mathrm{d}t} + \int_{0}^{y}{g_2(x, t) \mathrm{d}t}
             \end{align*}
             \begin{enumerate}[label={\upshape(\alph*)}]
                 \item Show that $\R{D}_2f(x, y) = g_2(x, y)$.
                 \item How should $f$ be defined so that $\R{D}_1f(x, y) = g_1(x, y)$?
-                \item Find a function $f:\F{R}^2\to \F{R}$ such that $\R{D}_1f(x, y) = x$ and 
+                \item Find a function $f\colon{}\F{R}^2\to \F{R}$ such that $\R{D}_1f(x, y) = x$ and 
                     $\R{D}_2f(x, y)$ $=y$. Find one such that $\R{D}_1f(x, y) = y$ and $\R{D}_2f(x, y) = x$.
             \end{enumerate}
         }
-    \problem[*]{If $f:\F{R}^2\to \F{R}$ and $\R{D}_2f = 0$, show that $f$ is independent of the second variable.
+    \problem[*]{If $f\colon{}\F{R}^2\to \F{R}$ and $\R{D}_2f = 0$, show that $f$ is independent of the second variable.
         If $\R{D}_1f = \R{D}_2f = 0$, show that $f$ is constant.}
     \problem[*]{Let $A = \{(x, y)\in \F{R}^2: x<0,\text{ or } x\ge 0\text{ and } y\neq 0\}$.
             \begin{enumerate}[label={\upshape(\alph*)}]
-                \item If $f:A\to \F{R}$ and $\R{D}_af = \R{D}_2f = 0$, show that $f$ is constant 
+                \item If $f\colon{}A\to \F{R}$ and $\R{D}_af = \R{D}_2f = 0$, show that $f$ is constant 
                     \textit{Hint:} Note that any two points in $A$ can be connected by a sequence 
                     of lines each parallel to one of the axes.
-                \item Find a fucntion $f:A\to \F{R}$ such that $\R{D}_2f = 0$ but $f$ is not independent
+                \item Find a fucntion $f\colon{}A\to \F{R}$ such that $\R{D}_2f = 0$ but $f$ is not independent
                     of the second variable. 
             \end{enumerate}
         } 
-    \problem{Define $f:\F{R}^2\to \F{R}$ by 
+    \problem{Define $f\colon{}\F{R}^2\to \F{R}$ by 
             \begin{align*}
                 f(x, y) = \left\{\begin{aligned}
-                    & xy \cdot \frac{x^2 -y^2}{x^2 + y^2} && (x, y) \neq 0 \\
-                    & 0 && (x, y) = 0
+                    & xy \cdot \frac{x^2 -y^2}{x^2 + y^2} && (x, y) \neq 0, \\
+                    & 0 && (x, y) = 0.
                 \end{aligned}\right.
             \end{align*}
             \begin{enumerate}[label={\upshape(\alph*)}]
@@ -169,11 +169,11 @@ be used.
                 \item Show that $\R{D}_{1, 2}f(0, 0) \neq \R{D}_{2, 1}f(0, 0)$.
             \end{enumerate}
         }
-    \problem[*]{ Define $f:\F{R}\to \F{R}$ by 
+    \problem[*]{ Define $f\colon{}\F{R}\to \F{R}$ by 
             \begin{align*}
                 f(x, y) = \left\{\begin{aligned}
-                    & \mathrm{e}^{-x^{-2}} && x \neq 0 \\
-                    & 0 && x = 0
+                    & \mathrm{e}^{-x^{-2}} && x \neq 0, \\
+                    & 0 && x = 0.
                 \end{aligned}\right.
             \end{align*}
         Show that $f$ is a $C^\infty$ fucntion, and $f^{(i)}(0) = 0$ for all $i$. 
@@ -185,19 +185,19 @@ be used.
     \problem[*]{Let 
             \begin{align*}
                 f(x) = \left\{\begin{aligned}
-                    & \mathrm{e}^{-(x-1)^{-1}} \cdot \mathrm{e}^{-(x+1)^{-2}} && x\in (-1, 1) \\
-                    & 0 && x\notin (-1, 1)
+                    & \mathrm{e}^{-(x-1)^{-1}} \cdot \mathrm{e}^{-(x+1)^{-2}} && x\in (-1, 1), \\
+                    & 0 && x\notin (-1, 1).
                 \end{aligned}\right.
             \end{align*}
             \begin{enumerate}[label={\upshape(\alph*)}]
-                \item Show  that $f:\F{R}\to \F{R}^2$ is a $C^\infty$ function which is positive 
+                \item Show  that $f\colon{}\F{R}\to \F{R}^2$ is a $C^\infty$ function which is positive 
                     on $(-1, 1)$ and 0 else 0 elsewhere.
-                \item Show that there is a $C^\infty$ fucntion $g:\F{R}\to [0, 1]$ such that $g(x) = 0$ for $x<0$ and 
+                \item Show that there is a $C^\infty$ fucntion $g\colon{}\F{R}\to [0, 1]$ such that $g(x) = 0$ for $x<0$ and 
                     $g(x) = 1$ for $x\ge \varepsilon$. \textit{Hint:} If $f$ is a $C^\infty$ function which is positive
                     on $(0, \varepsilon)$ and 0 elsewhere, let $g(x) = \int_{0}^{x }{{f}\big/{\int_{0 }^{\varepsilon }{f }}}$.
-                \item If $a\in \F{R}^n$, define $g:\F{R}^n\to \F{R}$ by 
+                \item If $a\in \F{R}^n$, define $g\colon{}\F{R}^n\to \F{R}$ by 
                     \begin{align*}
-                        g(x) = f\left(\left[x^1,-a^1\right]/\varepsilon\cdot \cdots \cdot f\left[x^n - a^n\right]/\varepsilon\right)
+                        g(x) = f\left(\left[x^1,-a^1\right]/\varepsilon\cdot \cdots \cdot f\left[x^n - a^n\right]/\varepsilon\right).
                     \end{align*} 
                     Show that $g$ is a $C^\infty$ function which is positive on 
                     \begin{align*}
@@ -205,17 +205,17 @@ be used.
                     \end{align*}
                     and zero elsewhere
                 \item If $A\subset \F{R}^n$ is open and $C\subset A$ is compact, show that there is a 
-                    non-negative $C^\infty$ function $f:A\to \F{R}$ such that $f(x)>0$ for $x\in C$ anf $f(x) = 0$
+                    non-negative $C^\infty$ function $f\colon{}A\to \F{R}$ such that $f(x)>0$ for $x\in C$ anf $f(x) = 0$
                     outside of some closed set contained in $A$.
-                \item Show that we can choose such an $f$ so that $f:A\to [0, 1]$ and $f(x) = 1$ for $x\in C$. 
+                \item Show that we can choose such an $f$ so that $f\colon{}A\to [0, 1]$ and $f(x) = 1$ for $x\in C$. 
                     \textit{Hint:} If the function $f$ of (d) satisfies $f(x)\ge \varepsilon$ for $x\in C$, consider 
                     $g\circ f$, where $g$ is the function of (b).
             \end{enumerate}
         }
-    \problem{Define $g, h:\{x\in \F{R}^2: |x|\le 1\} \to \F{R}^2$ by 
+    \problem{Define $g, h\colon{}\{x\in \F{R}^2: |x|\le 1\} \to \F{R}^2$ by 
             \begin{align*}
-                & g(x, y) = \left(x, y, \sqrt{1-x^2-y^2}\right) \\
-                & h(x, y) = \left(x, y, -\sqrt{1-x^2-y^2}\right) 
+                & g(x, y) = \left(x, y, \sqrt{1-x^2-y^2}\right), \\
+                & h(x, y) = \left(x, y, -\sqrt{1-x^2-y^2}\right). 
             \end{align*}
             Show that the maximum of $f$ on $\{x\in \F{R}^2:|x|=1\}$ is either the 
             maximum of $f\circ g$ or the maximum of $f\circ h$ on $\{x\in \F{R}^2:|x|\le 1\}$.

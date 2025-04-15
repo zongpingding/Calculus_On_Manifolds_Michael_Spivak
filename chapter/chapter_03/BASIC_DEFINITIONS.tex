@@ -1,5 +1,5 @@
-\section{BASIC DEFINITIONS}
-The definition of the integral of a function $f: A\to \B{R}$, where $A\subset \B{R}^n$
+\section[\textsc{basic definitions}]{BASIC DEFINITIONS}
+The definition of the integral of a function $f\colon{} A\to \B{R}$, where $A\subset \B{R}^n$
 is a closed rectangle, is so similar to that of the ordinary integral that 
 a rapid treatment will be give.
 
@@ -17,11 +17,11 @@ $P=(P_1, \cdots, P_n)$ divides $[a_1, b_1]\times \cdots \times [a_n, b_n]$ into
 $N = N_1 \cdots N_n$ subintervals. These subintervals will be called 
 \textbf{subrectangles of the partition} $P$. 
 
-Suppose now that $A$ is a rectangle, $f: A\to \F{R}$ is a bounded function, and $P$ is a 
+Suppose now that $A$ is a rectangle, $f\colon{} A\to \F{R}$ is a bounded function, and $P$ is a 
 partition of $A$. For each subrectangle $S$ of the partition let
 \begin{align*}
     & {m}_S(f) = \inf \{f(x):x\in S\},\\
-    & {M}_S(f) = \sup \{f(x):x\in S\}
+    & {M}_S(f) = \sup \{f(x):x\in S\},
 \end{align*}
 
 and let $v(S)$ be the volume of $S$ (the \textbf{volume}\index{Volume} of a rectangle 
@@ -31,7 +31,7 @@ for $P$ are defined by
 \begin{align*}
     L(f, P) 
     = \sum_{S }^{}{m_S(f)\cdot v(S)} \text{ and } 
-    U(f, P) = \sum_{S}^{}{M_S(f)\cdot v(S)}
+    U(f, P) = \sum_{S}^{}{M_S(f)\cdot v(S)}.
 \end{align*}
 
 Clearly $L(f, P)\le U(f, P)$, and an even stronger assertion (\ref{corollary3-2})
@@ -41,11 +41,10 @@ is true.
     Suppose the partition $P'$ refines\index{Refine a partition} $P$ (that is, each subrectangle of $P'$
     is contained in a subrectangle of $P$). Then 
     \begin{align*}
-        L(f, P) \le L(f, P')
+        L(f, P) \le L(f, P') \quad\text{ and }\quad U(f, P') \le U(f, P).
     \end{align*}
     \label{lemma3-1}
 \end{lemma}
-
 \begin{proof}
     Each subrectangle $S$ of $P$ is divided into several subrectangles $S_1, \cdots, S_\alpha$ of 
     $P'$, so $v(S) = v(S_1) + \cdots +v(S_\alpha)$. Now $m_S(f)\le m_{S_i}(f)$, since the values 
@@ -73,20 +72,20 @@ is true.
     (For example, let $P'' = (P_1^{''}, \cdots, P_n^{''})$, where $P'$ is a 
     partition of $[a_i, b_i]$ which refines $P_i$ and $P_i'$). Then 
     \begin{align*}
-        L(f, P') \le L(f, P'') \le U(f, P'') \le U(f, P)
+        L(f, P') \le L(f, P'') \le U(f, P'') \le U(f, P).
     \end{align*}
 \end{proof}
 
 It follows from Corollary 3-2 that the least upper bound of
 all lower sums for $f$ is less than or equal to the greatest lower
-bound of all upper sums for $f$. A function $f:A \to \B{R}$ is called \textbf{integrable}\index{Integrable function}\index{Function!integrable} 
+bound of all upper sums for $f$. A function $f\colon{}A \to \B{R}$ is called \textbf{integrable}\index{Integrable function}\index{Function!integrable} 
 on the rectangle $A$ if $f$ is bounded and $\sup\{L(f,P)\} = \inf \{U(f, P)\}$. 
 This common number is then denoted $\int_{A }^{}{f}$, and called the \textbf{integral}\index{Integrable} of 
 $f$ over $A$. Often, the notation $\int_{A  }^{}{f(x^1, \cdots, x^n)  \;\mathrm{d}x^1\cdots \dd x^n}$ 
-is used. If $f:[a, b]\to \B{R}$, where $a\le b$, then $\int_{a  }^{b }{f} = \int_{[a, b ]}^{}{f}$.
+is used. If $f\colon{}[a, b]\to \B{R}$, where $a\le b$, then $\int_{a  }^{b }{f} = \int_{[a, b ]}^{}{f}$.
 A simple but useful criterion for integrability is provided by 
 \begin{theorem}
-    A bounded function $f:A\to \B{R}$ is integrable if and only if for every $\varepsilon>0$ 
+    A bounded function $f\colon{}A\to \B{R}$ is integrable if and only if for every $\varepsilon>0$ 
     there is a partition $P$ of $A$ such that $U(f, P) - L(f, P)< \varepsilon$.
 \end{theorem}
 
@@ -95,57 +94,56 @@ A simple but useful criterion for integrability is provided by
     $f$ is integrable. On the other hand, if $f$ is integrable, so that $\sup\{L(f,P)\} = \inf \{U(f, P)\}$,
     then for any $\varepsilon>0$ there are partitions $P$ and $P'$ with $U(f, P)-L(f,P)<\varepsilon$. If 
     $P''$ refines both $P$ and $P'$, it follows from Lemma \ref{lemma3-1} that $U(f, P'')-L(f, P'')
-    \le U(f, P)-L(f, P)<\varepsilon$
+    \le U(f, P)-L(f, P)<\varepsilon$.
 \end{proof}
 
 In the following sections we will characterize the integrable
 functions and discover a method of computing integrals.
 For the present we consider two functions, one integrable and one not.
 
-1. Let $f:A\to \B{R}$ be a constant function, $f(x)=c$. Then for any partition
-$P$ and subrectangl $S$ we have $m_S(f) = M_S(f) = c$, so that $L(f, P) = U(f, P)
-= \sum_{S}^{}{c\cdot v(S)} = c\cdot v(A)$. Hence $\int_{A  }^{}{f} = c\cdot v(A)$.
+\begin{enumerate}[label={\textup{\arabic*.\,}}]
+  \item Let $f\colon{}A\to \B{R}$ be a constant function, $f(x)=c$. Then for any partition
+    $P$ and subrectangl $S$ we have $m_S(f) = M_S(f) = c$, so that $L(f, P) = U(f, P)
+    = \sum_{S}^{}{c\cdot v(S)} = c\cdot v(A)$. Hence $\int_{A  }^{}{f} = c\cdot v(A)$.
+  \item Let $f\colon{}[0, 1]\times [0, 1]\to \B{R}$ be defined by 
+    \begin{align*}
+        f(x, y) =
+        \left\{\begin{aligned}
+            & 0, \text{ if $x$ is rational}, \\
+            & 1, \text{ if $x$ is irrational}. 
+        \end{aligned}\right.
+    \end{align*}
 
-2. Let $f:[0, 1]\times [0, 1]\to \B{R}$ be defined by 
-\begin{align*}
-    f(x, y) =
-    \left\{\begin{aligned}
-        & 0, \text{ if $x$ is rational} \\
-        & 1, \text{ if $x$ is irrational} 
-    \end{aligned}\right.
-\end{align*}
-
-If $P$ is a partition, then every subrectangle $S$ will be contain points
-$(x, y)$ with $x$ rational, and also points $(x, y)$ with $x$ irrational.
-Hence 
-\begin{align*}
-    L(f, P) = \sum_{S  }^{}{0\cdot v(S)} = 0
-\end{align*}
-
-and 
-\begin{align*}
-    U(f, P) = \sum_{S  }^{}{1\cdot v(S)} = v([0, 1]\times [0, 1]) = 1 
-\end{align*}
-
-Therefore $f$ is not integrable. 
+    If $P$ is a partition, then every subrectangle $S$ will be contain points
+    $(x, y)$ with $x$ rational, and also points $(x, y)$ with $x$ irrational.
+    Hence 
+    \begin{align*}
+        L(f, P) = \sum_{S  }^{}{0\cdot v(S)} = 0
+    \end{align*}
+    and 
+    \begin{align*}
+        U(f, P) = \sum_{S  }^{}{1\cdot v(S)} = v([0, 1]\times [0, 1]) = 1.
+    \end{align*}
+    Therefore $f$ is not integrable. 
+\end{enumerate}
 
 \begin{problems}
     \problem{
-        Let $f:[0,1]\times [0,1]\to \B{R}$ be defined by
+        Let $f\colon{}[0,1]\times [0,1]\to \B{R}$ be defined by
         \begin{align*}
             f(x, y) = 
             \left\{\begin{aligned}
-                & 0 && \text{ if } 0\le x< \frac12 \\
-                & 1 && \text{ if } \frac12\le x\le 1
+                & 0 && \text{ if } 0\le x< \frac12, \\
+                & 1 && \text{ if } \frac12\le x\le 1.
             \end{aligned}\right.
         \end{align*}
 
         Show that $f$ is integrable and $\int_{[0,1]\times [0,1]}^{}{f} = \frac12$.
     }
-    \problem{Let $f:A\to \B{R}$ be integrable and let $g=f$ except at finitely many points.
+    \problem{Let $f\colon{}A\to \B{R}$ be integrable and let $g=f$ except at finitely many points.
     Show that $g$ is integrable and $\int_{A }^{}{f} = \int_A g$.}
 
-    \problem{Let $f,g:A\to \B{R}$ be integrable. 
+    \problem{Let $f,g\colon{}A\to \B{R}$ be integrable. 
         \begin{enumerate}[label={\upshape(\alph*)}]
             \item For any partition $P$ of $A$ and subrectangle $S$, show that 
                 \begin{align*}
@@ -160,26 +158,26 @@ Therefore $f$ is not integrable.
         \end{enumerate}
     }
     \problem{
-        Let $f: A \to \B{R}$ and let $P$ be a partition of $A$. Show that $f$ is 
+        Let $f\colon{} A \to \B{R}$ and let $P$ be a partition of $A$. Show that $f$ is 
         integrable if and only if for each subrectangle $S$ the function $f|S$, which
         consists of $f$ restricted to $S$, is integrable, and that in this case
         $\int_A f = \sum_S\int_S f|S$.
     }
     \problem{
-        Let $f,g:A\to \B{R}$ be integrable and suppose $f\le g$. Show that 
+        Let $f,g\colon{}A\to \B{R}$ be integrable and suppose $f\le g$. Show that 
         $\int_A f\le \int_A g$. 
     }
     \problem{
-        If $f:A\to \B{R}$ is integrable, show that $|f|$ is integrable and 
+        If $f\colon{}A\to \B{R}$ is integrable, show that $|f|$ is integrable and 
         $|\int_A f|\le \int_A |f|$.
     }
     \problem{
-        Let $f:[0,1]\times [0,1]\to \B{R}$ be defined by 
+        Let $f\colon{}[0,1]\times [0,1]\to \B{R}$ be defined by 
         \begin{align*}
             f(x,y) = 
             \left\{\begin{aligned}
                 & 0 && x \text{ irrational },\\
-                & 0 && x \text{ rational and } y \text{ irrational }\\
+                & 0 && x \text{ rational and } y \text{ irrational },\\
                 & 1/q && x \text{ rational }, y=p/q \text{ in lowest terms }.
             \end{aligned}\right.
         \end{align*}

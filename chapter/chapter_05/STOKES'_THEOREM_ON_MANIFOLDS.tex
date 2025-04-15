@@ -1,14 +1,13 @@
 \clearpage
-\section{STOKES' THEOREM ON MANIFOLDS}
+\section[\textsc{stokes' theorem on manifolds}]{STOKES' THEOREM ON MANIFOLDS}
 If $\omega$ is a $p$-form on a $k$-dimensional manifold-with-boundary
 $M$ and $c$ is a singular $p$-cube in $M$, we define
 \begin{align*}
-    \int_c \omega = \int_{[0,1]^p} c^*\omega
+  \int_c \omega = \int_{[0,1]^p} c^*\omega
 \end{align*}
-
 precisely as before; integrals over $p$-chains are also defined as
 before. In the case $p = k$ it may happen that there is an
-open set $W\supset [0,1]^k$ and a coordinate system $f:W\to\F{R}^n$ such
+open set $W\supset [0,1]^k$ and a coordinate system $f\colon{}W\to\F{R}^n$ such
 that $c(x) = f(x)$ for $x\in [0,1]^k$; a $k$-cube in $M$ will always be
 understood to be of this type. If $M$ is oriented, the singular
 $k$-cube $c$ is called \textbf{orientation-preserving}\index{Orientation-preserving} if $f$ is.
@@ -19,7 +18,7 @@ $k$-cube $c$ is called \textbf{orientation-preserving}\index{Orientation-preserv
     oriented $k$-dimensional manifold $M$ and $\omega$ is a $k$-form on $M$ such 
     that $\omega= 0$ outside of $c_1([0,1]^k) \cap c_2([0,1]^k)$, then
     \begin{align*}
-        \int_{c_1}\omega = \int_{c_2} \omega
+      \int_{c_1}\omega = \int_{c_2} \omega.
     \end{align*}
 \end{theorem}
 
@@ -28,24 +27,22 @@ $k$-cube $c$ is called \textbf{orientation-preserving}\index{Orientation-preserv
     \begin{align*}
         \int_{c_1}\omega 
         = \int_{[0,1]^k} c_1^*(\omega) 
-        = \int_{[0,1]^k} (c_2^{-1}\circ c_1)^*c_2^*(\omega)
+        = \int_{[0,1]^k} (c_2^{-1}\circ c_1)^*c_2^*(\omega).
     \end{align*}
 
     (Here $c_2^{-1}\circ c_1$ is defined only on a subset of $[0,1]^k$ and the second equality depends on the 
     fact that $\omega=0$ outside of $c_1([0,1]^k)\cap c_2([0,1]^k)$.) It thereforw suffices to show that 
     \begin{align*}
-        \int_{[0,1]^k}(c_2^{-1}\circ c_1)^*c_2^*(\omega)=\int_{[0,1]^k}c_2^*(\omega)=\int_{c_2}\omega
+        \int_{[0,1]^k}(c_2^{-1}\circ c_1)^*c_2^*(\omega)=\int_{[0,1]^k}c_2^*(\omega)=\int_{c_2}\omega.
     \end{align*}
-
-    if $c_2^*(\omega) =d\dd x^1\wedge\cdots\wedge\dd x^k$ and $c_2^{-1}\circ c_1$ is denoted 
-    by $g$, then byy Theorem 4-9 we have 
+    if $c_2^*(\omega) =\dd x^1\wedge\cdots\wedge\dd x^k$ and $c_2^{-1}\circ c_1$ is denoted 
+    by $g$, then by Theorem 4-9 we have 
     \begin{align*}
         (c_2^{-1}\circ c_1)^*c_2^*(\omega)
         & = g^*(f\;\dd x^1\wedge\cdots\wedge \dd x^k) \\
         & = (f\circ g)\cdot\det g'\cdot \dd x^1\wedge\cdots\wedge \dd x^k\\
-        & = (f\circ g)\cdot\left|\det g'\right|\cdot \dd x^1\wedge\cdots\wedge \dd x^k
+        & = (f\circ g)\cdot\left|\det g'\right|\cdot \dd x^1\wedge\cdots\wedge \dd x^k,
     \end{align*}
-
     since $\det g'(c_2^{-1}\circ c_1)>0$. The result now follows from Theorem 3-13.
 \end{proof}
 
@@ -56,7 +53,7 @@ Let $\omega$ be a $k$-form on an oriented $k$-dimensional manifold $M$.
 If there is an orientation-preserving singular $k$-cube $c$ in $M$ such
 that $\omega=0$ outside of $c([0, 1]^k)$, we define
 \begin{align*}
-    \int_M\omega=\int_c\omega
+    \int_M\omega=\int_c\omega.
 \end{align*}
 
 Theorem 5-4 shows $\int_M \omega$ does not depend on the choice of $c$. Suppose 
@@ -81,7 +78,7 @@ the definition of $\partial\mu$ show, $c_{(k.O)}$ is orientation-preserving if $
 even, but not if $k$ is odd. Thus, if $\omega$ is a $(k-1)$-form on $M$ which is 0 outside 
 of $c_{([0,1]^k)}$, we have
 \begin{align*}
-    \int_{c(k,0)}\omega = (-1)^k\int_{\partial M}\omega
+  \int_{c(k,0)}\omega = (-1)^k\int_{\partial M}\omega. 
 \end{align*}
 
 On the other hand, $c_{(k,O)}$ appears with coefficient $(-1)^k$ in $\partial c$.
@@ -90,7 +87,7 @@ Therefore
     \int_{\partial c}\omega 
     = \int_{(-1)^{k}c_{(k,0)}}\omega
     = (-1)^{k} \int_{c_{(k,0)}}\omega
-    = \int_{\partial M}\omega
+    = \int_{\partial M}\omega.
 \end{align*}
 
 Our choice of $\partial \mu$ was made to eliminate any minus signs in this equation, and 
@@ -98,14 +95,13 @@ in the following theorem.
 \index{Integral!of a form on a manifold|)}
 
 \begin{theorem}[Stokes' Theorem]\index{Stokes' Theorem}
-    If $M$ s a compact oriented $k$-dimensional manifold-with-boundary and $\omega$ is a
-    $(k-1)$-form on $M$, then
-    \begin{align*}
-        \int_M\dd\omega = \int_{\partial M}\omega
-    \end{align*}
+  If $M$ s a compact oriented $k$-dimensional manifold-with-boundary and $\omega$ is a
+  $(k-1)$-form on $M$, then
+  \begin{align*}
+    \int_M\dd\omega = \int_{\partial M}\omega.
+  \end{align*}
+  \textup{(Here $\partial M$ is given the induced orientation.)}
 \end{theorem}
-
-(Here $\partial M$ is given the induced orientation.)
 
 
 \begin{proof}
@@ -116,17 +112,15 @@ in the following theorem.
         = \int_{[0,1]^k}c^*(\dd\omega)
         = \int_{[0,1]^k}\;\dd(c^*\omega)
         = \int_{\partial I^k}c^*\omega
-        = \int_{\partial c}\omega       
+        = \int_{\partial c}\omega.    
     \end{align*} 
-
     Then 
     \begin{align*}
         \int_M\;\dd\omega
         = \int_c\;\dd\omega
         = \int_{\partial c}\omega
-        = 0        
+        = 0 , 
     \end{align*}
-
     since $\omega=0$ on $\partial c$. On the other hand, $\int_{\partial M}\omega =0$ since 
     $\omega=0$ on $\partial M$.
 
@@ -136,7 +130,7 @@ in the following theorem.
         \int_{{M}}\;\dd\omega
         = \int_{{c}}\;\dd\omega
         = \int_{{\partial c}}\omega
-        = \int_{{\partial M}}\omega        
+        = \int_{{\partial M}}\omega .      
     \end{align*}
 
     Now consider the general case. There is an open cover $\C{O}$ of $M$ and a partition of unity
@@ -144,12 +138,11 @@ in the following theorem.
     is of one of the two sorts already considered. We have 
     \begin{align*}
         0 = \dd(1) = \dd\bigg(\sum_{\varphi\in\Phi}\varphi\bigg)
-        = \sum_{\varphi\in\Phi}\;\dd\varphi
+        = \sum_{\varphi\in\Phi}\;\dd\varphi,
     \end{align*}
-
     so that 
     \begin{align*}
-        \sum_{\varphi\in\phi}^{}{\int_M \;\dd\varphi\wedge\omega} = 0
+      \sum_{\varphi\in\phi}^{}{\int_M \;\dd\varphi\wedge\omega} = 0.
     \end{align*}
 
     Therefore 
@@ -159,7 +152,7 @@ in the following theorem.
             = \sum_{\varphi\in\Phi}\int_M\;\dd\varphi\wedge\omega+\varphi\cdot \dd\omega \\
         & = \sum_{\varphi\in\Phi}\int_M\;\dd(\varphi\cdot\omega)
             = \sum_{\varphi\in\Phi}\int_M\varphi\cdot\omega  \\
-        & = \int_{\partial M}\omega
+        & = \int_{\partial M}\omega.
     \end{align*}
 \end{proof}
 
@@ -192,9 +185,8 @@ in the following theorem.
         If $M_1\subset\F{R}^n$ is an $n$-dimensional manifold-with-boundary and $M_2\subset M_1-\partial M_1$ 
         is an $n$-dimensional manifold-with-boundary, and $M_1,M_2$ are compact, prove that 
         \begin{align*}
-            \int_{\partial M_1}\omega=\int_{\partial M_2}\omega
+          \int_{\partial M_1}\omega=\int_{\partial M_2}\omega,
         \end{align*}
-
         where $\omega$ is an $(n-1)$-form on $M_1$, and $\partial M_1$ and $\partial M_2$ 
         have the orientations induced by the usual orientations of $M_1$ and $M_2$. 
         \textit{Hint:} Find a manifold-with-boundary $M$ such that $\partial M=\partial M_1\cup \partial M_2$ 

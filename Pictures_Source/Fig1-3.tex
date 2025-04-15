@@ -1,10 +1,4 @@
-% 生成最终的图象时把第一个文档类取消注释即可
 \documentclass[10pt,varwidth]{standalone}
-% \documentclass[12pt]{article}
-% 1.必须添加varwidth选项，不然就会报错
-\PassOptionsToPackage{quiet}{fontspec}
-\usepackage{ctex}
-% 必须要保证绘图的纸张足够的大
 \usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
 \usepackage{xifthen}
 \usepackage{xfp}
@@ -30,7 +24,7 @@
 
 
 \begin{document}
-\begin{tikzpicture}
+\begin{tikzpicture}[font=\Large]
     \draw[thick] (-16em, 0) -- (16em, 0);
     \node[below] at (6em, 0) {$x'$}; 
     \node[below] at (12em, 0) {$b$}; 

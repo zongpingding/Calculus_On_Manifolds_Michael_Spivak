@@ -1,5 +1,5 @@
 \clearpage
-\section{THE VOLUME ELEMENT}
+\section[\textsc{the volume element}]{THE VOLUME ELEMENT}
 Let $M$ be a $k$-dimensional manifold (or manifold-with-boundary) in $\F{R}^n$, 
 with an orientation $\mu$. If $x\in M$, then $\mu_x$ and the inner product $T_x$ we defined 
 previously determine a volume element $\omega(x) \in \Lambda^k(M_x)$. We therefore obtain a 
@@ -15,40 +15,37 @@ A concrete case of interest to us is the volume element of an oriented \textbf{s
 (two-dimensional manifold) $M$ in $\F{R}^3$. Let $n(x)$ be the unit outward normal at
 $x\in M$. If $\omega\in \Lambda^2(M_x)$ is defined by 
 \begin{align*}
-    \omega(v, w) = \det \begin{pmatrix}v\\ w\\ n(x)\end{pmatrix}
+  \omega(v, w) = \det \begin{pmatrix}v\\ w\\ n(x)\end{pmatrix},
 \end{align*} 
 
 then $\omega(v,w)=1$ if $v$ and $w$ are an orthonomal basis of $M_x$ with $[v, w]=\mu_x$. 
 Thus $\dd A=\omega$. On the other hand, $\omega(v, w)=\langle v\times w, n(x)\rangle$ by definition
 of $v\times w$. Thus we have 
 \begin{align*}
-    \dd A(v, w) = \langle v\times w, n(x)\rangle
+    \dd A(v, w) = \langle v\times w, n(x)\rangle.
 \end{align*}
 
 Since $v\times w$ is a multiple of $n(x)$ for $v,w\in M_x$, we conclude that 
 \begin{align*}
-    \dd A(v, w) = |v\times w|
+  \dd A(v, w) = |v\times w|
 \end{align*} 
-
 if $[v, w]=\mu_x$. If we wish to compute area of $M$, we must evaluate $\int_{[0,1]^2} c^*(\dd A)$ for 
 orientation-preserving singular 2-cubes. Define 
 \begin{align*}
-    & E(a) = [\R{D}_1c^1(a)]^2 + [\R{D}_1c^2(a)]^2 + [\R{D}_1c^3(a)]^2\\
-    & F(a) = [\R{D}_1c^1(a)]\cdot[\R{D}_2c^1(a)] \\
-    & \hspace*{2.2em} + [\R{D}_1c^2(a)]\cdot[\R{D}_2c^2(a)] + [\R{D}_1c^3(a)]\cdot[\R{D}_2c^3(a)]\\
-    & G(a) = [\R{D}_2c^1(a)]^2 + [\R{D}_2c^2(a)]^2 + [\R{D}_2c^3(a)]^2
+  & E(a) = [\R{D}_1c^1(a)]^2 + [\R{D}_1c^2(a)]^2 + [\R{D}_1c^3(a)]^2,\\
+  & F(a) = [\R{D}_1c^1(a)]\cdot[\R{D}_2c^1(a)], \\
+  & \hspace*{2.2em} + [\R{D}_1c^2(a)]\cdot[\R{D}_2c^2(a)] + [\R{D}_1c^3(a)]\cdot[\R{D}_2c^3(a)],\\
+  & G(a) = [\R{D}_2c^1(a)]^2 + [\R{D}_2c^2(a)]^2 + [\R{D}_2c^3(a)]^2.
 \end{align*}
-
 Then 
 \begin{align*}
-    & c^*(\dd A)((e_1)_a, (e_2)_a) = \dd A(c_*(e_1)_a, c_*(e_2)_a) \\
-    & = |(\R{D}_1c^1(a), \R{D}_1c^2(a), \R{D}_1c^3(a)) \times (\R{D}_2c^1(a), \R{D}_2c^2(a), \R{D}_2c^3(a))| \\
-    & = \sqrt{E(a)G(a) - F(a)^2}
+  & c^*(\dd A)((e_1)_a, (e_2)_a) = \dd A(c_*(e_1)_a, c_*(e_2)_a) \\
+  & = |(\R{D}_1c^1(a), \R{D}_1c^2(a), \R{D}_1c^3(a)) \times (\R{D}_2c^1(a), \R{D}_2c^2(a), \R{D}_2c^3(a))| \\
+  & = \sqrt{E(a)G(a) - F(a)^2}
 \end{align*}
-
 by Problem 4-9. Thus 
 \begin{align*}
-    \int_{[0,1]^2} c^*(\dd A) = \int_{[0,1]^2} \sqrt{EG-F^2}
+  \int_{[0,1]^2} c^*(\dd A) = \int_{[0,1]^2} \sqrt{EG-F^2}.
 \end{align*}
 
 Calculating surface area is clearly a foolhardy enterprise;
@@ -57,40 +54,40 @@ Moreover, there is a simple expression for $\dd A$ which suffices for
 theoretical considerations.
 
 \begin{theorem}
-    Let $M$ be an oriented two-dimensional manifold (or manifold-with-boundary) in $\F{R}^3$ 
-    and let n be the unit outward normal. Then
-    \begin{align}
-        \dd A=n^1\dd y\wedge\dd z+n^2\dd z\wedge\dd x+n^3\dd x\wedge\dd y.
-    \end{align}
+  Let $M$ be an oriented two-dimensional manifold (or manifold-with-boundary) in $\F{R}^3$ 
+  and let n be the unit outward normal. Then
+  \begin{align}
+    \dd A=n^1\dd y\wedge\dd z+n^2\dd z\wedge\dd x+n^3\dd x\wedge\dd y.
+  \end{align}
 
-    Moreover 
-    \begin{align}
-        n^1\dd A & = \dd y\wedge \dd z\\
-        n^2\dd A & = \dd z\wedge \dd x\\
-        n^3\dd A & = \dd x\wedge \dd y
-    \end{align}
+  Moreover 
+  \begin{align}
+    n^1\dd A & = \dd y\wedge \dd z.\\
+    n^2\dd A & = \dd z\wedge \dd x.\\
+    n^3\dd A & = \dd x\wedge \dd y.
+  \end{align}
 \end{theorem}
 
 \begin{proof}
-    Equation (1) is equivalent to the equation
-    \begin{align*}
-        \dd A(v, w) = \det 
-        \begin{pmatrix}
-            v\\ w\\ n(x)
-        \end{pmatrix}
-    \end{align*}
+  Equation (1) is equivalent to the equation
+  \begin{align*}
+    \dd A(v, w) = \det 
+    \begin{pmatrix}
+        v\\ w\\ n(x)
+    \end{pmatrix}.
+  \end{align*}
 
-    This is seen by expanding the determinant by minors along the bottom row.
-    To prove the other equations, let $z\in\F{R}^3_x$. Since $v\times w=\alpha n(x)$ for some 
-    $\alpha\in\F{R}$, we have 
-    \begin{align*}
-        \langle z, n(x)\rangle\cdot \langle v\times w, n(x)\rangle
-        & = \langle z, n(x)\rangle\alpha 
-        & = \langle z, \alpha n(x)\rangle
-        & = \langle z, v\times w\rangle
-    \end{align*}
+  This is seen by expanding the determinant by minors along the bottom row.
+  To prove the other equations, let $z\in\F{R}^3_x$. Since $v\times w=\alpha n(x)$ for some 
+  $\alpha\in\F{R}$, we have 
+  \begin{align*}
+    \langle z, n(x)\rangle\cdot \langle v\times w, n(x)\rangle
+    & = \langle z, n(x)\rangle\alpha 
+    & = \langle z, \alpha n(x)\rangle
+    & = \langle z, v\times w\rangle.
+  \end{align*}
 
-    Choosing $z=e_1, e_2$, and $e_3$ we obtain (2), (3), and (4).
+  Choosing $z=e_1, e_2$, and $e_3$ we obtain (2), (3), and (4).
 \end{proof}
 
 
@@ -99,12 +96,11 @@ A word of caution: if $\omega\in \Lambda^2(\F{R}^3_a)$ is defined by
     \omega
     = n^1(a)\cdot \dd y(a)\wedge\dd z(a)
     + n^{2}(a)\cdot\dd z(a)\wedge\dd x(a)
-    + n^{3}(a)\cdot\dd x(a)\wedge\dd y(a)
+    + n^{3}(a)\cdot\dd x(a)\wedge\dd y(a),
 \end{align*}
-
 it is not true, for example, that
 \begin{align*}
-    n^1(a)\cdot\omega = \dd y(a)\wedge\dd z(a)
+    n^1(a)\cdot\omega = \dd y(a)\wedge\dd z(a).
 \end{align*}
 
 \begin{figure}[!htb]
@@ -140,7 +136,7 @@ reader is referred to References \cite{cesari1956surface} or \cite{rad61948lengt
         orientation-preserving, show that
         \begin{align*}
             \int_{[0,1]}c^*(\dd s)
-            = \int_{[0,1]}\sqrt{[(c^1)']^2 + \cdots + [(c^n)']^2}
+            = \int_{[0,1]}\sqrt{[(c^1)']^2 + \cdots + [(c^n)']^2}.
         \end{align*}
     }
     \problem{
@@ -154,11 +150,11 @@ reader is referred to References \cite{cesari1956surface} or \cite{rad61948lengt
     }
     \problem{
         \begin{enumerate}[label=(\alph*)]
-            \item If $f: [a,b]\to \F{R}$ is non-negative and the graph of $f$ in the
+            \item If $f\colon{} [a,b]\to \F{R}$ is non-negative and the graph of $f$ in the
                 $xy$-plane is revolved around the $x$-axis in $\F{R}^3$ to yield a surface $M$,
                 show that the area of $M$ is
                 \begin{align*}
-                    \int_a^b 2\pi f\sqrt{1+(f')^2}
+                    \int_a^b 2\pi f\sqrt{1+(f')^2}.
                 \end{align*}
             \item Compute the area of $S^2$.
         \end{enumerate}
@@ -178,11 +174,11 @@ reader is referred to References \cite{cesari1956surface} or \cite{rad61948lengt
         \end{enumerate}
     }
     \problem{
-        If there is a nowhere-zero $k$-form on a $k$-dimensional manifold $M$, show that $M$ is orientable.
+      If there is a nowhere-zero $k$-form on a $k$-dimensional manifold $M$, show that $M$ is orientable.
     }
     \problem{
         \begin{enumerate}[label=(\alph*)]
-            \item If $f:[0,1]\to \F{R}$ is differentiable and $c:[0,1]\to \F{R}^2$ is defined
+            \item If $f\colon{}[0,1]\to \F{R}$ is differentiable and $c:[0,1]\to \F{R}^2$ is defined
                 by $c(x)=(x, f(x))$, show that $c([0,1])$ has length $\int_{[0,1]}\sqrt{1+(f')^2}$.
             \item Show that this lenght is the least upper bound of lengths of inscribed lines. \textit{Hint:}
                 If $0=t_0\le t_1\le\cdots\le t_n=1$, then 
@@ -191,22 +187,20 @@ reader is referred to References \cite{cesari1956surface} or \cite{rad61948lengt
                     & = \sqrt{\left(t_i-t_{i-1}\right)^2+\left(f(t_i)-f(t_{i-1})\right)^2} \\
                     & = \sqrt{\left(t_i-t_{i-1}\right)^2+f'(s_i)^2\left(t_i - t_{i-1}\right)^2}
                 \end{align*}
-
                 for some $s_i\in [t_{i-1}, t_i]$.
         \end{enumerate}
     }
     \problem{
         Consider the 2-form $\omega$ defined on $\F{R}^3-\{0\}$ by
         \begin{align*}
-            \omega=\frac{x\dd y\wedge\dd z+y\dd z\wedge\dd x+z\dd x\wedge\dd y}{(x^2+y^2+z^2)^{\frac32}} 
+            \omega=\frac{x\,\dd y\wedge\dd z+y\,\dd z\wedge\dd x+z\,\dd x\wedge\dd y}{(x^2+y^2+z^2)^{\frac32}}.
         \end{align*}
         \begin{enumerate}[label=(\alph*)]
             \item Show that $\omega$ is closed.
             \item Show that 
                 \begin{align*}
-                    \omega(p)(v_p, w_p) = \frac{\langle v\times w, p\rangle}{|p|^3}
+                    \omega(p)(v_p, w_p) = \frac{\langle v\times w, p\rangle}{|p|^3}.
                 \end{align*}
-
                 For $r>0$ let $S^2(r)=\{x\in\F{R}^3:|x|=r\}$. Show that $\omega$ restricted to the  
                 tangent space of $S^2(r)$ is $1/r^2$ times the volume element, and that $\int_{S^2(r)}\omega=4\pi$.
                 Conclude that $\omega$ is not exact. Nevertheless we denoted $\omega$ by $\dd\Theta$ since, as we 
@@ -218,7 +212,7 @@ reader is referred to References \cite{cesari1956surface} or \cite{rad61948lengt
             \item Let $M\subset\F{R}^3-\{0\}$ be a compact two-dimensional manifold-with-boundary 
                 such that every ray through 0 intersects Mat most once (Figure 5-10).
                 The union of those rays through 0 which intersect $M$, is a solid cone $C(M)$. 
-                The \textbf{solid angle}\index{Solid angle}\Index{Angle!solid} subtended by $M$ is defined as the area of $C(M)\cap S^2$, or 
+                The \textbf{solid angle}\index{Solid angle}\index{Angle!solid} subtended by $M$ is defined as the area of $C(M)\cap S^2$, or 
                 equivalently as $1/r^2$ times the area of $C(M)\cap S^2(r)$ for $r > 0$.
                 Prove that the solid angle subtended by $M$ is $|\int_M\dd\Theta|$.
                 \textit{Hint}: Choose $r$ small enough so that there is a three-dimensional 
@@ -233,28 +227,33 @@ reader is referred to References \cite{cesari1956surface} or \cite{rad61948lengt
                 %     \label{Fig 5-10}
                 % \end{figure}
         \end{enumerate}
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=.65\linewidth]{./pics/Fig5-10.pdf}
+          \caption{}
+          \label{Fig 5-10}
+      \end{figure}
     }
     \problem{
-        Let $f,g:[0,1]\to\F{R}^3$ be the nonintersecting closed curves. Define the \textbf{linking number}\index{Linking number} 
+        Let $f,g\colon{}[0,1]\to\F{R}^3$ be the nonintersecting closed curves. Define the \textbf{linking number}\index{Linking number} 
         $l(f,g)$ of $f$ and $g$ be (cf Problem 4-34)
         \begin{align*}
-            l(f,g) = \frac{-1}{4\pi}\int_{c_{f,g}}\dd\Theta
+            l(f,g) = \frac{-1}{4\pi}\int_{c_{f,g}}\dd\Theta.
         \end{align*}
         \begin{enumerate}[label=(\alph*)]
             \item Show that if $(F,G)$ is a homotopy of nonintersecting closed curves, then 
                 $l(F_0,G_0) = l(F_1,G_1)$.
             \item If $r(u,v)=|f(u)-g(v)|$ show that 
                 \begin{align*}
-                    l(f,g)=\frac{-1}{4\pi}\int_{0}^{1}\int_{0}^{1}\frac{1}{[r(u,v)]^3}\cdot A\left(u,v\right)\;\dd u\dd v
+                  l(f,g)=\frac{-1}{4\pi}\int_{0}^{1}\int_{0}^{1}\frac{1}{[r(u,v)]^3}\cdot A\left(u,v\right)\;\dd u\dd v
                 \end{align*}
-
                 where 
                 \begin{align*}
                     A(u,v)=\det
                     \begin{pmatrix}
                         (f^1)^{\prime}(u)&(f^2)^{\prime}(u)&(f^3)^{\prime}(u)\\
                         (g^1)^{\prime}(v)&(g^2)^{\prime}(v)&(g^3)^{\prime}(v)\\
-                        f^1(u)-g^1(v)&f^2(u)-g^2(v)&f^3(u)-g^3(v)
+                        f^1(u)-g^1(v)&f^2(u)-g^2(v)&f^3(u)-g^3(v).
                     \end{pmatrix}.
                 \end{align*}
             \item Show that $l(f,g) = 0$ if $f$ and $g$ both lie in the $xy$-plane.
@@ -268,15 +267,13 @@ reader is referred to References \cite{cesari1956surface} or \cite{rad61948lengt
         \begin{enumerate}[label=(\alph*)]
             \item If $(a,b,c)\in\F{R}^3$ define 
                 \begin{align*}
-                    \dd\Theta_{(a,b,c)}=\frac{(x-a)\dd y\wedge\dd z+(y-b)\dd z\wedge\dd x+(z-c)\dd x\wedge\dd y}{[(x-a)^2+(y-b)^2+(z-c)^2]^\frac32}
+                  \dd\Theta_{(a,b,c)}=\frac{(x-a)\,\dd y\wedge\dd z+(y-b)\,\dd z\wedge\dd x+(z-c)\,\dd x\wedge\dd y}{[(x-a)^2+(y-b)^2+(z-c)^2]^\frac32}.
                 \end{align*}
-
                 If $M$ is a compact two-dimensional manifold-with-boundary in $\F{R}^3$ and $(a,b,c)\notin M$ 
                 define
                 \begin{align*}
-                    \Omega(a,b,c)=\int_{M}\;\dd\Theta_{(a,b,c)}.
+                  \Omega(a,b,c)=\int_{M}\;\dd\Theta_{(a,b,c)}.
                 \end{align*}
-
                 Let $(a',b',c')$ be a point on the same side of $M$ as the outward normal and $(a',b'c')$
                 a point on the oppsite side. Show that by choosing $(a,b,c)$ sufficently close to $(a'.b',c')$ we can 
                 make $\Omega(a,b,c)-\Omega(a',b',c')$ as close to $-4\pi$ as desired. \textit{Hint:} First 
@@ -289,15 +286,14 @@ reader is referred to References \cite{cesari1956surface} or \cite{rad61948lengt
                 Let $n^+$ be the number of intersections where $v$ points in the same direction as 
                 the outward normal and $n^-$ the number of other intersections. If $n=n^+ - n^-$ show that
                 \begin{align*}
-                    n=\frac{-1}{4\pi}\int_{g}\;\dd\Omega
+                  n=\frac{-1}{4\pi}\int_{g}\;\dd\Omega.
                 \end{align*}
             \item Prove that 
                 \begin{align*}
-                    \R{D}_{1}\Omega(a,b,c) & = \int_{f}\frac{(y-b)\dd z-(z-c)\dd y}{r^{3}} \\
-                    \R{D}_{2}\Omega(a,b,c) & = \int_{f}\frac{(z-c)\dd x-(x-a)\dd z}{r^{3}} \\
-                    \R{D}_{3}\Omega(a,b,c) & = \int_{f}\frac{(x-a)\dd y-(y-b)\dd x}{r^{3}}
+                  \R{D}_{1}\Omega(a,b,c) & = \int_{f}\frac{(y-b)\dd z-(z-c)\dd y}{r^{3}} \\
+                  \R{D}_{2}\Omega(a,b,c) & = \int_{f}\frac{(z-c)\dd x-(x-a)\dd z}{r^{3}} \\
+                  \R{D}_{3}\Omega(a,b,c) & = \int_{f}\frac{(x-a)\dd y-(y-b)\dd x}{r^{3}},
                 \end{align*}
-
                 where $r(x,y,z)=|(x,y,z)|$.
             \item Show that the integer $n$ of (b) equals the integral of Problem 5-32(b), 
                 and use this result to show that $l(j,g) = 1$ if $f$ and $g$ are the curves 
@@ -305,12 +301,6 @@ reader is referred to References \cite{cesari1956surface} or \cite{rad61948lengt
                 (These results were known to Gauss\index{Gauss} \cite{gaussNachlass}. The proofs outlined here 
                 are from \cite{courant1937differential} pp. 409-411; see also \cite{maxwell1954electricity}, 
                 Volume 2, pp. 41-43.)
-                \begin{figure}[H]
-                    \centering
-                    \includegraphics[width=.65\linewidth]{./pics/Fig5-10.pdf}
-                    \caption{}
-                    \label{Fig 5-10}
-                \end{figure}
         \end{enumerate}
     }
 \end{problems}

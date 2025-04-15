@@ -1,7 +1,7 @@
 \clearpage
-\section{SUBSETS OF EUCLIDEAN SPACE}
+\section[\textsc{subset of euclidean space}]{SUBSETS OF EUCLIDEAN SPACE}
 The closed interval $[a,b]$ has a natural analogue in $\F{R}^2$. 
-This is the \textbf{closed rectangle}\Index{Close set}\index{Rectangle (closed or open)} $[a,b]\times [c,d]$, 
+This is the \textbf{closed rectangle}\index{Rectangle (closed or open)} $[a,b]\times [c,d]$, 
 defined as the collection of all pairs $(x,y)$ with $x\in [ a, b] $ and $y\in [c, d]$.
 More generally, if $A\subset\F{R}^m$ and $B\subset\F{R}^n$, 
 then $A\times B\subset\F{R}^{m+n}$ is defined as the set of all  
@@ -14,10 +14,10 @@ convention is extended to the product of any number of sets.
 The set $[a_1, b_1]\times \cdots \times [a_n,b_n]\subset \F{R}^n$ 
 is called a \textbf{closed rectangle}\index{Closed rectangle} in $\F{R}^n$, while the set 
 $(a_1, b_1)\times \cdots \times (a_n,b_n)\subset \F{R}^n$
-is called $open$(\figref{Fig 1-1})\index{Open set} if for each $x\in U$ there is an open 
-rectangle $A$ such that $x\in A\subset U$.
+is called \textbf{open rectangle}. More generally a set $U\in\mathbb{R}^n$ is called open (\figref{Fig 1-1})\index{Open set} 
+if for each $x\in U$ there is an open rectangle $A$ such that $x\in A\subset U$.
 
-A subset $C$ of $\F{R}^n$ is $closed$ if $\F{R}^n - C$ is open.
+A subset $C$ of $\F{R}^n$ is \textbf{closed}\index{Close set} if $\F{R}^n - C$ is open.
 For example, if $C$ contains only finitely many points, then $C$ is 
 closed.
 
@@ -33,7 +33,7 @@ $\F{R}^n$ is indeed a closed set.
 
 If $A\subset \F{R}^n$ and $x\in \F{R}^n$, then one of three possibilities must
 hold (\figref{Fig 1-2}):
-\begin{enumerate}[label={\upshape(\arabic*)}]
+\begin{enumerate}[label={\arabic*.\,}]
     \item There is an open rectangle $B$ such that $x\in B\subset A$
     \item There is an open rectangle $B$ such that $x \in B \subset C \subset \F{R}^n-A$.
     \item If $B$ is any open rectangle with $x\in B$, then $B$ contains points of both $A$ and $\F{R}^n-A$
@@ -85,7 +85,7 @@ results, of which only the first has any depth (i.e., uses any
 facts about the real numbers).
 
 \begin{theorem}[Heine-Borel]
-    The closed interval $[a,b]$ is compact.
+  The closed interval $[a,b]$ is compact.
 \end{theorem}
 
 \begin{proof}
@@ -165,7 +165,7 @@ $\{x\} \times B \subset \F{R}^{m+n}$ is compact.However, a much stronger asserti
 \end{corollary}
 
 \begin{corollary}
-    A closed bounded subset of $\F{R}^n$ is compact. (The converse is also true (Problem 1-20).)
+    A closed bounded subset of $\F{R}^n$ is compact. \textup{(The converse is also true (Problem 1-20).)}
 \end{corollary}
 
 \begin{proof}

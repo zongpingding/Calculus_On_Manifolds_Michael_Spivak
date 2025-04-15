@@ -1,9 +1,9 @@
 \clearpage
-\section{GEOMETRIC PRELIMINARIES}
+\section[\textsc{geometric preliminaries}]{GEOMETRIC PRELIMINARIES}
 A \textbf{singular $n$-cube}\index{Cube!singular}\index{Singular $n$-cube} in $A\subset \F{R}^n$ is a continuous function 
 $c:[0,1]^n\to A$ (here $[0,1]^n$ denotes the $n$-fold product $[0, 1]\times\cdots\times[0,1]$).
 We let $\F{R}^0$ and $[0,1]^0$ both denote $\{0\}$. A singular
-0-cube in $A$ is then a function $f:\{0\}\to A$ or, what amounts to
+0-cube in $A$ is then a function $f\colon{}\{0\}\to A$ or, what amounts to
 the same thing, a point in $A$. A singular 1-cube is often
 called a curve. A particularly simple, but particularly
 important example of a singular $n$-cube in $\F{R}^n$ is the \textbf{standard $n$-cube}\index{Standard $n$-cube}\index{Cube!standard $n$ cube} 
@@ -12,7 +12,7 @@ $I^n:[0,1]^n\to\F{R}^n$ defined by $I^n(x) = x$ for $x\in[0,1]^n$.
 We shall need to consider formal sums of singular $n$-cubes in
 $A$ multiplied by integers, that is, expressions like
 \begin{align*}
-    2c_1 + 3c_2 - 4c_3
+    2c_1 + 3c_2 - 4c_3,
 \end{align*}
 
 where $c_1,c_2,c_3$ are singular $n$-cubes in $A$. Such a finite sum of singular 
@@ -20,7 +20,7 @@ $n$-cubes with integer coefficients is called an \textbf{$n$-chain}\index{Chain}
 a singular $n$-cube $c$ is also considered as an $n$-chain $1\cdot c$. It is clear how 
 $n$-chain can be added, and multiplied by integers. For example 
 \begin{align*}
-    2(c_1+3c_4) + (-2)(c_1+c_3+c_2) = - 2c_2 - 2c_3 + 6c_4
+    2(c_1+3c_4) + (-2)(c_1+c_3+c_2) = - 2c_2 - 2c_3 + 6c_4.
 \end{align*}
 
 (A rigorous exposition of this formalism is presented in Problem 4-22.)
@@ -35,10 +35,10 @@ two singular $(n-1)$-cubes $I^n_{(i,0)}$ and $l^n_{(i,l)}$ as follows. If $x\in[
 \begin{align*}
     I^n_{(i,0)}(x) 
     & = I^n(x^1,\cdots,x^{i-1},0,x^i,\cdots,x^{n-1}) \\
-    & = (x^1,\cdots,x^{i-1},0,x^i,\cdots,x^{n-1})\\
+    & = (x^1,\cdots,x^{i-1},0,x^i,\cdots,x^{n-1}),\\
     I^n_{(i,1)}(x)
     & = I^n(x^1,\cdots,x^{i-1},1,x^i,\cdots,x^{n-1}) \\
-    & = (x^1,\cdots,x^{i-1},1,x^i,\cdots,x^{n-1})
+    & = (x^1,\cdots,x^{i-1},1,x^i,\cdots,x^{n-1}).
 \end{align*}
 
 \begin{figure}[!htb]
@@ -51,7 +51,7 @@ two singular $(n-1)$-cubes $I^n_{(i,0)}$ and $l^n_{(i,l)}$ as follows. If $x\in[
 We call $I^n_{(i,0)}$ the $(i,0)$-\textbf{face}\index{Faces of a singular cube} of $I^n$ and $I^n_{(i,1)}$ the $(i,1)$-\textbf{face} of $I^n$.
 (Figure \ref{Fig 4-5}). We then define 
 \begin{align*}
-    \partial I^n = \sum_{i=1}^n \sum_{\alpha=0,1}(-1)^{i+\alpha}I^n_{(i,\alpha)}
+    \partial I^n = \sum_{i=1}^n \sum_{\alpha=0,1}(-1)^{i+\alpha}I^n_{(i,\alpha)}.
 \end{align*}
 
 For a general singular $n$-cube $c:[0,1]^n\to A$ we first define the $(i,\alpha)$-face,
@@ -61,12 +61,12 @@ For a general singular $n$-cube $c:[0,1]^n\to A$ we first define the $(i,\alpha)
 
 and then define 
 \begin{align*}
-    \partial c = \sum_{i=1}^n \sum_{\alpha=0,1}(-1)^{i+\alpha}c_{(i,\alpha)}
+  \partial c = \sum_{i=1}^n \sum_{\alpha=0,1}(-1)^{i+\alpha}c_{(i,\alpha)}.
 \end{align*}
 
-Finally we define the boundary\index{Boundary!of a chain} of an $n$-chain $\sum_{}^{}{a_ic_i}$ by 
+Finally we define the boundary\index{Boundary!of a chain} of an $n$-chain $\Sigma_{}^{}{a_ic_i}$ by 
 \begin{align*}
-    \partial \sum_{}^{}{a_ic_i} = \sum_{}^{}{a_i\partial c_i}
+  \partial (\Sigma_{}^{}{a_ic_i}) = \Sigma_{}^{}{a_i\partial (c_i)}.
 \end{align*}
 
 Although these few definitions suffice for all applications in
@@ -91,7 +91,7 @@ this book, we include here the one standard property of $\partial$.
         (I^n_{(i,\alpha)})_{(j,\beta)}(x) 
         & = I^n_{(i,\alpha)}(I^{n-1}_{(j,\beta)}(x))\\
         & = I^n_{(i,\alpha)}(x^1,\cdots,x^{j-1},\beta,x^j,\cdots,x^{n-2}) \\
-        & = I^{{n}}(x^{1},\cdots,x^{{i}-1},\alpha,x^{{i}},\cdots,x^{{j}-1},{\beta},x^{{j}},\cdots,x^{{n}-2})
+        & = I^{{n}}(x^{1},\cdots,x^{{i}-1},\alpha,x^{{i}},\cdots,x^{{j}-1},{\beta},x^{{j}},\cdots,x^{{n}-2}).
     \end{align*}
 
     Similarly
@@ -99,7 +99,7 @@ this book, we include here the one standard property of $\partial$.
         (I^n_{(j+1,\beta)})_{(i,\alpha)}(x) 
         & = I^n_{(j+1,\beta)}(I^{n-1}_{(i,\alpha)}(x))\\
         & = I^n_{(j+1,\beta)}(x^1,\cdots,x^{i-1},\alpha,x^i,\cdots,x^{n-2}) \\
-        & = I^{{n}}(x^{1},\cdots,x^{{i-1}},\alpha,x^{i},\cdots,x^{{j}-1},{\beta},x^{{j}},\cdots,x^{{n}-2})
+        & = I^{{n}}(x^{1},\cdots,x^{{i-1}},\alpha,x^{i},\cdots,x^{{j}-1},{\beta},x^{{j}},\cdots,x^{{n}-2}).
     \end{align*}
 
     Thus $(I_{(i,\alpha)}^n)_{(j,\beta)}=(I_{(j+1,\beta)}^n)_{(i,\alpha)}$ for $i\le j$.
@@ -109,7 +109,7 @@ this book, we include here the one standard property of $\partial$.
     \begin{align*}
         \partial(\partial c)
         & = \partial\left(\sum_{i=1}^n\sum_{\alpha=0,1}(-1)^{i+\alpha}c_{(i,\alpha)}\right) \\
-        & = \sum_{i=1}^{n}\sum_{\alpha=0,1}\sum_{j=1}^{n-1}{\sum_{\beta=0,1}^{}{(-1)^{i+\alpha+j+\beta}(c_{(i,\alpha)})_{(j,\beta)}}}
+        & = \sum_{i=1}^{n}\sum_{\alpha=0,1}\sum_{j=1}^{n-1}{\sum_{\beta=0,1}^{}{(-1)^{i+\alpha+j+\beta}(c_{(i,\alpha)})_{(j,\beta)}}}.
     \end{align*} 
 
     In this sum $(c_{(i,\alpha)})_{(j,\beta)}$ and $(c_{(j+1,\beta)})_{(i,\alpha)}$ occur 
@@ -128,7 +128,7 @@ with $\partial c' = c$.
 \begin{problems}
     \problem{
         Let $\C{S}$ be the set of all singular $n$-cube, and $\B{Z}$ the integer.
-        An $n$-\textbf{chain}\index{Chain} is a function $f:\C{S}\to \B{Z}$ such that $f(c)=0$
+        An $n$-\textbf{chain}\index{Chain} is a function $f\colon{}\C{S}\to \B{Z}$ such that $f(c)=0$
         for all but finitely many $c$. Define $f+g$ and $n f$ by $(f+g)(c) = f(c)+g(c)$
         and $nf(c)=n\cdot f(c)$. Show that $f+g$ and $nf$ are $n$-chains if $f$ and 
         $g$ are. If $c\in\C{S}$, let $c$ also denote the function $f$ such that 

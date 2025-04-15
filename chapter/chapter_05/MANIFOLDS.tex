@@ -1,6 +1,6 @@
-\section{MANIFOLDS}
+\section[\textsc{manifolds}]{MANIFOLDS}
 If $U$ and $V$ are open sets in $\F{R}^n$, a differentiable function
-$h: U\to V$ with a differentiable inverse $h^{-1}:V\to U$ will be called 
+$h\colon{} U\to V$ with a differentiable inverse $h^{-1}\colon{}V\to U$ will be called 
 a \textbf{diffeomorphism}\index{Diffeomorphism}. (``differentiable'' henceforth means ``$C^\infty$''.)
 
 A subset $M$ of $\F{R}^n$ is called a $k$-\textbf{dimensional manifold}\index{Manifold}\index{Dimension!of a manifold} (in $\F{R}^n$)
@@ -8,11 +8,11 @@ if for every point $x\in M$ the following condition is satisfied:
 
 \vspace*{1em}
 \noindent($M$) There is an open set $U$ containing $x$, an open set $V\subset \F{R}^n$, and a 
-diffeomorphism $h:U\to V$ such that
+diffeomorphism $h\colon{}U\to V$ such that
 \begin{align*}
     h(U\cap M)
     & = V\cap (\F{R}^k\times \{0\}) \\
-    & = \{y\in V:y^{k+1}=\cdots=y^n=0\}
+    & = \{y\in V:y^{k+1}=\cdots=y^n=0\}.
 \end{align*}
 
 In other words, $U\cap M$ is, ``up to diffeomorphism,'' simply
@@ -33,11 +33,11 @@ One common example of an $n$-dimensional manifold is the $n$-\textbf{sphere}\ind
 $S^n$, defined as $\{x\in\F{R}^{n+1}:|x|=1\}$. We leave it as an exercise for 
 the reader to prove taht condition ($M$) is satisfied. If you are unwilling 
 to trouble yourself with the details, you may instead use the following theorem,
-which provides many examples of manifolds (note that $S^n=g^{-1}(0)$, where $g:\F{R}^{n+1}\to\F{R}$
+which provides many examples of manifolds (note that $S^n=g^{-1}(0)$, where $g\colon{}\F{R}^{n+1}\to\F{R}$
 is defined by $g(x)=|x|^2-1$).
 
 \begin{theorem}
-    Let $A\subset \F{R}^n$ be open and let $g:A\to\F{R}^p$ be a differentiable
+    Let $A\subset \F{R}^n$ be open and let $g\colon{}A\to\F{R}^p$ be a differentiable
     function such that $g'(x)$ has $\R{rank}\; p$ whenever $g(x)=0$. Then $g^{-1}(0)$
     is an $(n-p)$-dimensional manifold in $\F{R}^n$.
 \end{theorem}
@@ -55,11 +55,11 @@ is very important.
     
     \vspace*{1em}
     \noindent$(C)$ There is an open set $U$ containing $x$ , an open set $W\subset\F{R}^k$,
-    and a 1-1 differentiable function $f:W\to\F{R}^n$ such that
+    and a 1-1 differentiable function $f\colon{}W\to\F{R}^n$ such that
     \begin{enumerate}[label=\upshape{(\arabic*)}]
         \item $f(W)=M\cap U$.
         \item $f'(y)$ has $\R{rank}\; k$ for each $y\in W$.
-        \item $f^{-1}:f(W)\to W$ is continuous.
+        \item $f^{-1}\colon{}f(W)\to W$ is continuous.
     \end{enumerate}
 \end{theorem}
 
@@ -73,23 +73,23 @@ is very important.
 \end{figure}
 
 \begin{proof}
-    If $M$ is a $k$-dimensional manifold in $\F{R}^n$, choose $h:U\to V$ satisfying $(M)$. Let 
-    $W=\{a\in\F{R}^k:(a,0)\in h(M)\}$ and define $f:W\to\F{R}^n$ by $f(a)=h^{-1}(a,0)$. Clearly 
-    $f(W)=M\cap U$ and $f^{-1}$ is continuous. If $H:U\to\F{R}^k$ is $H(z)=(h^1(z),\cdots,h^k(z))$,
+    If $M$ is a $k$-dimensional manifold in $\F{R}^n$, choose $h\colon{}U\to V$ satisfying $(M)$. Let 
+    $W=\{a\in\F{R}^k:(a,0)\in h(M)\}$ and define $f\colon{}W\to\F{R}^n$ by $f(a)=h^{-1}(a,0)$. Clearly 
+    $f(W)=M\cap U$ and $f^{-1}$ is continuous. If $h\colon{}U\to\F{R}^k$ is $H(z)=(h^1(z),\cdots,h^k(z))$,
     then $H(f(y))=y$ for all $y\in W$; therefore $H'(f(y))\cdot f'(y)=I$ and $f'(y)$ must have 
     $\R{rank}\; k$.
 
-    Suppose, conversely, that $f:W\to\F{R}^n$ satisfies condition $(C)$. Let $x=f(y)$. Assume that 
-    the matrix $\R{D}_if^i(y), 1\le i,j\le k$ has a non-zero determinant. Define $g:W\times \F{R}^{n-k}\to\F{R}^n$
+    Suppose, conversely, that $f\colon{}W\to\F{R}^n$ satisfies condition $(C)$. Let $x=f(y)$. Assume that 
+    the matrix $\R{D}_if^i(y), 1\le i,j\le k$ has a non-zero determinant. Define $g\colon{}W\times \F{R}^{n-k}\to\F{R}^n$
     by $g(a,b)=f(a)+(0,b)$. Then $\det g'(a,b)=\det(\R{D}_if^i(a))$, so $\det g'(y,0)\neq 0$. By Theorem 2-11
     there is an open set $V_1'$ containing $(y,0)$ and an open set $V_2'$ containing $g(y,0)=x$ such that
-    $g:V_1'\to V_2'$ has a differentiable inverse $h:V_2'\to V_1'$. Since $f^{-1}$ is continuous, 
+    $g\colon{}V_1'\to V_2'$ has a differentiable inverse $h\colon{}V_2'\to V_1'$. Since $f^{-1}$ is continuous, 
     $\{f(a):(a,0)\in V_1'\} = \{U\cap f(W)\}$ for some open set $U$. Let $V_2=V_2'\cap U$ and $V_1=g^{-1}(V_2)$.
     Then $V_2\cap M$ is exactly $\{f(a):(a,0)\in V_1\} = \{g(a,0):(a,0)\in V_1\}$, so 
     \begin{align*}
-        h(V_1\cap M) 
-        & = g^{-1}(V_1\cap M) \\
-        & = g^{-1}(\{g(a,0):(a,0)\in V_1\}) \\
+        h(V_2\cap M) 
+        & = g^{-1}(V_2\cap M) 
+          = g^{-1}(\{g(a,0):(a,0)\in V_1\}) \\
         & = V_1\cap (\F{R}^k\times \{0\})
     \end{align*} 
 \end{proof}
@@ -115,7 +115,7 @@ $x\in M$ either condition $(M)$ or the following condition is satisfied:
 \end{figure}
 
 \noindent $(M')$ is an open set $U$ containing $x$, an open set $V\in\F{R}^n$, and a diffeomorphism 
-$h:U\to V$ such that 
+$h\colon{}U\to V$ such that 
 \begin{align*}
     h(U\cap M) 
     & = V\cap(\F{H}^k\times \{0\}) \\
@@ -154,14 +154,14 @@ boundary of a set, as defined in Chapter 1 (see Problems 5-3 and 5-8).
     \problem{
         Prove a partial converse of Theorem 5-1: If $M\subset \F{R}^n$ is a $k$-dimensional manifold,
         and $x\in M$, then there is an open set $A\subset \F{R}^n$ containing $x$ and a differentiable
-        function $g:A\to\F{R}^{n-k}$ such that $A\cap M=g^{-1}(0)$ and $g'(y)$ has $\R{rank}\; n-k$ when 
+        function $g\colon{}A\to\F{R}^{n-k}$ such that $A\cap M=g^{-1}(0)$ and $g'(y)$ has $\R{rank}\; n-k$ when 
         $g(y)=0$.
     }
     \problem{
         Prove that a $k$-dimensional (vector) subspace of $\F{R}^n$ is a $k$-dimensional manifold.
     }
     \problem{
-        If $f:\F{R}^n\to\F{R}^m$, the \textbf{graph}\index{Graph} of $f$ is $\{(x,y):y=f(x)\}$. Show that 
+        If $f\colon{}\F{R}^n\to\F{R}^m$, the \textbf{graph}\index{Graph} of $f$ is $\{(x,y):y=f(x)\}$. Show that 
         the graph of $f$ is an $n$-dimensional manifold if and only if $f$ is differentiable.
     }
     \problem{
