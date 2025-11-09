@@ -9,18 +9,19 @@ TEX_SOURCE_FILES = $(shell find $(SRC_CHAPTER) -name '*.tex') \
 
 # build
 $(TARGET).pdf: $(TEX_SOURCE_FILES)
-	pdflatex --shell-escape $(TARGET).tex
+	pdflatex $(TARGET).tex
 	biber $(TARGET)
 	makeindex -s $(TARGET).ist $(TARGET).idx
 	pdflatex $(TARGET).tex
 	pdflatex $(TARGET).tex				
 
 temp:
-	pdflatex --shell-escape $(TARGET).tex
+	pdflatex $(TARGET).tex
 
 clean:
 	latexmk -c
 	rm -f *.bbl-SAVE-ERROR
+	rm -f *.bbl *.gz
 
 Clean:
 	latexmk -C
