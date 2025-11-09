@@ -125,7 +125,7 @@
 \newcounter{pr@blem}[chapter]
 \newcommand{\problem}[2][]{
     \stepcounter{pr@blem}
-    \par\noindent{\bfseries\thechapter-\thepr@blem.#1}
+    \par\noindent{\bfseries\llap{#1}\thechapter-\thepr@blem.}
     #2 \par
 }
 
